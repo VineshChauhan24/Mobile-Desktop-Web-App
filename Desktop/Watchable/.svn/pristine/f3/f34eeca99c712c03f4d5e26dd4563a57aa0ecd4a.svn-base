@@ -1,0 +1,134 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.FeaturedCategoryTestCases.FeaturedCategoryPageTestCases;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyHomeFeaturedAllBundlesAreDisplayed 
+ * Description: This test case is to verify Home/Featured category all bundles are displayed
+ * and clickable by comparing with Featured API response for registered Gazeebo Application user.
+ * **/
+
+public class VerifyHomeFeaturedAllBundlesAreDisplayed extends BaseTest{
+  
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass=new RegisterToXidioApplicationAndChangeAPassword();
+	AssertionRepoFunctions assertionFunction=new AssertionRepoFunctions();
+	UserLoginFunctions userLogin=new UserLoginFunctions();
+	
+  @Test
+  public void testVerifyHomeFeaturedAllBundlesAreDisplayed() throws Exception {
+	
+	Map<String, List<VideoDetails>> videoDetails=RestAPIServices.FeaturedBundleAPI();
+	List <VideoDetails> featuredBundlesList=videoDetails.get("bundlesList");
+	
+	try{
+		/* This Method is to register new user using Gazeebo application 
+		 * and to change a password. 
+		 */
+		RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+	
+		//This method is to ensure Home is Active page when Login into Application.
+		assertionFunction.assertHomeActiveLink();
+		
+		//This method is to assert Gazeebo Top Middle Menu and to ensure its collapsed.
+		assertionFunction.assertGazeeboTopMiddleMenu();
+		
+		Thread.sleep(sleepTime);
+	    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Featured[\\s\\S]*$"));
+	    
+	    if(featuredBundlesList!=null && featuredBundlesList.size()<10)
+	    {
+		    for(VideoDetails featuredBundleDetails:featuredBundlesList)
+		    {
+		    	Thread.sleep(sleepTime);
+		 	    boolean isPresent;
+		 	    do
+		 	    {
+		 	    	isPresent=driver.findElements(By.xpath(".//*[@id='featured']/div/section").linkText(featuredBundleDetails.getTitle())).size()>0;
+		 	    	if(isPresent==true)
+		 	    	{
+		 	    		assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredBundleDetails.getTitle()+"[\\s\\S]*$"));
+		 	    	    driver.findElement(By.xpath(".//*[@id='featured']/div/section").linkText(featuredBundleDetails.getTitle())).click();
+		 	    	   
+		 	    	    Thread.sleep(sleepTime);
+		 	    	    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredBundleDetails.getTitle()+"[\\s\\S]*$"));
+		 	    	    
+			 	    	 //This method asserts Gazeebo Logo.
+			 	   		assertionFunction.assertWatchableLogo();
+		 	    	    
+		 	    	    driver.navigate().back();
+		 	    	    Thread.sleep(sleepTime);
+		 	    	}
+		 	    	else
+		 	    	{
+		 	    		driver.findElement(By.xpath("//*[@id='featured']/div/section/a[2]/span")).click();
+		 	    		Thread.sleep(sleepTime);
+		 	    	}    		
+		 	    }
+		 	    while(isPresent==false);
+		    }
+	    }
+	    else
+	    {
+	    	for(int index=0; index<10; index++)
+	    	{
+	    		VideoDetails featuredBundleDetails=featuredBundlesList.get(index);
+	    		Thread.sleep(sleepTime);
+		 	    boolean isPresent;
+		 	    do
+		 	    {
+		 	    	isPresent=driver.findElements(By.xpath(".//*[@id='featured']/div/section").linkText(featuredBundleDetails.getTitle())).size()>0;
+		 	    	if(isPresent==true)
+		 	    	{
+		 	    		assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredBundleDetails.getTitle()+"[\\s\\S]*$"));
+		 	    	    driver.findElement(By.xpath(".//*[@id='featured']/div/section").linkText(featuredBundleDetails.getTitle())).click();
+		 	    	   
+		 	    	    Thread.sleep(sleepTime);
+		 	    	    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredBundleDetails.getTitle()+"[\\s\\S]*$"));
+		 	    	    
+			 	    	//This method asserts Gazeebo Logo.
+			 	   		assertionFunction.assertWatchableLogo();
+			 	    	    
+		 	    	    driver.navigate().back();
+		 	    	    Thread.sleep(sleepTime);
+		 	    	}
+		 	    	else
+		 	    	{
+		 	    		driver.findElement(By.xpath("//*[@id='featured']/div/section/a[2]/span")).click();
+		 	    		Thread.sleep(sleepTime);
+		 	    	}	    		
+		 	    }
+		 	    while(isPresent==false);
+	    	}
+	    }
+	    
+	    //This method asserts Footer Logo and It's Text.
+	    assertionFunction.assertFooterLogo();
+	    
+	    //This method asserts Footer Copy Right Links.
+	    assertionFunction.assertFooterCopyRight();
+	    
+	    //This method is used to logout from Gazeebo Application.
+		    userLogin.LogOut(driver);
+	    
+	    //This method is to ensure Login page is displayed when user Sign Out from Application.
+	    assertionFunction.assertLoginPageDetails(); 
+	} 
+	catch (Throwable t) {
+		captureScreenshot();
+		collector.addError(t);
+	}
+  }
+}

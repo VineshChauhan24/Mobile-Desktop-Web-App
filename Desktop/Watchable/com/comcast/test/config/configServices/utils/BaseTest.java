@@ -1,0 +1,280 @@
+package comcast.test.config.configServices.utils;
+
+/**
+ * Company: Valtech
+ * Author:
+ * Description: Class include the methods
+ * setUp(): Initiate the browser type.
+ * tearDown(): Close/Quit the browser once test has run.
+ * captureScreenshot(): Capture the application screenshot.
+ */
+
+import static org.junit.Assert.fail;
+
+import java.awt.AWTException;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.ErrorCollector;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
+import comcast.test.app.testCases.userManagement.userLogin.ValidateUserLoginUsingValidCredentials.LoginToWatchableWithValidCredentials1;
+
+public class BaseTest {
+
+	public static WebDriver driver;
+	public String baseUrl;
+	public StringBuffer verificationErrors = new StringBuffer();
+	public static long sleepTime = 5000;
+	public static long LessSleepTime = 1000;
+	public static long sleepTimeForVideoPlay = 30000;
+	//public static long sleepTimeForVideoPlay = 25000;
+	public static TestDataGenerator proUtil = new TestDataGenerator();
+	public TestDataGenerator orProUtil = new TestDataGenerator();
+	public static Logger log;
+	public String Browser;
+
+	// The Chrome Driver locations under the resource folder
+	// private static String MAC_DRIVER = "/chromedriver/mac/chromedriver";
+	// private static String WINDOWS_DRIVER =
+	// "/chromedriver/windows/chromedriver.exe";
+
+	/**
+	 * Method Name: setUp Description: Initiate the respective browser which is
+	 * set at "data.properties" file.
+	 */
+
+	private static boolean isSupportedPlatform() {
+		Platform current = Platform.getCurrent();
+		return Platform.MAC.is(current) || Platform.WINDOWS.is(current);
+	}
+
+	@Rule
+	public ErrorCollector collector = new ErrorCollector();
+
+	@Before
+	public void setUp() throws Exception {
+
+		// log = Logger.getLogger(this.getClass().getName());
+		proUtil.load(new FileInputStream(new File("com/data.properties")));
+		orProUtil.load(new FileInputStream(new File("com/OR.properties")));
+		Browser = proUtil.getProperty("BROWSER");
+		// For logging
+		log = Logger.getLogger(this.getClass().getName());
+
+		if (Browser.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+		}
+
+		else if (Browser.equalsIgnoreCase("chrome")) {
+			// System.setProperty("webdriver.chrome.driver", "chromedriver");
+			/*
+			 * System.setProperty("webdriver.chrome.driver",
+			 * "resources\\chromedriver.exe"); driver=new ChromeDriver();
+			 * driver.manage().window().maximize();
+			 * driver.manage().deleteAllCookies();
+			 */
+
+			setupChromeDriver();
+		}
+
+		else if (Browser.equalsIgnoreCase("InternetExplorer")) {
+			System.setProperty("webdriver.ie.driver",
+					"resources\\IEDriverServer.exe");
+			driver = new InternetExplorerDriver();
+		}
+
+		else if (Browser.equalsIgnoreCase("Safari")) {
+			assumeTrue(isSupportedPlatform());
+			driver = new SafariDriver();
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+		} else
+			driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		// driver.navigate().refresh();
+		//driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	//	driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+	
+
+	}
+
+	// @Before
+	public static void setupChromeDriver() {
+		// OS type
+		String errorMessage;
+		String Os = proUtil.getProperty("OS");
+		if (Os.equalsIgnoreCase("Mac")) {
+			System.setProperty("webdriver.chrome.driver",
+					"/usr/bin/chromedriver");
+			driver = new ChromeDriver();
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			// driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+			Dimension targetSize = new Dimension(1920, 1080); // your screen
+																// resolution
+																// here
+			driver.manage().window().setSize(targetSize);
+
+		} else {
+			System.setProperty("webdriver.chrome.driver",
+					"resources\\chromedriver_Windows.exe");
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			//driver.manage().deleteAllCookies();
+		}
+
+	}
+
+	public TestDataGenerator getProUtil() {
+		return proUtil;
+	}
+
+	public void setProUtil(TestDataGenerator proUtil) {
+		this.proUtil = proUtil;
+	}
+
+	public TestDataGenerator getOrProUtil() {
+		return orProUtil;
+	}
+
+	public void setOrProUtil(TestDataGenerator orProUtil) {
+		this.orProUtil = orProUtil;
+	}
+
+	private void assumeTrue(boolean supportedPlatform) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
+	 * Method Name: tearDown Description: Quit the browser instance once the
+	 * test case/test scenario has finished.
+	 */
+	@After
+	public void tearDown() throws Exception {
+		// refresh the browser.
+		// driver.navigate().refresh();
+		// driver.manage().deleteAllCookies();
+		// Quit the initiated browser.
+		// driver.quit();
+		String Os = proUtil.getProperty("OS");
+		// Closing the driver once the suite execution is finished.
+		driver.close();
+
+		// Quitting the driver once the suite execution is finished.
+		driver.quit();
+
+		/*
+		 * if (Browser.equalsIgnoreCase("chrome")) {
+		 * 
+		 * Runtime.getRuntime().exec("taskkill /im chromedriver_Windows.exe /f");
+		 * }
+		 */
+
+		/*
+		 * if (Os.equalsIgnoreCase("Windows")) {
+		 * 
+		 * Runtime.getRuntime().exec("taskkill /im chromedriver_Windows.exe /f");
+		 * 
+		 * }
+		 */
+
+		String verificationErrorString = verificationErrors.toString();
+		if (!"".equals(verificationErrorString)) {
+			fail(verificationErrorString);
+
+			TestDataGenerator proUtil = new TestDataGenerator();
+			proUtil.setProperty("BROWSER", "firefox");
+			proUtil.store(
+					new FileOutputStream(new File("com/data.properties")), null);
+			proUtil.store(new FileOutputStream(new File("com/OR.properties")),
+					null);
+
+		}
+
+		// Changes the browser for multiple browser execution.
+		// @Note: Comment if single browser
+		// TestDataGenerator.ChangeBrowser();
+	}
+
+	/**
+	 * Method: captureScreenshot Description:Capture the screenshot of the
+	 * application at runtime and stores at "screenshots" folder with
+	 * className/timeStamp.
+	 * 
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
+	public void captureScreenshot() throws IOException, InterruptedException {
+
+		// JavascriptExecutor jsx = (JavascriptExecutor)driver;
+		// jsx.executeScript("window.scrollBy(0,1200)", "");
+		Thread.sleep(sleepTime);
+		File scrFile = ((TakesScreenshot) driver)
+				.getScreenshotAs(OutputType.FILE);
+		Calendar calendar = Calendar.getInstance();
+		Date date = calendar.getTime();
+		DateFormat stringDate = new SimpleDateFormat("ddMMyyhhmmss");
+		String cdate = stringDate.format(date);
+		String ClassName = this.getClass().getSimpleName();
+
+		String c = getClass().getName(); // prints Package name + class name.
+		String d = getClass().getSimpleName(); // prints only class name.
+		String e = getClass().getCanonicalName(); // prints Package name + class
+													// name.
+
+		System.out.println(c);
+		System.out.println(d);
+		System.out.println(e);
+
+		FileUtils.copyFile(scrFile, new File("./screenshots\\" + ClassName
+				+ "_" + cdate + ".jpg"));
+		Thread.sleep(2000);
+	}
+
+	public boolean captureScreen(String fileName) throws IOException,
+			AWTException {
+		Robot robot = new Robot();
+
+		BufferedImage screenShot = robot.createScreenCapture(new Rectangle(
+				Toolkit.getDefaultToolkit().getScreenSize()));
+		return ImageIO.write(screenShot, "JPG", new File(fileName));
+	}
+}

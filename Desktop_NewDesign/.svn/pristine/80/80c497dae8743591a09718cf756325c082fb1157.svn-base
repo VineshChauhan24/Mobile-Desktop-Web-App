@@ -1,0 +1,26 @@
+
+#*********************************************************************************************************************
+
+#					WATCHABLE NEW WEB CLIENT UI OBJECTS
+
+#***********************************************************************************************************************
+
+#***********************************************************************************************************************
+#                          PageObjectVerification [ACROSS ALL THE PAGES]
+#***********************************************************************************************************************
+homePageType_XPATH = //meta[@content='Home Page']
+showPageType_XPATH = //meta[@content='Show Page']
+providerPageType_XPATH = //meta[@content='Provider Page']
+playlistPageType_XPATH = //meta[contains(@content, 'Playlists Page')]
+browseShowsPageType_XPATH = //meta[@content='Browse Shows Page']
+myShowsPageType_XPATH = //meta[@content='My Shows Page']
+helpPageType_XPATH = //meta[@content='FAQ Page']
+watchPageType_XPATH = //meta[contains(@content, 'Watch Page')]
+
+
+#*********************************************************************************************************************
+#													HOME PAGE OBJECTS
+#***********************************************************************************************************************
+
+
+homePageHomeIcon_XPATH = //div[@class='home_icon']

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Watchable App Automation - Functional Suite]">
+  <test name="LoginToWatchableWithValidCredentials(failed)">
+    <classes>
+      <class name="comcast.test.homepage.LoginToWatchableWithValidCredentials">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="suiteSetUp"/>
+          <include name="Step01_NavigeteToURL"/>
+        </methods>
+      </class> <!-- comcast.test.homepage.LoginToWatchableWithValidCredentials -->
+    </classes>
+  </test> <!-- LoginToWatchableWithValidCredentials(failed) -->
+</suite> <!-- Failed suite [Watchable App Automation - Functional Suite] -->

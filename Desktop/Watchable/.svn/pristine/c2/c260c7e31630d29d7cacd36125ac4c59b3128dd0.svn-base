@@ -1,0 +1,147 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.PopularChannelsCategoryTestCases.PopularChannelCategoryPageTestCases;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.JsonParser;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.configServices.utils.UrlFactoryUtil;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyHomePopularChannelDetails Description: This test case
+ * validates whether the channel is displayed under Popular Channels section in
+ * Home page by logging registered user into Watchable application.
+ * **/
+
+public class VerifyHomePopularChannelDetails extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyHomePopularChannelDetails() throws Exception {
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.allPopularChannelsList();
+		List<VideoDetails> channelList = videoDetails
+				.get("popularChannelsList");
+
+		String sessionToken = RestAPIServices.executeGenreAuthentication();
+
+		try {
+
+			// Opening application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+			Thread.sleep(sleepTime);
+
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method asserts Popular Channels title.
+			assertionFunction.assertPopularChannelsTitle();
+
+			if (channelList != null) {
+				// This method is to scroll UI to Popular Channels Section.
+				homePageCommonFun.scrollToPopularChannelsSection();
+
+				int loopMaxIndex = 0;
+				if (channelList.size() < 2)
+					loopMaxIndex = channelList.size();
+				else
+					loopMaxIndex = 2;
+
+				//for (int index = 0; index < loopMaxIndex; index++) {
+					VideoDetails popularChannels = channelList.get(0);
+					// This Method verifies Channel present in Popular Channel
+					// Section and selects a Channel.
+					homePageCommonFun.selectPopularChannel(popularChannels
+							.getTitle());
+
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularChannels.getTitle()+"[\\s\\S]*$"));
+					// lekshmi : Changed Object identifier to fetch the popular
+					// channel title
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.CHANNELDETAILSPAGETITLE_XPATH))
+							.getText()
+							.equalsIgnoreCase(popularChannels.getTitle()));
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularChannels.getDescription()+"[\\s\\S]*$"));
+
+					// This is to get publisher details result
+					String publisherResponse = RestAPIServices
+							.getSessionTokenResponse(
+									UrlFactoryUtil.getInstance()
+											.getPublisherDetailsResponse(
+													popularChannels
+															.getPublisherURL()),
+									sessionToken);
+					List<VideoDetails> publisherDetails = JsonParser
+							.parsePublisherDetailsResponse(publisherResponse);
+
+					if (publisherDetails != null) {
+						for (int i = 0; i < publisherDetails.size(); i++) {
+							VideoDetails publishersDetail = publisherDetails
+									.get(i);
+							// lekshmi : Changed Object identifier to fetch the
+							// publisher title
+							// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+publishersDetail.getPublisherName()+"[\\s\\S]*$"));
+							assertTrue(driver
+									.findElement(
+											By.xpath(XpathObjectRepo.CHANNELDETAILSPUBLISHERTITLE_XPATH))
+									.getText()
+									.equalsIgnoreCase(
+											publishersDetail.getPublisherName()));
+						}
+
+					}
+					driver.navigate().back();
+					Thread.sleep(sleepTime);
+				//}
+			} else {
+				boolean isPresent;
+				// Lekshmi : Changed Object identifier
+				isPresent = driver
+						.findElement(
+								By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSROW_XPATH))
+						.findElements(
+								By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSFIRSTTITLELABEL_XPATH))
+						.size() > 0;
+				if (isPresent == true) {
+					String channelName = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSROW_XPATH))
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSFIRSTTITLELABEL_XPATH))
+							.getText();
+					// Lekshmi : Change the object identifier
+					// assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+channelName+"[\\s\\S]*$"));
+					assertFalse(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSFIRSTTITLELABEL_XPATH))
+							.getText().equalsIgnoreCase(channelName));
+				}
+			}
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

@@ -1,0 +1,218 @@
+#PreConfiguration Methods Properties\:
+#-------------------------------------
+
+#Browser can use firefox,chrome,Safari,InternetExplorer etc. 
+BROWSER=chrome
+#BROWSER=firefox
+#OS can be Windows, Mac
+OS=Windows
+#OS=Mac
+
+#Server 
+
+#HOMEAPPURL=http\://portal2.qa.xidio.com
+HOMEAPPURL=http\://portal2.qa.xidio.com:3100
+#HOMEAPPURL=http://ec2-54-90-244-235.compute-1.amazonaws.com:3100
+#BASEURL=http\://fabricdemo.xidio.com demo3-fabric-lb-1756645713.us-east-1.elb.amazonaws.com
+BASEURL=http\://qafabric.demo.xidio.com
+#BASEURL=http\://fabricdemo.xidio.com/
+#HOMEAPPURL=http\://www.projecthelen.net\:3000
+
+
+#APPURL=http\://portal.qa.xidio.com\:3100/login
+#HOMEAPPURL=http\://portal.qa.xidio.com\:3100
+
+#QA_Server
+#APPURL=http\://portal2.qa.xidio.com/login
+#HOMEAPPURL=http\://portal2.qa.xidio.com
+#APPURL=http\://portal.qa.xidio.com/login
+#HOMEAPPURL=http\://portal.qa.xidio.com
+#BASEURL=http\://fabricdemo.xidio.com demo3-fabric-lb-1756645713.us-east-1.elb.amazonaws.com
+#BASEURL=http\://qafabric.demo.xidio.com
+#BASEURL=http\://fabricdemo.xidio.com/
+
+#Server_2
+#APPURL=http\://ec2-54-82-17-87.compute-1.amazonaws.com\:3100/login
+#HOMEAPPURL=http\://ec2-54-82-17-87.compute-1.amazonaws.com\:3100
+
+#APPURL=http\://xidiotrial\:Fhaze1@ec2-50-19-134-160.compute-1.amazonaws.com\:3000
+#APPURL=http\://test_300\:Demo1111@www.projecthelen.net\:3000
+#APPURL=http\://xidiotrial\:Fhaze1@www.xidio.com
+
+#Local URL's
+#HOMEAPPURL=http\://192.168.162.71\:3000
+#APPURL=http\://192.168.162.71\:3000/login
+#HOMEAPPURL=http\://192.168.136.229\:3000
+#APPURL=http\://192.168.136.229\:3000/login
+
+#Projecthelen URL's
+#HOMEAPPURL=http\://www.projecthelen.net\:3000
+#APPURL=http\://www.projecthelen.net\:3000/login
+
+#APPURL=http\://xidiotrial\:Fhaze1@www.projecthelen.net\:3000/login
+
+#APPURL=http\://portal.qa.xidio.com/login
+#HOMEAPPURL=http\://portal.qa.xidio.com
+
+
+#API Base URLS:
+
+#BASEURL=http\://107.20.31.47\:9000
+#BASEURL=http\://api.test2.xidio.com
+#BASEURL=http\://api.midtier.xidio.com\:9000
+#Uncomment below BASEURL it when u want to test it on migration or any non-pre-prod branches: Jamuna#
+#BASEURL=http\://demo3-fabric-lb-1756645713.us-east-1.elb.amazonaws.com
+#BASEURL=http\://prod-fabric-lb-14472425.us-east-1.elb.amazonaws.com
+#BASEURL=http\://54.204.189.43\:9000
+
+
+#BASEURL=http\://fabricdemo.xidio.com
+#BASEURL=http\://demo3-fabric-lb-1756645713.us-east-1.elb.amazonaws.com
+
+#BASEURL=http\://fabricdemo.xidio.com demo3-fabric-lb-1756645713.us-east-1.elb.amazonaws.com
+BASEURL=http\://qafabric.demo.xidio.com
+#BASEURL=http\://fabricdemo.xidio.com/
+
+
+#BASEURL=http\://fabricdemo.xidio.com
+
+BASEURL=http\://qafabric.demo.xidio.com
+
+
+VIMOND=http\://api.test2.xidio.com
+STAGE=http\://api.stage2.xidio.com
+
+#Login Credential properties
+
+
+USER_NAME=comcastxcs111214053357@gmail.com
+
+USER_NAME=comcastxcs111214053357@gmail.com
+
+
+USER_NAME=comcastxcs111214053357@gmail.com
+
+#USER_NAME=nosubscribe@gmail.com
+PASSWORD=Demo1111
+RESET_PASSWORD=Demo1111
+CONFIRM_PASSWORD=Demo1111
+DIFF_CONFIRM_PASSWORD=Password@2
+
+#Invalid Login Credential properties
+INVALID_USER_NAME=abcd.v@valtech.co.in
+INVALID_PASSWORD=Pass
+INVALID_PASSWORD_LENGTH=Pass1
+INVALID_EMAIL=EMAIL.COM
+INVALID_MOBILE_NUMBER=996532
+NONCAPITAL_LETTER_PASSWORD=password1
+NONDIGIT_PASSWORD=Demo1111
+INVALID_ZIP_LENGTH=5913
+INVALID_ZIP=zip12
+
+#ACCOUNT PAGE DETAILS
+ZIPXPATH=//div[contains(@id,'registration')]/descendant\:\:input[contains(@name,'user')
+
+
+#User Registration properties
+FIRST_NAME=UpdatedXidioTest
+LAST_NAME=Xidio
+ADDRESS=New York
+CITY=New York
+STATE=AL - Alabama
+ZIP=12345
+#EMAIL=comcastxcs270814124003@gmail.com
+
+
+
+EMAIL=comcastxcs111214053357@gmail.com
+MOBILE_NUMBER=9988262687
+REG_PASSWORD=Demo3333
+
+EMAIL=comcastxcs111214053357@gmail.com
+MOBILE_NUMBER=9988262687
+REG_PASSWORD=Demo3333
+
+EMAIL=comcastxcs111214053357@gmail.com
+MOBILE_NUMBER=9988262687
+REG_PASSWORD=Demo3333
+
+
+EMAIL=comcastxcs111214053357@gmail.com
+MOBILE_NUMBER=9988262687
+REG_PASSWORD=Demo3333
+
+
+#Data Generate properties
+EMAILIDNAME=comcastxcs
+MAILIDAT=@gmail.com
+
+#Setting New Detials
+UPD_FIRST_NAME=UpdatedXidioTest
+UPD_LAST_NAME=Xidio
+UPD_ADDRESS=New York
+UPD_CITY=New York
+UPD_STATE=AL - Alabama
+UPD_ZIP=12345
+UPD_EMAIL=comcastxcs250914033521@gmail.com
+UPD_MOBILE_NUMBER=9995976396
+
+#User Account Details properties
+CC_NUMBER=4111111111111111
+CC_EXPIRY_MONTH=2
+CC_SECURITY_CODE=123
+CC_PIN_CODE=1234
+CC_YEAR=2019
+ACTIVATION_CODE=1234
+
+#Update User Account Details properties
+UPD_CC_NUMBER=4111111111111111
+UPD_CC_EXPIRY_MONTH=3
+UPD_CC_SECURITY_CODE=123
+UPD_CC_PIN_CODE=1234
+UPD_CC_YEAR=2020
+UPD_ACTIVATION_CODE=5678
+
+#Invalid Account Details properties
+INVALID_CC_PIN_CODE=5343
+INVALID_CC_PIN_CODE_LENGTH=23423
+INVALID_CC_NUMBER=43333
+INVALID_CC_SECURITY_CODE_CHAR=abc
+INVALID_CC_SECURITY_CODE=1234
+INVALID_CC_SECURITY_CODE_LENGTH=12
+INVALID_CC_EXPIRY_MONTH=13
+INVALID_ACTIVATION_CODE=abc1
+CAPTCHA_CODE=abcdef
+CONFIRMATION_PASS=abcde
+
+#Video Search Properties
+SEARCH_VIDEO_BY=Norcal Publishing
+VIDEIO_KEY_NAME=African Cats
+SEARCH_BY_SPLCHAR=\#$&$\#$
+SEARCH_BY_BLANKSPACES="    "
+
+#TestCase Specif Properties
+CURRENT_YEAR=2014
+PAST_YEAR=2012
+
+#SQL Keywords
+SQLKEY_USERNAME=test_301 OR 1\=1
+
+#SQL Statement
+SQLSTMT_USERNAME=test_301 OR first_name LIKE '%Test%'
+
+#Java Script Code
+JS_USERNAME=<script>alert('Injected\!');</script>
+
+#Special Characters
+SPL_USERNAME=@\#$%^\!@$
+
+#Digits
+DIGIT_USERNAME=1234567
+
+#Video Page Details
+PLAYFROMRESUME_BTN_XPATH=//div[@id\='controls']/descendant\:\:div[contains(@id,'resume')]
+PLAYFROMSTART_BTN_XPATH=//div[@id\='controls']/descendant\:\:div[contains(@id,'start')]
+
+#My Channels details
+MYCHANNELS_ERROR_MESSAGE=You have not subscribed to any channel yet.
+

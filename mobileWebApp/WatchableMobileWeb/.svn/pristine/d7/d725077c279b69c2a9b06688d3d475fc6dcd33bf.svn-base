@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Watchable Mobile Web Automation - Functional Suite">
+	<test name="VerifyHomePageContent">
+		<classes>
+			<class name="comcast.test.homepage.VerifyHomePageContent" />
+		</classes>
+	</test> <!-- LoginToWatchableWithValidCredentials -->
+</suite> <!-- Watchable Suite -->
+

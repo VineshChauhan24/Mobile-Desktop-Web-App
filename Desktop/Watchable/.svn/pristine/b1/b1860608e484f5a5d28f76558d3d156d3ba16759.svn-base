@@ -1,0 +1,54 @@
+package comcast.test.app.testCases.homePage;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifySearchTextBoxHiddenByDefault Description: This test case
+ * verifies Search text box is hidden by default in header. 
+ * Author: Manoj
+ * **/
+
+
+public class VerifySearchTextBoxHiddenByDefault extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifySearchTextBoxHiddenByDefault() throws Exception {
+
+		try {
+
+			log.info("Script: VerifySearchTextBoxHiddenByDefault");
+			log.info("******************************************");
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			Thread.sleep(LessSleepTime);
+
+			// Verifying Search text box is hidden by default in header
+
+			assertFalse(
+					"Search text box is not hidden by default in header",
+					driver.findElement(
+							By.xpath(XpathObjectRepo.searchText_XPATH))
+							.isDisplayed());
+			log.info("Search text box is hidden by default in header");
+
+			log.info("");
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

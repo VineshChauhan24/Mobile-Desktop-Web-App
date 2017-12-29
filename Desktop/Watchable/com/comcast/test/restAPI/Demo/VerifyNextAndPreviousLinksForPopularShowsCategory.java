@@ -1,0 +1,69 @@
+package comcast.test.restAPI.Demo;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+
+/**
+ * Class Name: VerifyNextAndPreviousLinksForPopularShowsCategory Description:
+ * This test case validates whether previous and next links present under
+ * Popular Shows section works fine in Home page by logging registered user into
+ * Comcast application.
+ * **/
+
+public class VerifyNextAndPreviousLinksForPopularShowsCategory extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+
+	@Test
+	public void testVerifyNextAndPrevoisLinksForPopularShowsCategory()
+			throws Exception {
+
+		/*
+		 * This Method is to register new user using Comcast application and to
+		 * change a password.
+		 */
+		RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+		Thread.sleep(sleepTime);
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Popular Shows[\\s\\S]*$"));
+
+		boolean present;
+		int count = 0;
+		do {
+			Thread.sleep(sleepTime);
+			present = driver
+					.findElements(
+							By.xpath(".//*[@id='popular_shows']/div/section/a[2]/span"))
+					.size() > 0;
+			if (present == true) {
+				driver.findElement(
+						By.xpath(".//*[@id='popular_shows']/div/section/a[2]/span"))
+						.click();
+				count++;
+				Thread.sleep(sleepTime);
+			}
+		} while (present == true && count < 3);
+
+		Thread.sleep(sleepTime);
+		do {
+			Thread.sleep(sleepTime);
+			present = driver.findElements(
+					By.xpath(".//*[@id='prev_popular_shows']/span")).size() > 0;
+			if (present == true) {
+				driver.findElement(
+						By.xpath(".//*[@id='prev_popular_shows']/span"))
+						.click();
+				count--;
+				Thread.sleep(sleepTime);
+			}
+		} while (present == true && count > 0);
+
+		driver.findElement(By.linkText("Log Out")).click();
+	}
+}

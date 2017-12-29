@@ -1,0 +1,131 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.PopularShowsCategoryTestCases.PopularShowsCategoryPageTestCases;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import java.util.List;
+import java.util.Map;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyShowsAreDisplayedUnderHomePopularShowsCategoryPage
+ * Description: This test case validates whether the Shows are displayed under
+ * Popular Shows section in Home page by logging registered user into Watchable
+ * application.
+ * **/
+
+public class VerifyShowsAreDisplayedUnderHomePopularShowsCategoryPage extends
+		BaseTest {
+
+	// Manoj: Code refactoring done
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyShowsAreDisplayedUnderHomePopularShowsCategoryPage()
+			throws Exception {
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.nHomePopularShowsAPIs();
+		List<VideoDetails> popularShowList = videoDetails.get("popularShows");
+
+		try {
+			/*
+			 * This Method is to register new user using Watchable application and
+			 * to change a password.
+			 */
+			//RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+			
+			driver.get(DataServiceProperties.HOMEAPPURL);
+			
+			//This method is used to enter user name and password credential
+			Thread.sleep(sleepTime);
+
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method asserts Popular Shows Header Title.
+			assertionFunction.assertPopularShowsTitle();
+
+			// This method is to scroll UI to Popular Channels Section.
+			homePageCommonFun.scrollToPopularShowsSection();
+
+			int loopMaxIndex = 0;
+			if (popularShowList != null) {
+				if (popularShowList.size() < 4)
+					loopMaxIndex = popularShowList.size();
+				else
+					loopMaxIndex = 4;
+
+				for (int index = 0; index < loopMaxIndex; index++) {
+					VideoDetails showList = popularShowList.get(index);
+					// This Method verifies Shows present in Popular Shows
+					// Section and selects a Show.
+					homePageCommonFun.selectPopularShows(showList.getTitle());
+
+					// Manoj: Object Modified and moved to XpathObjectRepo file
+
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+showList.getTitle()+"[\\s\\S]*$"));
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.SHOWDETAILSHOWTITLE_XPATH))
+							.getText().matches(showList.getTitle()));
+
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+showList.getChannelTitle()+"[\\s\\S]*$"));
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.SHOWDETAILCHANNELTITLE_XPATH))
+							.getText().matches(showList.getChannelTitle()));
+
+					driver.navigate().back();
+					Thread.sleep(sleepTime);
+				}
+			} else {
+				boolean isPresent;
+
+				// Manoj: Object Modified and moved to XpathObjectRepo file
+				// isPresent=driver.findElement(By.xpath(".//*[@id='popular_shows']/div/section")).findElements(By.xpath(".//*[@id='popular_shows']/div/section/div/div/ul[1]/li[1]/article/a/div/div")).size()>0;
+				isPresent = driver
+						.findElement(
+								By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSVIEWROW_XPATH))
+						.findElements(
+								By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSICON_XPATH))
+						.size() > 0;
+				if (isPresent == true) {
+					// String
+					// showName=driver.findElement(By.xpath(".//*[@id='popular_shows']/div/section")).findElement(By.xpath(".//*[@id='popular_shows']/div/section/div/div/ul[1]/li[1]/article/h1/a")).getText();
+					// assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+showName+"[\\s\\S]*$"));
+
+					String showName = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSVIEWROW_XPATH))
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSFIRSTTITLELABEL_XPATH))
+							.getText();
+					assertFalse(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSFIRSTTITLELABEL_XPATH))
+							.getText().matches(showName));
+				}
+			}
+
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

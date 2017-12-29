@@ -1,0 +1,170 @@
+package comcast.test.app.testCases.videoManagement.videoPlay.videoStreamingTestCases;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyLikeFunctonalityWithLogin Description: This test case is to
+ * verify Like functionality in video player by logging into Watchable
+ * application.
+ * **/
+
+public class VerifyLikeFunctonalityWithLogin extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyLikeFunctonalityWithLogin() throws Exception {
+
+		// Map <String,List<VideoDetails>>
+		// videoDetails=RestAPIServices.featuredSectionVideos();
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.featuredSectionVideos();
+		List<VideoDetails> videoList = videoDetails.get("featuredVideoList");
+		String pageTitle="";
+
+		try {
+			/*
+			 * This Method is to register new user using Watchable application
+			 * and to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+			pageTitle=driver.getTitle();
+			
+			int loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+
+				// This method is to ensure Home is Active page when Login into
+				// Application.
+				assertionFunction.assertHomeActiveLink();
+
+				if (videoList != null) {
+
+					for (int i = 0; i < videoList.size(); i++) {
+						int j = i + 1;
+						/*
+						 * driver.findElement(
+						 * By.xpath(XpathObjectRepo.HOMEFEATUREDLIST_XPATH + "["
+						 * + j + "]" + XpathObjectRepo.LINKHREF_XPATH))
+						 * .click();
+						 */
+
+						try {
+							driver.findElement(
+									By.xpath(XpathObjectRepo.HOMEFEATUREDLIST_XPATH
+											+ "["
+											+ j
+											+ "]"
+											+ XpathObjectRepo.LINKHREF_XPATH))
+									.click();
+
+							Thread.sleep(XidioConstant.halfMin);
+
+							Thread.sleep(sleepTime);
+							Thread.sleep(sleepTime);
+							Thread.sleep(sleepTime);
+
+							// Manoj: Checking Selected video is partially
+							// played
+							Thread.sleep(sleepTime);
+
+							WebElement playFromPresent = driver
+									.findElement(By
+											.xpath(XpathObjectRepo.VIDEOPLAYFROMBUTTON_XPATH));
+
+							if (playFromPresent.isDisplayed() == true) {
+								// Thread.sleep(sleepTime);
+								// Thread.sleep(sleepTime);
+								driver.findElement(
+										By.xpath(XpathObjectRepo.VIDEOPLAYFROMBUTTON_XPATH))
+										.click();
+								Thread.sleep(sleepTime);
+								Thread.sleep(sleepTime);
+							}
+
+							Thread.sleep(sleepTime);
+							Thread.sleep(sleepTime);
+
+							homePageCommonFun.mouseOverOnVideoPlayer();
+							// Get Vote count before liking it.
+							// String getLikeCount=videos.getVoteCount();
+							// Lekshmi : Change the object identifier
+							boolean isLikePresent = false;
+							try {
+								driver.findElement(By
+										.xpath(XpathObjectRepo.VIDEOLIKEIMAGE_XPATH));
+								isLikePresent = true;
+							} catch (NoSuchElementException nse) {
+								System.out.println("In exception");
+							}
+							// click on the "Follow Now" button if present else
+							// go
+							// back to
+							// Home Page
+							if (isLikePresent) {
+								driver.findElement(
+										By.xpath(XpathObjectRepo.VIDEOLIKEIMAGE_XPATH))
+										.click();
+								Thread.sleep(sleepTime);
+								String likedClass = driver
+										.findElement(
+												By.xpath(XpathObjectRepo.VIDOLIKEORUNLIKEIMAGE_XPATH))
+										.getAttribute("class");
+								assertEquals("liked", likedClass);
+								break;
+							} else {
+								driver.navigate().back();
+								// i++;
+								Thread.sleep(sleepTime);
+							}
+
+						}
+
+						catch (NoSuchElementException noelement) {
+							Reporter.log("Video not present");
+							log.error("Video not present");
+
+						}
+
+					}
+
+				}
+
+				// This method is used to logout from Watchable Application.
+				userLogin.LogOut(driver);
+			}
+		} catch (Throwable t) {
+			if (pageTitle.contains(UILablesRepo.HOMEPAGE_TITLE)) {
+			captureScreenshot();
+			collector.addError(t);
+			}
+		}
+
+	}
+}

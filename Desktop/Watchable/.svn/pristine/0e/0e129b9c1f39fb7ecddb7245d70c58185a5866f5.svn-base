@@ -1,0 +1,226 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.PopularShowsCategoryTestCases.PopularShowsCategoryPageTestCases;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+
+/**
+ * Class Name: VerifyNextAndPreviousLinksForPopularShowsCategory Description:
+ * This test case validates whether previous and next links present under
+ * Popular Shows section works fine in Home page by logging registered user into
+ * Watchable application.
+ * **/
+
+public class VerifyNextAndPreviousLinksForPopularShowsCategory extends BaseTest {
+
+	// Manoj: Code refactoring done
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+
+	@Test
+	public void testVerifyNextAndPreviousLinksForPopularShowsCategory()
+			throws Exception {
+
+		try {
+			/*
+			 * This Method is to register new user using Watchable application
+			 * and to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+			int loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+
+				// This method is to ensure Home is Active page when Login into
+				// Application.
+				assertionFunction.assertHomeActiveLink();
+
+				// This method asserts Popular Shows Header Title.
+				assertionFunction.assertPopularShowsTitle();
+
+				// This method is to scroll UI to Popular Channels Section.
+				homePageCommonFun.scrollToPopularShowsSection();
+
+				boolean present = false;
+				int count = 0;
+				do {
+
+					// Manoj: Objects modified and added to XpathObjectRepo file
+
+					// String
+					// isNextEnable=driver.findElement(By.xpath(".//*[@id='popular_shows']/div/section/a[2]/span")).getAttribute("class");
+					String isNextEnable = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSBUTTONNEXT_XPATH))
+							.getAttribute("class");
+					if (!isNextEnable.equalsIgnoreCase("next hidden")
+							&& !isNextEnable.equalsIgnoreCase("next disabled")) {
+						present = true;
+						// driver.findElement(By.xpath(".//*[@id='popular_shows']/div/section/a[2]/span")).click();
+
+						WebElement nextBtn = driver
+								.findElement(By
+										.xpath(XpathObjectRepo.HOMEPOPULARSHOWSBUTTONNEXT_XPATH));
+						
+						
+
+						/*if (nextBtn.isEnabled() && nextBtn.isDisplayed()) {
+							nextBtn.click();
+						}*/
+						
+							 try{
+								 nextBtn.click();
+							 
+				 	    	    }
+				 	    	    catch(NoSuchElementException noelement){
+				 	    	    log.error("Next button is not fully visible");
+				 	    	    	
+				 	    	    }
+						
+						
+						/*
+						 * driver.findElement(
+						 * By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSBUTTONNEXT_XPATH
+						 * )) .click();
+						 */
+
+						Thread.sleep(sleepTime);
+						// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*YOU ARE WATCHING[\\s\\S]*$"));
+						assertTrue(driver
+								.findElement(
+										By.xpath(XpathObjectRepo.YOUAREWATCHINGHEADERLABEL_XPATH))
+								.getText()
+								.matches(UILablesRepo.HOMEPAGE_YOUAREWATCHING));
+
+						// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*FEATURED[\\s\\S]*$"));
+						assertTrue(driver
+								.findElement(
+										By.xpath(XpathObjectRepo.HOMEFEATUREDCONTAINERLABEL_XPATH))
+								.getText()
+								.matches(UILablesRepo.HOMEPAGE_FEATURED));
+
+						// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*POPULAR SHOWS[\\s\\S]*$"));
+						assertTrue(driver
+								.findElement(
+										By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSTITLELABEL_XPATH))
+								.getText()
+								.matches(UILablesRepo.HOMEPAGE_POPULARSHOWS));
+
+						// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*POPULAR CHANNELS[\\s\\S]*$"));
+						assertTrue(driver
+								.findElement(
+										By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSTITLELABEL_XPATH))
+								.getText()
+								.matches(UILablesRepo.HOMEPAGE_FEATUREDCHANNELS));
+
+						count++;
+					}
+				} while (present && count < 3);
+
+				Thread.sleep(sleepTime);
+
+				do {
+					// Manoj: Objects modified and added to XpathObjectRepo file
+
+					// String
+					// isPreviousEnable=driver.findElement(By.xpath(".//*[@id='popular_shows']/div/section/a[1]/span")).getAttribute("class");
+					String isPreviousEnable = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSBUTTONPREVIOUS_XPATH))
+							.getAttribute("class");
+					if (!isPreviousEnable.equalsIgnoreCase("prev hidden")
+							&& !isPreviousEnable
+									.equalsIgnoreCase("prev disabled")) {
+						present = true;
+						// driver.findElement(
+						// By.xpath(".//*[@id='popular_shows']/div/section/a[1]/span")
+						// ).click();
+
+						WebElement ptrevBtn = driver
+								.findElement(By
+										.xpath(XpathObjectRepo.HOMEPOPULARSHOWSBUTTONPREVIOUS_XPATH));
+
+						try{
+							 ptrevBtn.click();
+				 	    	    }
+				 	    	    catch(NoSuchElementException noelement){
+				 	    	    log.error("Previous button is not fully visible");
+				 	    	    	
+				 	    	    }
+
+						/*
+						 * driver.findElement( By.xpath(XpathObjectRepo.
+						 * HOMEPOPULARSHOWSBUTTONPREVIOUS_XPATH)) .click();
+						 */
+
+						Thread.sleep(sleepTime);
+						// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*YOU ARE WATCHING[\\s\\S]*$"));
+						assertTrue(driver
+								.findElement(
+										By.xpath(XpathObjectRepo.YOUAREWATCHINGHEADERLABEL_XPATH))
+								.getText()
+								.matches(UILablesRepo.HOMEPAGE_YOUAREWATCHING));
+
+						// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*FEATURED[\\s\\S]*$"));
+						assertTrue(driver
+								.findElement(
+										By.xpath(XpathObjectRepo.HOMEFEATUREDCONTAINERLABEL_XPATH))
+								.getText()
+								.matches(UILablesRepo.HOMEPAGE_FEATURED));
+
+						// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*POPULAR SHOWS[\\s\\S]*$"));
+						assertTrue(driver
+								.findElement(
+										By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSTITLELABEL_XPATH))
+								.getText()
+								.matches(UILablesRepo.HOMEPAGE_POPULARSHOWS));
+
+						// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*POPULAR CHANNELS[\\s\\S]*$"));
+						assertTrue(driver
+								.findElement(
+										By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSTITLELABEL_XPATH))
+								.getText()
+								.matches(UILablesRepo.HOMEPAGE_FEATUREDCHANNELS));
+
+						count--;
+					}
+				} while (present && count > 0);
+
+				// This method asserts Footer Logo and It's Text.
+				assertionFunction.assertFooterLogo();
+
+				// This method asserts Footer Copy Right Links.
+				assertionFunction.assertFooterCopyRight();
+
+				// This method is used to logout from Watchable Application.
+				userLogin.LogOut(driver);
+
+			}
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

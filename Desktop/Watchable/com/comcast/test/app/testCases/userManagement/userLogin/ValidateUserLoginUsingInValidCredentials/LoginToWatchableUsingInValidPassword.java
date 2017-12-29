@@ -1,0 +1,50 @@
+package comcast.test.app.testCases.userManagement.userLogin.ValidateUserLoginUsingInValidCredentials;
+
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.LoginFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: LoginToGazeeboUsingInValidPassword Description: This test case is
+ * used to login to Watchable application with an invalid Password for
+ * registered user.
+ * **/
+
+public class LoginToWatchableUsingInValidPassword extends BaseTest {
+
+	LoginFunctions loginFuntion = new LoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testLoginToWatchableUsingInValidPassword() throws Exception {
+
+		driver.get(DataServiceProperties.APPURL);
+
+		// This method is used to enter invalid password with valid UserName
+		// loginFuntion.LoginToXidioApplication(driver,proUtil.getProperty("USER_NAME"),proUtil.getProperty("INVALID_PASSWORD"));
+
+		loginFuntion.LoginToXidioApplication(driver, UILablesRepo.USERNAME,
+				UILablesRepo.INVALID_PASSWORD);
+
+		driver.findElement(By.xpath(XpathObjectRepo.LOGINBUTTON_XPATH)).click();
+
+		Thread.sleep(sleepTime);
+		// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Incorrect email or password[\\s\\S]*$"));
+		assertTrue(driver
+				.findElement(
+						By.xpath(XpathObjectRepo.LOGINPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+				.getText().matches(UILablesRepo.LOGIN_ERROR_MSG));
+
+		// This method is to assert Join Watchable Header in Sign Up page.
+		// assertionFunction.assertJoinGazeeboBanner();
+
+		// This method is to ensure Display of Login page.
+		assertionFunction.assertLoginPageDetails();
+	}
+}

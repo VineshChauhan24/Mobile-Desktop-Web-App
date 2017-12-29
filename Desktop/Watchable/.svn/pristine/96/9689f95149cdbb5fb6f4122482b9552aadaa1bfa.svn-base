@@ -1,0 +1,128 @@
+package comcast.test.app.testCases.videoManagement.videoPlay.videoStreamingTestCases;
+
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyReportFunctionalityWithLogin Description: This test case is to
+ * verify Report functionality in video player by logging into Watchable
+ * application.
+ * **/
+
+public class VerifyReportFunctionalityWithLogin extends BaseTest {
+	
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyReportFunctonalityWithLogin() throws Exception {
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.featuredSectionVideos();
+		List<VideoDetails> videoList = videoDetails.get("featuredVideoList");
+
+		try {
+			/*
+			 * This Method is to register new user using Watchable application
+			 * and to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+			int loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+
+				// This method is to ensure Home is Active page when Login into
+				// Application.
+				assertionFunction.assertHomeActiveLink();
+
+				if (videoList != null) {
+
+					for (int i = 0; i < videoList.size(); i++) {
+						int j = i + 1;
+						driver.findElement(
+								By.xpath(XpathObjectRepo.HOMEFEATUREDLIST_XPATH
+										+ "[" + j + "]"
+										+ XpathObjectRepo.LINKHREF_XPATH))
+								.click();
+						Thread.sleep(XidioConstant.halfMin);
+						homePageCommonFun.mouseOverOnVideoPlayer();
+
+						// Lekshmi : Change the object identifier
+						boolean isReportPresent = false;
+						try {
+							driver.findElement(By
+									.xpath(XpathObjectRepo.VIDEO_DETAILSPAGE_REPORT_IMAGE_XPATH));
+							isReportPresent = true;
+						} catch (NoSuchElementException nse) {
+							System.out.println("-------------REPORT ELEMENT IN VIDEO PAGE IS NOT FOUND--------------");
+						}
+						
+						if (isReportPresent) {
+							driver.findElement(
+									By.xpath(XpathObjectRepo.VIDEO_DETAILSPAGE_REPORT_IMAGE_XPATH))
+									.click();
+							Thread.sleep(sleepTime);
+							assertTrue(driver.findElement(By.xpath(XpathObjectRepo.VIDEO_DETAILSPAGE_REPORTVIDEO_HEADER_XPATH)).getText().equalsIgnoreCase(UILablesRepo.VIDEO_REPORT_HEADER));
+							boolean isReportedBefore = false;
+							try {
+								WebElement element = driver.findElement(By.xpath("//div[@id='reportVideo']/descendant::input[@checked='checked']"));
+								isReportedBefore = true;
+							}
+							catch (NoSuchElementException NSE) {
+								
+							}
+							
+							if(isReportedBefore) {
+								System.out.println("-------------VIDEO IS ALREADY REPORTED BY THE SAME USER--------------");
+								driver.navigate().back();
+								// i++;
+								Thread.sleep(sleepTime);
+							}
+							else {
+								driver.findElement(By.xpath(XpathObjectRepo.VIDEO_REPORTVIDEO_INCORRECTRATING_RADIO_XPATH)).click();
+								driver.findElement(By.xpath(XpathObjectRepo.VIDEO_REPORTVIDEO_BUTTON_XPATH)).click();
+								Thread.sleep(sleepTime);
+								assertTrue(driver.findElement(By.xpath(XpathObjectRepo.VIDEO_VIDEOREPORTED_SPAN_XPATH)).getText().matches(UILablesRepo.VIDEO_VIDEOREPORTED_SPAN_TEXT));
+								Thread.sleep(sleepTime);
+								//driver.findElement(By.xpath(XpathObjectRepo.VIDEO_VIDEOREPORTED_BUTTON_XPATH)).click();
+								break;
+							}
+							}
+					}
+				}
+				
+				// This method is used to logout from Watchable Application.
+				userLogin.LogOut(driver);
+			}
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+	
+
+}

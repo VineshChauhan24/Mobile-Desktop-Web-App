@@ -1,0 +1,12 @@
+[0906/152235:ERROR:process_info.cc(608)] range at 0xfffde000, size 0x230 fully unreadable
+[0906/152235:ERROR:process_info.cc(608)] range at 0x0, size 0x24 fully unreadable
+[0906/152235:ERROR:process_reader_win.cc(233)] ReadMemory at 0x0 of 36 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0906/152235:ERROR:process_snapshot_win.cc(367)] ReadMemory PEB_LDR_DATA
+[0906/152235:ERROR:process_reader_win.cc(233)] ReadMemory at 0x0 of 784 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0906/152235:ERROR:process_snapshot_win.cc(390)] ReadMemory RTL_USER_PROCESS_PARAMETERS
+[0906/152235:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0906/152235:ERROR:process_reader_win.cc(233)] ReadMemory at 0x51710000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0906/152235:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\52.0.2743.116\chrome_child.dll
+[0906/152235:ERROR:exception_snapshot_win.cc(88)] thread ID 0 not found in process
+[0906/152235:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[0906/152235:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558

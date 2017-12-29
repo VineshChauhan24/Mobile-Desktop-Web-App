@@ -1,0 +1,129 @@
+package comcast.test.app.testCases.videoManagement.videoPlay.HomeCategoryVideos.FeaturedVideos;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.VideoPlay;
+import comcast.test.config.configServices.FlashObjectWebDriver;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: PlayHomeFeaturedVideoBySelectingChannelAndThenShow Description:
+ * This test case is to play the video by clicking a channel followed by a show
+ * displayed under channel page from 'Featured' section on 'Home' screen.
+ * **/
+
+public class PlayHomeFeaturedVideoBySelectingChannelAndThenShow extends
+		BaseTest {
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	VideoPlay videoplay = new VideoPlay();
+
+	@Test
+	public void testPlayHomeFeaturedVideoBySelectingChannelAndThenShow()
+			throws Exception {
+
+		FlashObjectWebDriver flashApp = new FlashObjectWebDriver(driver,
+				"PlayerPlatformAPI");
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.nHomeFeaturedAPI();
+		List<VideoDetails> channelList = videoDetails
+				.get("featuredChannelsList");
+		List<VideoDetails> showsListUnderChannel = videoDetails
+				.get("showsUnderChannel");
+		List<VideoDetails> videoList = videoDetails.get("video");
+
+		int durationInSeconds = 0;
+		int durationInMins = 0;
+
+		try {
+			/*
+			 * This Method is to register new user using Watchable application
+			 * and to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+			driver.get(proUtil.getProperty("HOMEAPPURL"));
+			Thread.sleep(sleepTime);
+
+			// This method asserts Home link to ensure Home is Active page when
+			// Login into Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method asserts featured title.
+			assertionFunction.assertFeaturedTitle();
+
+			if (channelList != null) {
+				// This Method verifies Channel present in Featured list and
+				// selects a Channel.
+				homePageCommonFun.selectFeaturedChannel(channelList.get(
+						XidioConstant.selectFeaturedChannel).getTitle());
+
+				// Select show under channel
+				driver.findElement(
+						By.linkText(showsListUnderChannel.get(
+								XidioConstant.selectShow).getTitle())).click();
+
+				Thread.sleep(sleepTime);
+				assertTrue(driver
+						.findElement(By.cssSelector("BODY"))
+						.getText()
+						.matches(
+								"^[\\s\\S]*"
+										+ showsListUnderChannel.get(
+												XidioConstant.selectShow)
+												.getTitle() + "[\\s\\S]*$"));
+
+				// Select Video under Channel show.
+				String videoName = videoList.get(XidioConstant.selectVideo)
+						.getTitle();
+				driver.findElement(By.partialLinkText(videoName)).click();
+
+				durationInSeconds = videoList.get(XidioConstant.selectVideo)
+						.getDuration();
+				durationInMins = durationInSeconds / 60;
+
+				// This method is to validate video play functionality.
+				videoplay.videoPlayVerification(durationInMins, videoName);
+			}
+
+			// This method asserts Home and My Channels inactive link when user
+			// clicks on Bundle/Channel/Show.
+			assertionFunction.assertAllInActiveLink();
+
+			// This method asserts Watchable Logo.
+			assertionFunction.assertWatchableLogo();
+
+			// This method asserts Footer Logo and It's Text.
+			assertionFunction.assertFooterLogo();
+
+			// This method asserts Footer Copy Right Links.
+			assertionFunction.assertFooterCopyRight();
+
+			// This method is used to logout from Watchable Application.
+			// userLogin.LogOut(driver);
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

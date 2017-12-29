@@ -1,0 +1,130 @@
+package comcast.test.app.testCases.homePage;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.homePage.homePageFunctions.HomeFun;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyHeaderlinksWithLogin Description: This test case verifies
+ * all header item after login Author: Manoj
+ * **/
+
+public class VerifyHeaderlinksWithLogin extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyHeaderlinksWithLogin() throws Exception {
+
+		try {
+
+			log.info("Script: VerifyHeaderlinksWithLogin");
+			log.info("**********************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Login to Watchable application
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.EMAIL,
+					UILablesRepo.PASSWORD);
+
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// Verifying Watchable Logo is present in header
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Watchable Logo is not present in header",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.loginFormCloseButton_XPATH)));
+				log.info("Watchable Logo is present in header");
+
+				// Verifying Playlists menu is present in header
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Playlists menu is not present in header",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.playLists_XPATH)));
+				log.info("Playlists menu is present in header");
+
+				// Verifying  Browse Shows menu is present in header
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						" Browse Shows menu is not present in header",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.allChannelsMenu_XPATH)));
+				log.info(" Browse Shows menu is present in header");
+
+				// Verifying My Shows menu is present in header
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"My Shows menu is not present in header",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.myWatchlistMenu_XPATH)));
+				log.info("My Shows menu is present in header");
+
+				// Verifying Search icon(button) is present in header
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Search icon(button) is not present in header",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.searchButton_XPATH)));
+				log.info("Search icon(button) is present in header");
+
+				// Click on Search icon to make search text box visible
+				HomeFun.clickOnSearchButton();
+
+				// Verifying Search text box is present in header
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Search text box is not present in header",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.searchText_XPATH)));
+				log.info("Search text box is present in header");
+
+				// Verifying user profile icon is present in header after login
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"User profile icon is not present in header",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.profileIcon_XPATH)));
+				log.info("User profile icon is present in header");
+
+				// Verifying login user email is present in header after login
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Login user email is not present in header",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.loginUserEmailTitle_XPATH)));
+				log.info("Login user email is present in header");
+
+				// Logout from Watchable Application.
+				// LoginFun.logOut(driver);
+				log.info("");
+
+			}
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

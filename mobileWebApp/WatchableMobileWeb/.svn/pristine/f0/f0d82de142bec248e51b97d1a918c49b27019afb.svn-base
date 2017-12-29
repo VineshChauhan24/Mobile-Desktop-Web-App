@@ -1,0 +1,135 @@
+
+#**********************************************************************************************************************************
+
+##                              HOME PAGE OBJECTS
+
+#**********************************************************************************************************************
+
+watchableHeaderlLabel_ID=logo
+watchableHeaderlLabel_XPATH = //a[@class='home_button']
+homePageWatchableLogo_XPATH=//div[@id='headerView']/descendant::nav[@class ='watchable_logo']/descendant::a[@class='home_button']
+homePageUpSellBar_XPATH=//div[@id='headerView']
+homePageHeaderSection_XPATH=//header[contains(@class,'tool_menu')]
+homePagePlaylistMetadataSection_ID=mpl_metadata_container
+homePageVideoPlayer_XPATH=//div[@id='videoContainer']/descendant::div[@class='vjs-poster']
+homePagePlaylistVideoSection_XPATH=//div[@id='featured_videos']/descendant::ul[@class='clearfix channel_ul mobile']
+homePageDescriptionText_XPATH=//div[@id='header-content-wrap']/descendant::section[@class='home_description']
+//homePageShowImage_XPATH=//div[@id='header-content-wrap']/descendant::div[3]/div/img
+homePageShowImage_XPATH=//div[@id='header-content-wrap']/div[3]/div/img
+homePageAppStoreButton_XPATH=//div[@id="header-content-wrap"]/descendant::a/descendant::img[@class='appStore_footer']
+homePageGooglePlayButton_XPATH=//div[@id="header-content-wrap"]/descendant::a/descendant::img[@class='googlePlay_footer']
+homePageFooterWatchableLogo_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::img[@class='footerlogo']
+homePageFooterLinkSection_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::p[1]
+homePageFooterSocialSharingSection_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::section
+homePageFooterContactUsLink_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::p[@class='contactPopup']
+#homePageFooterCopyRightText_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::p/following::p
+homePageFooterCopyRightText_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::p[3]
+homePageUpSellBarCloseButton_XPATH=//div[@class='upSellBar']/descendant::img[@class='closeIcon']
+homePageUpSellBarText_XPATH=//section[@id='text']
+homePageUpSellVerticalLine=//div[@class='divider']
+homePageUpSellBarGooglePlayButton_XPATH=//img[@class='googlePlay_banner']					
+homePageIIcon_XPATH=//img[@src='/assets/mimages/Info_Button.png']
+homePageHeadeGooglePlay_XPATH=//div[@id='headerView']/descendant::header[contains(@class,'tool_menu')]/descendant::img[contains(@class,'googlePlay')]
+playlistMetadadaDescription_XPATH=//div[@id='mpl_metadata_container']/descendant::p[@class='pl_description']
+playlistMetadadaGenre_XPATH=//div[@id='mpl_metadata_container']/descendant::p[@class='genre']
+playlistMetadadaTitle_XPATH=//div[@id='mpl_metadata_container']/descendant::div[@class = 'pl_title_text']/descendant::h3
+playlistMetadadaTotalVideoDuration_XPATH=//div[@id='mpl_metadata_container']/descendant::section/descendant::p[3]
+previousPlaylistButton_XPATH=//span[@id='previousplaylist']/descendant::img
+nextPlaylistButton_XPATH=//span[@id='nextplaylist']/descendant::img
+tellMeMoreButton_XPATH=//div[@class='owl-item active']/descendant::div[@id='mpl_metadata_container']/descendant::p[@class = 'pl_description']
+#spreadTheLoveButton_XPATH=//div[@id='featured_videos']/descendant::div[@class='sharePLbutton']/descendant::div[@class='my-button']/img/span
+spreadTheLoveButton_CSS=#featured_videos > section:nth-child(2) > div > div.my-button
+spreadTheLoveButton_XPATH=//div[@id='featured']/descendant::div[@id='featured_videos']/descendant::section/descendant::div[@class='sharePLbutton']/descendant::div[@class='my-button']/span
+socialPopUp_XPATH=//div[@class='owl-item active']/descendant::div[@id='featured_videos']/descendant::div[@class='social_popup']
+socialPopUpTwitterButton_XPATH=//div[@class='owl-item active']/descendant::div[@id='featured_videos']/descendant::div[@class='social_popup']/descendant::span[@class='twitter_share']/descendant::img
+socialPopUpFaceBookButton_XPATH=//div[@class='owl-item active']/descendant::div[@id='featured_videos']/descendant::div[@class='social_popup']/descendant::span[@class='facebook_share']/descendant::img
+socialPopUpEmailButton_XPATH=//div[@id='mpl_metadata_container']/descendant::div[@class='social_popup']/descendant::div[@class='email_share']/descendant::img
+emailSharePopUp_XPATH=//div[@id='headerView']/descendant::div[@class='dialog_box mobile']
+emailSharePopUpTitle_XPATH=//div[@id='headerView']/descendant::div[@class='dialog_box mobile']/descendant::header[@class='mobile emailpl_title']
+emailSharePopUpCloseButton_XPATH=//div[@id='headerView']/descendant::div[@class='dialog_box mobile']/descendant::div[@class='close_icon mobile']/descendant::img
+emailSharePopUpFromEmailText_ID=from_email
+emailSharePopUpToEmailText_ID=to_email
+emailSharePopUpMessageText_ID=msg_pl
+emailSharePopUpSendButton_XPATH=//div[@id='headerView']/descendant::div[@id='step-0']/descendant::div[contains(@class,'m_email_button')]
+emailSharePopUpFromEmailError_XPATH=//div[@id='headerView']/descendant::div[@id='step-0']/descendant::div[@class='bottom email-box']/descendant::label[@for='from_email'][@class='error']
+emailSharePopUpToEmailError_XPATH=//div[@id='headerView']/descendant::div[@id='step-0']/descendant::div[@class='bottom email-box']/descendant::label[@for='to_email'][@class='error']
+emailShareConfirmMessage_XPATH=//div[@id='headerView']/descendant::div[@class='dialog_box mobile']/descendant::header[@class='confirmation1 email_video']
+playlistVideIcon_XPATH=//div[@id='featured_videos']/descendant::li[@class='featured_list mobile']/descendant::img
+playlistFirstVideTitle_XPATH=//div[@class='owl-item active']/descendant::div[1]/descendant::h1[1]/descendant::a
+playlistFirstVideShowTitle_XPATH=//div[@class='owl-item active']/descendant::div[1]/descendant::h1[2]/descendant::a
+playlistFirstVideDuration_XPATH=//div[@class='owl-item active']/descendant::div[1]/descendant::div[@class='video_timeduration']
+footerPrivacyPolicyLink_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::p[1]/descendant::a[contains(text(), 'Privacy Policy')]
+footerTermsOfServiceLink_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::p[1]/descendant::a[contains(text(), 'Terms of Service')]
+footerAdChoicesLink_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::p[1]/descendant::a[contains(text(), 'AdChoices')]
+#footerContactUsLink_XPATH=//p[@class='contactPopup']
+footerTwitterButton_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::a[contains(@href, 'twitter')]/descendant::img
+footerInstagramButton_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::a[contains(@href, 'instagram')]/descendant::img
+footerFacebookButton_XPATH=//div[@id='header-content-wrap']/descendant::footer/descendant::a[contains(@href, 'facebook')]/descendant::img
+contactUsForm_XPATH=//p[@class='contactPopupbox']
+appstorepage_XPATH=//div[@id='left-stack']//img
+googleplaypage_XPATH=//android.widget.ImageView[1]
+
+#newly added
+homepageUpSellGooglePlayButton_XPATH=//a[@href='https://play.google.com/store/apps/details?id=com.comcast.watchablephone&hl=en']//img[@class='googlePlay_banner']
+homepageDescriptionFirstLineText_XPATH=//div[@id='header-content-wrap']/descendant::section[@class='home_description']/h3[1]
+homepageDescriptionSecondLineText_XPATH=//div[@id='header-content-wrap']/descendant::section[@class='home_description']/p
+homepageDescriptionThridLineText_XPATH=//div[@id='header-content-wrap']/descendant::section[@class='home_description']/h3[2]
+shareSpreadTheLoveButton_XPATH=//div[@class='owl-item active']/descendant::div[@class='0']/descendant::div[@class='item content content-video']/descendant::div[@id='video_list']/descendant::div[@id='featured']/descendant::section/descendant::div[@id='featured_videos']/descendant::section/descendant::div[@class='sharePLbutton']
+#socialshareemail_XPATH=//div[@class='owl-item active']/descendant::div[@class='0']/descendant::div[@class='item content content-video']/descendant::div[@id='video_list']/descendant::div[@id='featured']/descendant::section/descendant::div[@id='featured_videos']/descendant::section/descendant::div[@class='sharePLbutton']/descendant::div[@class='social_popup']/descendant::span[@class='email_share']
+socialshareemail_XPATH=//div[@class='owl-item active']/descendant::div[@id='featured_videos']/descendant::div[@class='social_popup']/descendant::span[@class='email_share']/descendant::img
+socailsharefacebook_XPATH=//div[@class='owl-item active']/descendant::div[@id='featured_videos']/descendant::div[@class='social_popup']/descendant::span[@class='facebook_share']/descendant::img
+socailsharefacebooklogin_XPATH=//span[contains(text(),'Log In')]
+emailCloseIcon_XPATH=//div[@class='close_icon mobile']
+twitterfollow_XPATH=//div[@class='UserProfileHeader-buttons u-floatRight']
+instagramfollow_XPATH=//img[@class='_8gpiy _r43r5 _f2b2t']
+facebookfollow_XPATH=//span[@class='_5vdw']
+videosectionnextpagebutton_XPATH=//div[@class='owl-item active']/descendant::div[@id='featured_videos']/descendant::ul/descendant::div[contains(@class,'arrowRight')]
+videosectionpreviouspagebutton_XPATH=//div[@class='owl-item active']/descendant::div[@id='featured_videos']/descendant::ul/descendant::div[contains(@class,'arrowLeft')]
+videocountpage_XPATH=//div[@class='owl-item active']/descendant::div[@id='featured_videos']/descendant::ul/descendant::li[@class='page_number']
+twitterloginpage_XPATH=//input[@type='submit']
+twitterloginpagetitle_XPATH=//title[contains(text(),'Share') and contains(text(),'a') and contains(text(),'link') and contains(text(),'on') and contains(text(),'Twitter')]
+
+
+#**********************************************************************************************************************************
+
+##                              UPSELL OVERLAY PAGE OBJECTS
+
+#**********************************************************************************************************************
+upsellPopupForm_XPATH==//div[@class='upsellPopup']
+upSellOverlayCloseButton_XPATH=//div[@class='upsellPopup']/descendant::img[@class='popUpCloseButton']
+upSellOverlayPhoneImage_XPATH=//div[@class='upsellPopup']/descendant::div[@class='popupContent']/descendant::img
+upSellOverlayBodyText1_ID=text1
+upSellOverlayBodyText2_ID=text2
+upSellOverlayAppStoreButton_ID=//div[@class='upsellPopup']/descendant::div[@class='popupContent']/descendant::a/descendant::img[@class='appStore_upsellPopup']
+upSellOverlayAppStoreButton_ID=//div[@class='upsellPopup']/descendant::div[@class='popupContent']/descendant::a/descendant::img[@class='googlePlay_upsellPopup']
+
+
+
+#**********************************************************************************************************************************
+
+##                             PLAY LIST DETAIL POP-UP
+
+#**********************************************************************************************************************
+
+playlistDetailPopup_XPATH=//div[contains(@class,'b-modal __b-popup')]
+playlistDetailPopupCloseButton_XPATH=//div[@class='pl_description_popup']/descendant::div[@class='popUpCloseContainer']/descendant::img[@class='pl_description_popUpCloseButton']
+playlistDetailPopupWatchableLogo_XPATH=//div[@class='pl_description_popup']/descendant::img[@class='pl_description_popup_logo']
+playlistDetailPopupPlaylistTitle_XPATH=//div[@class='pl_description_popup']/descendant::h2[@class='pl_description_popup_title']
+playlistDetailPopupPlaylistGenreTitle_XPATH=//div[@class='pl_description_popup']/descendant::h4[@class='pl_description_popup_genre']
+playlistDetailPopupPlaylistDescription_XPATH=//div[@class='pl_description_popup']/descendant::p[@class='pl_description_popup_des']
+
+
+#**********************************************************************************************************************************
+
+##                            SHOW PAGE
+
+#**********************************************************************************************************************
+
+
+ShowPageFirstVideShowTitle_XPATH=//div[@id='featured_videos']/descendant::div[1]/descendant::h1[2]
+ShowPageHomeIcon_XPATH=//div[@id='headerView']/descendant::a[@class='home_button_icon']/descendant::img
+
+
+
+
+

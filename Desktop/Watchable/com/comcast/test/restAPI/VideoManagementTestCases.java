@@ -1,0 +1,157 @@
+package comcast.test.restAPI;
+
+import static org.junit.Assert.assertEquals;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.TestDataGenerator;
+import comcast.test.config.dataServices.userRegistration.UserRegistrationUsingComcast;
+
+public class VideoManagementTestCases extends BaseTest {
+
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	UserRegistrationUsingComcast userReg = new UserRegistrationUsingComcast();
+	public long sleepTime = 2500;
+
+	@Test
+	public void testVerifyStoreCategoryVideosAreDisplayed() throws Exception {
+
+		// This method is used to register new user into Comcast Application
+		TestDataGenerator proUtil = new TestDataGenerator();
+		proUtil.load(new FileInputStream(new File("com/apidata.properties")));
+
+		driver.get(DataServiceProperties.APPURL);
+
+		driver.findElement(By.name("user[user_name]")).clear();
+		driver.findElement(By.name("user[user_name]")).sendKeys("test_302");
+
+		driver.findElement(By.name("user[password]")).clear();
+		driver.findElement(By.name("user[password]")).sendKeys("Demo1111");
+
+		driver.findElement(By.id("user_login")).click();
+
+		driver.findElement(By.linkText("STORE")).click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(
+				By.xpath(".//*[@id='content-wrap']/div[1]/section/a[2]/span"))
+				.click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(
+				By.xpath(".//*[@id='content-wrap']/div[1]/section/a[1]/span"))
+				.click();
+
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Featured[\\s\\S]*$"));
+
+		assertTrue(driver
+				.findElement(By
+						.xpath("html/body/div[1]/div[2]/div[1]/section/div[1]/div/ul[1]/li[1]/article/a/img")));
+
+		Thread.sleep(sleepTime);
+		assertEquals(
+				"",
+				driver.findElement(
+						By.xpath("//div[@id='content-wrap']/div/section/div/div/ul/li/article/a/img"))
+						.getText());
+
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Popular[\\s\\S]*$"));
+
+		assertTrue(driver
+				.findElement(By
+						.xpath(".//*[@id='content-wrap']/div[2]/section/div[1]/div/ul[1]/li[1]/article/a/img")));
+
+		driver.findElement(By.linkText("Divas of Music")).click();
+
+		Thread.sleep(sleepTime);
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Divas of Music[\\s\\S]*$"));
+
+		driver.findElement(By.linkText("ROWS")).click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(By.linkText("SHOWS")).click();
+		Thread.sleep(sleepTime);
+		driver.findElement(By.linkText("VIDEOS")).click();
+		Thread.sleep(sleepTime);
+		driver.findElement(By.linkText("STORE")).click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(By.cssSelector("a.next")).click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(By.linkText("Backstage")).click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(
+				By.xpath("//div[@id='content-wrap']/article/section/article/div/header/nav/select/option[2]"))
+				.click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(
+				By.xpath("//div[@id='content-wrap']/article/section/article/div/header/nav/select[2]/option[2]"))
+				.click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(By.linkText("STORE")).click();
+
+		// testVerifyStoreCategoryVideosAreDisplayed() throws Exception {
+		// This method is used to enter user name and password credential
+
+		driver.findElement(By.linkText("HOME")).click();
+
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Up Next[\\s\\S]*$"));
+		assertEquals(
+				"",
+				driver.findElement(
+						By.xpath("//div[@id='content-wrap']/div/section/div/div/ul/li/article/a/img"))
+						.getText());
+
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Featured[\\s\\S]*$"));
+		assertEquals(
+				"",
+				driver.findElement(
+						By.xpath("//div[@id='content-wrap']/div[2]/section/div/div/ul/li/article/a/img"))
+						.getText());
+
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Popular Shows[\\s\\S]*$"));
+		assertEquals(
+				"",
+				driver.findElement(
+						By.xpath("//div[@id='content-wrap']/div[3]/section/div/div/ul/li/article/a/img"))
+						.getText());
+
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Popular Channels[\\s\\S]*$"));
+		assertEquals(
+				"",
+				driver.findElement(
+						By.xpath("//div[@id='content-wrap']/div[4]/section/div/div/ul/li/article/a/img"))
+						.getText());
+
+		/*
+		 * Subscription feature is still not implemented because of that no
+		 * assertions
+		 */
+		driver.findElement(By.linkText("Log Out")).click();
+	}
+
+	private void assertTrue(boolean matches) {
+	}
+
+	private void assertTrue(WebElement findElement) {
+	}
+}

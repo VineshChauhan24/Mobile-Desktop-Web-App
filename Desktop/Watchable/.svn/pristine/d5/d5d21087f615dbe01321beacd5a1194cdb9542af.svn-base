@@ -1,0 +1,140 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.PopularChannelsCategoryTestCases.ChannelTestCases.ChannelPageTestCases;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyVideoCountForHomePopularChannels Description: This test
+ * case validates whether 'Videos' count is displayed in channel page for the
+ * channel present under Popular Channels section in Home page by logging
+ * registered user into Watchable application.
+ * **/
+
+public class VerifyVideoCountForHomePopularChannels extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyVideoCountForHomePopularChannels() throws Exception {
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.allPopularChannelsList();
+		List<VideoDetails> channelList = videoDetails
+				.get("popularChannelsList");
+
+		try {
+			/*
+			 * This Method is to register new user using Gazeebo application and
+			 * to change a password.
+			 */
+			
+			//Login is not required to run this test case
+			//RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+			
+			//Open Application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+			Thread.sleep(sleepTime);
+
+
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method is to assert Gazeebo Top Middle Menu and to ensure
+			// its collapsed.
+			// assertionFunction.assertGazeeboTopMiddleMenu();
+
+			// This method asserts Popular Channels title.
+			assertionFunction.assertPopularChannelsTitle();
+
+			if (channelList != null) {
+				// This method is to scroll UI to Popular Channels Section.
+				homePageCommonFun.scrollToPopularChannelsSection();
+
+				int loopMaxIndex = 0;
+				if (channelList.size() < 4)
+					loopMaxIndex = channelList.size();
+				else
+					loopMaxIndex = 4;
+
+				for (int index = 0; index < loopMaxIndex; index++) {
+					VideoDetails channels = channelList.get(index);
+					// This Method verifies Channel present in Popular Channel
+					// Section and selects a Channel.
+					homePageCommonFun.selectPopularChannel(channels.getTitle());
+					// Lekshmi : Changed Object Identifier to verify Videos
+					// Count
+					// Manoj: Object changed and moved to XpathObjectRepo
+					// file
+					// String
+					// Videocount=driver.findElement(By.xpath("//div[@id='content-wrap']/descendant::div[@class='content-metadata']/ul/li[2]")).getText();
+					String Videocount = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.CHANNELDETAILVIDEOSCOUNT_XPATH))
+							.getText();
+					assertEquals("Videos " + channels.getNumOfVideos() + "",
+							Videocount);
+
+					driver.navigate().back();
+					Thread.sleep(sleepTime);
+					//homePageCommonFun.scrollToSection();
+				}
+			} else {
+				boolean isPresent;
+				// Manoj: Object changed and moved to XpathObjectRepo
+				// file
+
+				// isPresent=driver.findElement(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul")).findElements(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul/li[1]/article/h1/a")).size()>0;
+				isPresent = driver
+						.findElement(
+								By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSROW_XPATH))
+						.findElements(
+								By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSFIRSTTITLELABEL_XPATH))
+						.size() > 0;
+				if (isPresent == true) {
+					// String
+					// channelName=driver.findElement(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul")).findElement(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul/li[1]/article/h1/a")).getText();
+					String channelName = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSROW_XPATH))
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSFIRSTTITLELABEL_XPATH))
+							.getText();
+					assertFalse(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSROW_XPATH))
+							.getText().contains(channelName));
+				}
+			}
+
+			// This method is used to logout from Gazeebo Application.
+			//userLogin.LogOut(driver);
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			//assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

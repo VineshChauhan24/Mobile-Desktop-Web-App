@@ -1,0 +1,66 @@
+package comcast.test.app.testCases.userManagement.profileManagement.RegisteredUserTestCasesForChangeActivationCode;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+
+/**
+ * Class Name: SkipUserActivationCode Description: This test case allows user to
+ * navigate to 'Home'screen by skipping the user activation code by logging
+ * registered user into Gazeebo application.
+ * **/
+
+public class SkipUserActivationCode extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+
+	@Test
+	public void testSkipUserActivationCode() throws Exception {
+		try {
+			/*
+			 * This Method is to register new user using Gazeebo application and
+			 * to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+			// This method asserts Home link ensure Home is Active page when
+			// Login into Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method is to navigate Profile Management Account details
+			// page.
+			Thread.sleep(sleepTime);
+			userLogin.navigateToAccountDetailsPage(driver);
+
+			driver.findElement(By.linkText("Change activation code")).click();
+
+			Thread.sleep(sleepTime);
+			driver.findElement(By.linkText("Skip activation, go to GAZEEBO"))
+					.click();
+
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method is to assert Gazeebo Top Middle Menu and to ensure
+			// its collapsed.
+			assertionFunction.assertGazeeboTopMiddleMenu();
+
+			// This method is used to logout from application.
+			userLogin.LogOut(driver);
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

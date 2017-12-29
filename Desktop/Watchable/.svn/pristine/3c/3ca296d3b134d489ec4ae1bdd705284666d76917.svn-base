@@ -1,0 +1,138 @@
+package comcast.test.app.testCases.signUp;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.signUp.signUpFunctions.SignUpFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: RegToWatchableWithoutProvidingAnyDetails Description: This test
+ * case is try to register to Watchable application without entering any details
+ * and verify the error messages. 
+ * Author: Manoj
+ * **/
+
+public class RegToWatchableWithoutProvidingAnyDetails extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testRegToWatchableWithoutProvidingAnyDetails() throws Exception {
+
+		try {
+
+			log.info("Script: RegToWatchableWithoutProvidingAnyDetails");
+			log.info("************************************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Click on Sign UP button from header menu
+			SignUpFun.clickOnSignUpButton();
+
+			// Verify sign up form opened successfully
+			assertTrue(
+					"Sign Up form is not opened",
+					CommonFun.isElementPresent(driver,
+							By.xpath(XpathObjectRepo.signUpForm_XPATH)));
+			log.info("Sign Up form opened successfully");
+
+			// click on SIGN UP button by keeping all fields blank
+			SignUpFun.clickOnSignUpFormButton();
+
+			// Verify user name error message
+			assertTrue(
+					"User name Error Message is not displayed",
+					CommonFun.isElementPresent(
+							driver,
+							By.xpath(XpathObjectRepo.signUpFormUserNameError_XPATH)));
+			log.info("User name Error Message '"
+					+ driver.findElement(
+							By.xpath(XpathObjectRepo.signUpFormUserNameError_XPATH))
+							.getText() + "' is displayed");
+
+			// Verify email error message
+			assertTrue("Email Error Message is not displayed",
+					CommonFun.isElementPresent(driver, By
+							.xpath(XpathObjectRepo.signUpFormEmailError_XPATH)));
+			log.info("Email Error Message '"
+					+ driver.findElement(
+							By.xpath(XpathObjectRepo.signUpFormEmailError_XPATH))
+							.getText() + "' is displayed");
+
+			// Verify password error message
+			assertTrue(
+					"Password Error Message is not displayed",
+					CommonFun.isElementPresent(
+							driver,
+							By.xpath(XpathObjectRepo.signUpFormPasswordError_XPATH)));
+			log.info("Password Error Message '"
+					+ driver.findElement(
+							By.xpath(XpathObjectRepo.signUpFormPasswordError_XPATH))
+							.getText() + "' is displayed");
+			if (driver.findElements(
+					By.xpath(XpathObjectRepo.signUpFormCaptchaImage_XPATH))
+					.size() > 0) {
+
+				// Verify Captcha error message
+				assertTrue(
+						"Captcha Error Message is not displayed",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.signUpFormCaptchaError_XPATH)));
+				log.info("Captcha Error Message '"
+						+ driver.findElement(
+								By.xpath(XpathObjectRepo.signUpFormCaptchaError_XPATH))
+								.getText() + "' is displayed");
+			}
+
+			// Verify Terms and Conditions error message
+			assertTrue(
+					"Terms and Conditions Error Message is not displayed",
+					CommonFun.isElementPresent(
+							driver,
+							By.xpath(XpathObjectRepo.signUpFormTermsConditionError_XPATH)));
+			log.info("Terms and Conditions Error Message '"
+					+ driver.findElement(
+							By.xpath(XpathObjectRepo.signUpFormTermsConditionError_XPATH))
+							.getText() + "' is displayed");
+
+			if (driver.findElements(
+					By.xpath(XpathObjectRepo.signUpFormCaptchaImage_XPATH))
+					.size() > 0) {
+				if (driver.findElement(
+						By.xpath(XpathObjectRepo.signUpFormCaptchaImage_XPATH))
+						.isDisplayed() == true) {
+
+					// Close the Sign Up form
+					SignUpFun.clickOnSignUpFormCloseIcon();
+
+					// Verify Sign Up form is closed successfully
+					assertFalse(
+							"Sign Up Form is not closed",
+							driver.findElement(
+									By.xpath(XpathObjectRepo.signUpForm_XPATH))
+									.isDisplayed());
+					log.info("Sign Up form is closed");
+				}
+			}
+
+			log.info("");
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

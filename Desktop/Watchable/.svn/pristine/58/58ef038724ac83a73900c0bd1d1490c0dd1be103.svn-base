@@ -1,0 +1,49 @@
+#Befor and After Method propertis
+SELENIUM_SERVER_HOST=localhost
+SELENIUM_SERVER_PORT=4444
+BROWSER=*firefox
+APPURL=http://xidiotrial:Fhaze1@www.xidio.com
+#APPURL=http://xidiotrial:Fhaze1@www.test.projecthelen.com
+
+#Login Credential properties
+USER_NAME=test37@test.com
+PASSWORD=Password@1
+RESET_PASSWORD=Password@1
+CONFIRM_PASSWORD=Password@1
+
+#Invalid Login Credential properties
+INVALID_USER_NAME=anil.v@valtech.co.in
+INVALID_PASSWORD=Password@1
+INVALID_EMAIL=EMAIL.COM
+INVALID_MOBILE_NUMBER=996532
+NONCAPITAL_LETTER_PASSWORD=password1
+NONDIGIT_PASSWORD=password
+INVALID_ZIP_LENGTH=5913
+INVALID_ZIP=CODE
+
+#User Registration properties
+FIRST_NAME=XidioTest
+LAST_NAME=xidio
+ADDRESS=Marina road New York
+CITY=New York
+STATE=NY
+ZIP=12345
+EMAIL=test37@test.com
+MOBILE_NUMBER=9945325307
+REG_PASSWORD=Password@1
+
+#Setting New Detials
+UPD_FIRST_NAME=anjum
+UPD_LAST_NAME=xidio
+UPD_ADDRESS=Marina road New York
+UPD_CITY=New York
+UPD_STATE=NY
+UPD_ZIP=12345
+UPD_EMAIL=lenka.dillip@gmail.com
+UPD_MOBILE_NUMBER=9945325269
+
+#User Account Details properties
+CC_NUMBER=4111111111111111
+CC_EXPIRY_MONTH=2
+CC_SECURITY_CODE=123
+CC_PIN_CODE=1234

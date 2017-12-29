@@ -1,0 +1,157 @@
+package comcast.test.restAPI;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyHomeFeaturedResponseDetailsIsDisplayed 
+ * Description: This test case is to verify All Home/Featured category data displayed
+ * on UI and API response data for registered Comcast Application user.
+ * **/
+
+public class newVerifyHomeFeaturedResponseDetailsIsDisplayed extends BaseTest{
+  
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass=new RegisterToXidioApplicationAndChangeAPassword();
+	AssertionRepoFunctions assertionFunction=new AssertionRepoFunctions();
+	
+  @Test
+  public void testVerifyHomeFeaturedResponseDetailsIsDisplayed() throws Exception {
+	
+	Map<String, List<VideoDetails>> videoDetails=RestAPIServices.nFeaturedAPI();
+	List <VideoDetails> featuredResponse=videoDetails.get("featuredResponseList");
+	
+	for(VideoDetails vid:featuredResponse)
+	{
+		System.out.println("Title: "+vid.getTitle());
+		System.out.println("ID: "+vid.getId());
+	}
+	try{
+		/* This Method is to register new user using Comcast application 
+		 * and to change a password. 
+		 */
+		RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+		//This method is ensure Home is Active page when Login into Application.
+		assertionFunction.assertHomeActiveLink();
+		
+		Thread.sleep(sleepTime);
+	    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Featured[\\s\\S]*$"));
+	    
+	    boolean isVideoPresent=false;
+	    if(featuredResponse!=null && featuredResponse.size()<20)
+	    {
+	    	for(VideoDetails featuredAPIResponse:featuredResponse)
+		    {
+		    	Thread.sleep(sleepTime);
+		 	    boolean isPresent;
+		 	    do
+		 	    {
+		 	    	isPresent=driver.findElements(By.xpath(".//*[@id='featured']/div/section").linkText(featuredAPIResponse.getTitle())).size()>0;
+		 	    	if(isPresent==true)
+		 	    	{
+		 	    		isVideoPresent=true;
+		 	    		assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredAPIResponse.getTitle()+"[\\s\\S]*$"));
+		 	    	    driver.findElement(By.xpath(".//*[@id='featured']/div/section")).findElement(By.linkText(featuredAPIResponse.getTitle())).click();
+		 	    	    Thread.sleep(sleepTime);
+		 	    	    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredAPIResponse.getTitle()+"[\\s\\S]*$"));
+		 	    	    
+		 	    		//This method asserts Home and Subscriptions inactive link when user clicks on Bundle/Channel/Show.
+		 	    		assertionFunction.assertAllInActiveLink();
+		 	    		
+			 	    	//This method asserts XIDIO Logo.
+			 	   		assertionFunction.assertWatchableLogo();
+			 	   		
+			 	   		//This method asserts Help link.
+			 	   		assertionFunction.assertHelpLink();
+			 	   		
+			 	   		//This method asserts Search Text Box and its value.
+			 	   		assertionFunction.assertSearchTextBox();
+		 	    	    
+		 	    	    driver.navigate().back();
+		 	    	    Thread.sleep(sleepTime);
+		 	    	}
+		 	    	else
+		 	    	{
+		 	    		driver.findElement(By.xpath("//*[@id='featured']/div/section/a[2]/span")).click();
+		 	    		Thread.sleep(sleepTime);
+		 	    	}	    		
+		 	    }
+		 	    while(isPresent==false);	   
+		    }
+	    	if(!isVideoPresent)
+	 	    {
+	 	    	assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredResponse.get(0).getTitle()+"[\\s\\S]*$"));
+	 	    }
+	    }
+	    else
+	    {
+	    	for(int index=0; index<20; index++)
+	    	{
+	    		VideoDetails featuredAPIResponse=featuredResponse.get(index);
+	    		Thread.sleep(sleepTime);
+		 	    boolean isPresent;
+		 	    do
+		 	    {
+		 	    	isPresent=driver.findElements(By.xpath(".//*[@id='featured']/div/section").linkText(featuredAPIResponse.getTitle())).size()>0;
+		 	    	if(isPresent==true)
+		 	    	{
+		 	    		isVideoPresent=true;
+		 	    		assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredAPIResponse.getTitle()+"[\\s\\S]*$"));
+		 	    	    driver.findElement(By.xpath(".//*[@id='featured']/div/section")).findElement(By.linkText(featuredAPIResponse.getTitle())).click();
+		 	    	    Thread.sleep(sleepTime);
+		 	    	    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredAPIResponse.getTitle()+"[\\s\\S]*$"));
+		 	    	    
+			 	    	//This method asserts XIDIO Logo.
+			 	   		assertionFunction.assertWatchableLogo();
+			 	   		
+			 	   		//This method asserts Help link.
+			 	   		assertionFunction.assertHelpLink();
+			 	   		
+			 	   		//This method asserts Search Text Box and its value.
+			 	   		assertionFunction.assertSearchTextBox();
+		 	    	    
+		 	    	    driver.navigate().back();
+		 	    	    Thread.sleep(sleepTime);
+		 	    	}
+		 	    	else
+		 	    	{
+		 	    		driver.findElement(By.xpath("//*[@id='featured']/div/section/a[2]/span")).click();
+		 	    		Thread.sleep(sleepTime);
+		 	    	}	    		
+		 	    }
+		 	    while(isPresent==false);	   
+	    	}
+	    	if(!isVideoPresent)
+	 	    {
+	 	    	assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredResponse.get(0).getTitle()+"[\\s\\S]*$"));
+	 	    }
+	    }  
+	    
+	    //This method asserts Footer Logo and It's Text.
+	    assertionFunction.assertFooterLogo();
+	    
+	    //This method asserts Footer Copy Right Links.
+	    assertionFunction.assertFooterCopyRight();
+	    
+	    driver.findElement(By.linkText("Log Out")).click();
+	    
+	    //This method is to ensure Login page is displayed when user Sign Out from Application.
+	    assertionFunction.assertLoginPageDetails(); 
+	} 
+	catch (Throwable t) {
+		captureScreenshot();
+		collector.addError(t);
+	}
+  }
+}

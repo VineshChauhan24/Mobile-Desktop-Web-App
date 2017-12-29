@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Watchable App Automation" default="doTest"
+	basedir=".">
+
+	<property name="sourceDir" location="src" />
+	<property name="buildDir" location="bin" />
+	<property name="reportDir" location="reports" />
+	<property name="libDir" location="lib" />
+	<property name="testSuiteLocation" location="testSuite" />
+
+	<path id="master-classpath">
+		<fileset dir="${libDir}">
+			<include name="*.jar">
+			</include>
+		</fileset>
+		<pathelement path="${buildDir}">
+		</pathelement>
+	</path>
+
+	<target name="build" description="Creates a build of the test suite.">
+		<echo>"Making directory ${buildDir}"</echo>
+		<mkdir dir="${buildDir}" />
+		<echo>"Making directory ${reportDir}"</echo>
+		<mkdir dir="${reportDir}" />
+
+		<echo>"Doing build..."</echo>
+		<javac destdir="${buildDir}" debug="true" deprecation="false"
+			failonerror="true" includeantruntime="false">
+			<src path="${sourceDir}" />
+			<classpath refid="master-classpath">
+			</classpath>
+		</javac>
+	</target>
+
+	<taskdef resource="testngtasks" classpath="${libDir}/testng-6.8.jar" />
+
+	<target name="clean" description="Remove the build and report directories">
+
+		<delete dir="${reportDir}" />
+
+	</target>
+
+	<target name="doTest" description="Execute TestNG tests"
+		depends="clean,build">
+		<testng classpathref="master-classpath" outputdir="./reports"
+			workingDir="${buildDir}" haltonfailure="false" useDefaultListeners="false"
+			listeners="org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter">
+
+			<!-- Specify suites or scripts to run here -->
+
+			<xmlfileset dir="${testSuiteLocation}" includes="testng.xml" />
+			<sysproperty key="org.uncommons.reportng.title" value="Test Result Report" />
+			<sysproperty key="org.uncommons.reportng.escape-output"
+				value="false" />
+		</testng>
+	</target>
+</project>

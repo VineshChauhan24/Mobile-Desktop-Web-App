@@ -1,0 +1,147 @@
+package comcast.test.app.testCases.videoManagement.videoSubscriptionManagement.freeSubscribedChannels.Categories;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.app.common.videoManagement.subscriptionsPage.common.SubscriptionsPageCommonFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.subscribeFreeFeaturedChannelFromHome.DS_SubscribeAFreeChannelFromHomeFeatured;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/** 
+ * Class Name: VerifySubscribedChannelsGenreChannels
+ * Description: This test case verifies Genre Categories channels in Subscribed channels CATEGORIES page. 
+ * by logging registered user into Watchable application.
+ * **/
+
+public class VerifySubscribedChannelsGenreChannels extends BaseTest{
+	
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass=new RegisterToXidioApplicationAndChangeAPassword();
+	DS_SubscribeAFreeChannelFromHomeFeatured subscribeFreeHomeChannel=new DS_SubscribeAFreeChannelFromHomeFeatured();
+	HomePageCommonFunctions homePageCommonFun=new HomePageCommonFunctions();
+	UserLoginFunctions userLogin=new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction=new AssertionRepoFunctions();
+	SubscriptionsPageCommonFunctions subscriptionsPageCommonFun=new SubscriptionsPageCommonFunctions();
+	
+	@Test
+	public void testVerifySubscribedChannelsGenreChannels() throws Exception {
+			
+		try{
+			/* This Method is to register new user using Gazeebo application 
+			 * and to change a password. 
+			 */
+			subscribeFreeHomeChannel.RegisterAndSubscribeAFreeChannelHomeFeatured();
+
+			if (!driver
+					.findElement(By.xpath(XpathObjectRepo.TOPMENULOGIN_XPATH))
+					.getAttribute("class").contains("active")) {
+				driver.findElement(By.xpath(XpathObjectRepo.TOPMENULOGIN_XPATH))
+						.click();
+
+			}
+
+			userLogin.UserLoginCredentials(driver);
+
+			driver.findElement(By.xpath(XpathObjectRepo.LOGINBUTTON_XPATH))
+					.click();
+			Thread.sleep(sleepTime);
+			int loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+
+				// Additional action required pass below Method
+
+				if (!driver
+						.findElement(
+								By.xpath(XpathObjectRepo.TOP_MENU_HOME_BUTTON_XPATH))
+						.getAttribute("class").contains("active")) {
+					driver.findElement(
+							By.xpath(XpathObjectRepo.TOP_MENU_HOME_BUTTON_XPATH))
+							.click();
+				}
+			
+			//This method is to ensure Home is Active page when Login into Application.
+			assertionFunction.assertHomeActiveLink();
+			
+		    //This method is to navigate My Channels Page.
+			subscriptionsPageCommonFun.navigateToMyChannelsPage();
+			
+			//This method is to ensure My Channels is Active page when Login into Application.
+			assertionFunction.assertMyChannelsActiveLink();
+
+			//This method is to navigate My Channels CATEGORIES page.
+			subscriptionsPageCommonFun.clickCategoriesLink();
+			
+			Map<String, List<VideoDetails>> genreDetails=RestAPIServices.subscriptionGenresAPI();
+			List<VideoDetails> genresCategoryList=genreDetails.get("genresCategoriesList");
+			List<VideoDetails> genresCategoryChannelsList=genreDetails.get("GenreCategoriesChannelList");
+					    			
+			if(genresCategoryList!=null)
+			{
+				int loopIndexMax=0;
+				if( genresCategoryList.size()<4){
+					loopIndexMax=genresCategoryList.size();
+				}else{
+					loopIndexMax=4;
+				}
+				
+				for(int index=0;index<loopIndexMax;index++)
+				{
+					String getCategoryTitle=driver.findElement(By.xpath(".//*[@id='content-wrap']/article/section/article/div/div/div/div["+index+1+"]/div/section/header/h1")).getText();
+		        	//This is to assert Genre category from API response and UI displayed.
+		        	assertEquals(genresCategoryList.get(index).getTitle(),getCategoryTitle);
+		        	
+		        	if(genresCategoryChannelsList!=null)
+					{
+						int channelloopIndexMax=0;
+						if( genresCategoryChannelsList.size()<2){
+							channelloopIndexMax=genresCategoryChannelsList.size();
+						}else{
+							channelloopIndexMax=2;
+						}
+						
+						for(int channelsIndex=0; channelsIndex<channelloopIndexMax; channelsIndex++)
+						{
+							VideoDetails subscribedGenreChannels=genresCategoryChannelsList.get(channelsIndex);
+				    		assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+subscribedGenreChannels.getTitle()+"[\\s\\S]*$"));
+				    	
+						}
+					}
+				}
+			}
+			else
+			{
+				assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*You have not subscribed any channel yet.[\\s\\S]*$"));
+			}
+				 
+			//This method unsubscribe a subscribed channels.
+	        subscriptionsPageCommonFun.unSubscribeASubscribedChannels();
+	        
+		    //This method is used to logout from Gazeebo Application.
+		    userLogin.LogOut(driver);
+			}
+		    //This method is to ensure Login page is displayed when user Sign Out from Application.
+		    assertionFunction.assertLoginPageDetails(); 
+		} 
+		catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}		    
+	}
+}

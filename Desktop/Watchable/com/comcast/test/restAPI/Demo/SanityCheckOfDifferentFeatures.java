@@ -1,0 +1,173 @@
+package comcast.test.restAPI.Demo;
+
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.TestDataGenerator;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: SanityCheckOfDifferentFeatures Description: This test case is to
+ * verify if a set of Bundles is displayed under 'Featured' section on 'Store'
+ * screen by logging into Comcast application.
+ */
+
+public class SanityCheckOfDifferentFeatures extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	TestDataGenerator proUtil = new TestDataGenerator();
+
+	@Test
+	public void testVerifyChannelIsDisplayedUnderFeaturedCategory()
+			throws Exception {
+
+		proUtil.load(new FileInputStream(new File("com/data.properties")));
+		String userName = proUtil.getProperty("USER_NAME");
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.FeaturedBundleAPI();
+		List<VideoDetails> BundlesList = videoDetails.get("bundlesList");
+		List<VideoDetails> BundlesChannelList = videoDetails
+				.get("showsInBundle");
+		List<VideoDetails> ShowsListUnderBundleRows = videoDetails
+				.get("subShowInBundleChannel");
+		List<VideoDetails> VideoListUnderBundleRows = videoDetails
+				.get("videosInBundleChannel");
+
+		/*
+		 * This Method is to register new user using Comcast application and to
+		 * change a password.
+		 */
+		// RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+		// This method is used to register new user into Comcast Application
+		// userReg.testUserRegistrationUsingComcast(driver);
+
+		driver.get(DataServiceProperties.APPURL);
+
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Log In[\\s\\S]*$"));
+
+		// This method is used to enter user name and password credential
+		Thread.sleep(sleepTime);
+		userLogin.UserLoginCredentials(driver);
+
+		driver.findElement(By.id("user_login")).click();
+		Thread.sleep(sleepTime);
+
+		driver.findElement(By.linkText("Log Out")).click();
+
+		Thread.sleep(6000);
+		driver.get(proUtil.getProperty("HOMEAPPURL"));
+
+		Thread.sleep(sleepTime);
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Home[\\s\\S]*$"));
+
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Featured[\\s\\S]*$"));
+
+		Thread.sleep(sleepTime);
+		driver.findElement(By.linkText("HOME")).click();
+
+		// This method is used to enter user name and password credential
+		Thread.sleep(4000);
+		userLogin.UserLoginCredentials(driver);
+
+		driver.findElement(By.id("user_login")).click();
+		Thread.sleep(sleepTime);
+
+		driver.findElement(By.linkText("STORE")).click();
+
+		Thread.sleep(sleepTime);
+		assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.matches("^[\\s\\S]*Featured[\\s\\S]*$"));
+
+		driver.findElement(
+				By.linkText(BundlesList.get(XidioConstant.selectBundle)
+						.getTitle())).click();
+
+		assertTrue(driver
+				.findElement(By.cssSelector("BODY"))
+				.getText()
+				.matches(
+						"^[\\s\\S]*"
+								+ BundlesList.get(XidioConstant.selectBundle)
+										.getTitle() + "[\\s\\S]*$"));
+
+		Thread.sleep(sleepTime);
+		driver.findElement(By.linkText("CHANNELS")).click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(
+				By.linkText(BundlesChannelList.get(
+						XidioConstant.selectBundleChannel).getTitle())).click();
+
+		Thread.sleep(sleepTime);
+		assertTrue(driver
+				.findElement(By.cssSelector("BODY"))
+				.getText()
+				.matches(
+						"^[\\s\\S]*"
+								+ BundlesChannelList.get(
+										XidioConstant.selectBundleChannel)
+										.getTitle() + "[\\s\\S]*$"));
+
+		driver.findElement(By.linkText("ROWS")).click();
+
+		Thread.sleep(sleepTime);
+		driver.findElement(
+				By.linkText(ShowsListUnderBundleRows.get(
+						XidioConstant.selectShow).getTitle())).click();
+
+		// This is to assert Show Name.
+		assertTrue(driver
+				.findElement(By.cssSelector("BODY"))
+				.getText()
+				.matches(
+						"^[\\s\\S]*"
+								+ ShowsListUnderBundleRows.get(
+										XidioConstant.selectShow).getTitle()
+								+ "[\\s\\S]*$"));
+
+		// This is to assert Video Name.
+		assertTrue(driver
+				.findElement(By.cssSelector("BODY"))
+				.getText()
+				.matches(
+						"^[\\s\\S]*"
+								+ VideoListUnderBundleRows.get(
+										XidioConstant.selectVideo).getTitle()
+								+ "[\\s\\S]*$"));
+
+		Thread.sleep(sleepTime);
+		driver.findElement(
+				By.linkText(VideoListUnderBundleRows.get(
+						XidioConstant.selectVideo).getTitle())).click();
+
+		String VideoCurrentURL = driver.getCurrentUrl();
+
+		Thread.sleep(15000);
+		driver.findElement(By.linkText("Log Out")).click();
+
+		Thread.sleep(10000);
+		driver.get(VideoCurrentURL);
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+}

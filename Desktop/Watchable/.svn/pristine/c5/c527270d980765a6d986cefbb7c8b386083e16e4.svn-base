@@ -1,0 +1,82 @@
+package comcast.test.app.testCases.userManagement.userLogin.ForgotPassword;
+
+import static org.junit.Assert.*;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.xml.sax.SAXException;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyForgotPasswordFunctionalityWithInValidEmail Description:
+ * This test case is to verify Forgot Password functionality by providing
+ * invalid Email ID Format.
+ **/
+
+public class VerifyForgotPasswordWithInValidEmailIdFormat extends BaseTest { 
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+
+	@Test
+	public void testVerifyForgotPasswordFunctionalityWithInValidEmail()
+			throws InterruptedException, XPathExpressionException,
+			ParserConfigurationException, SAXException, IOException {
+
+		driver.get(DataServiceProperties.APPURL);
+		try {
+			driver.findElement(
+					By.xpath(XpathObjectRepo.FORGOT_PASSWD_LINK_XPATH)).click();
+
+			// This method is to assert Join WAtchable Header in Sign Up page.
+			assertionFunction.assertJoinWatchableBanner();
+
+			assertTrue(driver
+					.findElement(
+							By.xpath(XpathObjectRepo.FORGOT_PASSWD_EMAIL_HEADER_XPATH))
+					.getText()
+					.equalsIgnoreCase(UILablesRepo.FORGOT_PASSWD_EMAIL_HEADER));
+
+			proUtil.load(new FileInputStream(new File("com/data.properties")));
+			String Email = proUtil.getProperty("INVALID_EMAIL");
+			driver.findElement(
+					By.xpath(XpathObjectRepo.FORGOT_PASSWD_EMAIL_XPATH))
+					.sendKeys(Email);
+
+			driver.findElement(By.xpath(XpathObjectRepo.LOGINBUTTON_XPATH))
+					.click();
+			Thread.sleep(sleepTime);
+
+			assertTrue(driver
+					.findElement(
+							By.xpath(XpathObjectRepo.FORGOT_PASSWD_INVALID_EMAILFORMAT_XPATH))
+					.getText()
+					.equalsIgnoreCase(
+							UILablesRepo.FORGOT_PASSWD_INVALID_EMAILFORMAT_MSG));
+
+			// This method asserts Footer Logo and It's Text.
+			assertionFunction.assertFooterCategoryLinks();
+
+			// This method asserts footer links.
+			assertionFunction.assertFooterCopyRight();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+
+	}
+
+}

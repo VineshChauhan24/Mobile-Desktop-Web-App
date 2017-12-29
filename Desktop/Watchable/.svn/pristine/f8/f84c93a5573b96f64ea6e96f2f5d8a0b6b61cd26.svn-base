@@ -1,0 +1,128 @@
+package comcast.test.app.testCases.follow;
+
+//import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+//import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.app.testCases.channelPage.channelPageFunctions.ChannelPageFun;
+import comcast.test.app.testCases.follow.followFunctions.FollowFun;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyFollowConfirmationPopupDisplay Description: This test
+ * script verifies Confirmation message is displayed after following a show.
+ *  Author: Manoj
+ * **/
+
+public class VerifyFollowConfirmationPopupDisplay extends BaseTest {
+
+	@Test
+	public void testVerifyFollowConfirmationPopupDisplay() throws Exception {
+
+		try {
+
+			// Test script
+			log.info("Script: VerifyFollowConfirmationPopupDisplay");
+			log.info("***********************************************");
+
+			// Open Application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+			Thread.sleep(sleepTime);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Login to Watchable application
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.EMAIL,
+					UILablesRepo.PASSWORD);
+
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// This method asserts Featured Channels title.
+				AssertionRepoFunctions.assertFeaturedChannelsTitle();
+
+				// This method is to scroll UI to Popular Channels Section.
+				HomePageCommonFunctions.scrollToPopularChannelsSection();
+				Thread.sleep(sleepTime);
+
+				// Verify Channel present in FEATURED CHANNELS row
+
+				int channelCount = driver.findElements(
+						By.xpath(XpathObjectRepo.featuredChannelsIcon_XPATH))
+						.size();
+				if (channelCount > 0) {
+
+					log.info(channelCount
+							+ " Channels are present in featured channels section in home page");
+
+					String selectedChannel = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.featuredFirstChannelTitle_XPATH))
+							.getText();
+					log.info("Selected channel: " + selectedChannel);
+					// Click on first channel from featured Channel section
+
+					ChannelPageFun.clickOnFirstFeaturedChannelLink();
+
+					// Verify successfully navigate to channel details page
+					AssertionRepoFunctions.assertChannelPageTitle();
+
+					// Verify selected channel is already followed or not
+
+				//	boolean channelPresent = false;
+
+					String follow = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.followButton_XPATH))
+							.getAttribute("class").trim();
+
+					log.info(follow);
+
+					if (!follow.contains(UILablesRepo.FOLLOW)) {
+
+						// Click on follow button
+						FollowFun.clickOnFollowButton();
+
+						// Verify successful follow message is displayed
+					/*	assertTrue(
+								"Successful follow message is not displayed",
+								CommonFun.isElementPresent(
+										driver,
+										By.xpath(XpathObjectRepo.followSuccessMsg_XPATH)));
+						
+						log.info("Successful follow message is displayed");
+						
+						log.info("The message displayed: YOU ARE NOW FOLLOWING "
+								+ driver.findElement(
+										By.xpath(XpathObjectRepo.channelPageChannelTitle_XPATH))
+										.getText());*/
+						
+					} else {
+
+						log.info("Your are already following this Shows...!");
+					}
+
+				} else {
+					log.error("Shows are not present in featured Shows section in home page");
+					log.info("");
+				}
+			}
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+
+}

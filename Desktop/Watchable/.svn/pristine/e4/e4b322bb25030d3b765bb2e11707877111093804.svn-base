@@ -1,0 +1,231 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.FeaturedCategoryTestCases.FeaturedCategoryPageTestCases;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyHomeFeaturedResponseDetailsIsDisplayed Description: This
+ * test case is to verify All Home/Featured category data displayed on UI and
+ * API response data for registered Watchable Application user.
+ * **/
+
+public class VerifyHomeFeaturedResponseDetailsIsDisplayed extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+
+	@Test
+	public void testVerifyHomeFeaturedResponseDetailsIsDisplayed()
+			throws Exception {
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.nFeaturedAPI();
+		List<VideoDetails> featuredResponse = videoDetails
+				.get("featuredResponseList");
+		try {
+			/*
+			 * This Method is to register new user using Watchable application and
+			 * to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+			int loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+
+				// This method is to ensure Home is Active page when Login into
+				// Application.
+				assertionFunction.assertHomeActiveLink();
+
+				// This method is to assert Watchable Top Middle Menu and to
+				// ensure
+				// its collapsed.
+				// assertionFunction.assertGazeeboTopMiddleMenu(); -
+				// Functionality
+				// not present now
+
+				Thread.sleep(sleepTime);
+
+				// Manoj: Modified the object and moved to XpathObjectRepo file.
+				/*
+				 * assertTrue(driver.findElement(By.cssSelector("BODY")).getText(
+				 * ) .matches("^[\\s\\S]*Featured[\\s\\S]*$"));
+				 */
+
+				assertTrue(driver
+						.findElement(
+								By.xpath(XpathObjectRepo.HOMEFEATUREDCONTAINERLABEL_XPATH))
+						.getText().matches(UILablesRepo.HOMEPAGE_FEATURED));
+
+				boolean isVideoPresent = false;
+
+				// featuredResponse API is returning null as there is no shows
+				// now in featured section.
+				// Below code will re-work once featured section contains show.
+				// But now script is running successfully.
+
+				if (featuredResponse != null) {
+					int loopMaxIndex = 0;
+					if (featuredResponse.size() < 20)
+						loopMaxIndex = featuredResponse.size();
+					else
+						loopMaxIndex = 20;
+
+					for (int index = 0; index < loopMaxIndex; index++) {
+						VideoDetails featuredAPIResponse = featuredResponse
+								.get(index);
+						Thread.sleep(sleepTime);
+						boolean isPresent;
+						boolean isHomePage;
+						boolean isDurationPresent;
+
+						do {
+
+							// Manoj: Modified the object and moved to
+							// XpathObjectRepo file.
+							/*
+							 * By.xpath(
+							 * ".//*[@id='featured']/div/section/div/div/ul[1]"
+							 * ); isPresent = driver.findElements(
+							 * By.linkText(featuredAPIResponse.getTitle()))
+							 * .size() > 0;
+							 */
+
+							By.xpath(XpathObjectRepo.FEATUREDROW_XPATH);
+							isPresent = driver
+									.findElements(
+											By.linkText(featuredAPIResponse
+													.getTitle())).size() > 0;
+
+							// Featured response is null. So not able to reactor
+							// following code
+
+							if (isPresent == true) {
+								isVideoPresent = true;
+								assertTrue(driver
+										.findElement(By.cssSelector("BODY"))
+										.getText()
+										.matches(
+												"^[\\s\\S]*"
+														+ featuredAPIResponse
+																.getTitle()
+														+ "[\\s\\S]*$"));
+								driver.findElement(
+										By.xpath(".//*[@id='featured']/div/section/div/div/ul[1]"))
+										.findElement(
+												By.linkText(featuredAPIResponse
+														.getTitle())).click();
+								Thread.sleep(sleepTime);
+								assertTrue(driver
+										.findElement(By.cssSelector("BODY"))
+										.getText()
+										.matches(
+												"^[\\s\\S]*"
+														+ featuredAPIResponse
+																.getTitle()
+														+ "[\\s\\S]*$"));
+
+								// This method asserts Gazeebo Logo.
+								assertionFunction.assertWatchableLogo();
+								do {
+									isHomePage = driver
+											.findElements(
+													By.xpath(".//*[@id='featured']/div/section/header/h1"))
+											.size() > 0;
+									isDurationPresent = driver
+											.findElements(
+													By.xpath(".//*[@id='current_dur']"))
+											.size() > 0;
+									if (isDurationPresent == true) {
+										Thread.sleep(sleepTime);
+										Actions builder = new Actions(driver);
+										builder.moveToElement(
+												driver.findElement(By
+														.id("PlayerPlatformAPI")))
+												.build().perform();
+
+										driver.findElement(
+												By.xpath(".//*[@id='pause']"))
+												.click();
+
+										Thread.sleep(sleepTime);
+										driver.navigate().back();
+										Thread.sleep(sleepTime);
+									}
+									driver.navigate().back();
+									Thread.sleep(sleepTime);
+								} while (isHomePage == true);
+							} else {
+								String isNextEnable = driver
+										.findElement(
+												By.xpath("//*[@id='featured']/div/section/a[2]"))
+										.getAttribute("class");
+								if (!isNextEnable
+										.equalsIgnoreCase("next hidden")
+										&& !isNextEnable
+												.equalsIgnoreCase("next disabled")) {
+									driver.findElement(
+											By.xpath("//*[@id='featured']/div/section/a[2]"))
+											.click();
+									Thread.sleep(sleepTime);
+								}
+								assertTrue(driver
+										.findElement(By.cssSelector("BODY"))
+										.getText()
+										.matches(
+												"^[\\s\\S]*"
+														+ featuredAPIResponse
+																.getTitle()
+														+ "[\\s\\S]*$"));
+								break;
+							}
+						} while (isPresent == false);
+					}
+					if (!isVideoPresent) {
+						assertTrue(driver
+								.findElement(By.cssSelector("BODY"))
+								.getText()
+								.matches(
+										"^[\\s\\S]*"
+												+ featuredResponse.get(0)
+														.getTitle()
+												+ "[\\s\\S]*$"));
+					}
+				}
+
+				// This method asserts Footer Logo and It's Text.
+				assertionFunction.assertFooterLogo();
+
+				// This method asserts Footer Copy Right Links.
+				assertionFunction.assertFooterCopyRight();
+
+				// This method is used to logout from Watchable Application.
+				userLogin.LogOut(driver);
+			}
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

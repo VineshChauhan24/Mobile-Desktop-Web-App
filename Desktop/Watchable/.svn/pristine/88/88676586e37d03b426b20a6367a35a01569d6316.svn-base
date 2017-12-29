@@ -1,0 +1,99 @@
+package comcast.test.app.testCases.contactUs;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.app.testCases.contactUs.contactUsFunctions.ContactUsFun;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VeriyContactUsEmailFieldPopulatedWithEmailLoginWithUserName
+ * Description: This test scripts verifies the email field in contact us form is
+ * pre populated with email address after login with user name. 
+ * Author: Manoj
+ * **/
+
+public class VeriyContactUsEmailFieldPopulatedWithEmailLoginWithUserName extends
+		BaseTest {
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVeriyContactUsEmailFieldPopulatedWithEmailLoginWithUserName()
+			throws Exception {
+
+		try {
+
+			log.info("Script: VeriyContactUsEmailFieldPopulatedWithEmailLoginWithUserName");
+			log.info("*******************************************************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Login to Watchable application using valid user name and password
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.USERNAME,
+					UILablesRepo.PASSWORD);
+
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// Scroll to Footer
+				HomePageCommonFunctions.scrollToFooterSection();
+				Thread.sleep(sleepTime);
+
+				// Click on Contact Us link from footer
+				ContactUsFun.clickOnContactUsLink();
+
+				// Verify Contact Us form opened successfully
+				assertTrue(
+						"Contact Us form is not opened",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.contactUsForm_XPATH)));
+				log.info("Contact Us form opened successfully");
+
+				// Verify email text box present in Contact Us form
+				assertTrue("Email text box is not present in Contact Us form",
+						CommonFun.isElementPresent(driver, By
+								.id(XpathObjectRepo.contactUsFormEmailText_ID)));
+				log.info("Email text box is present in Contact Us form");
+
+				// Verify the email text box is pre-populated with logged users
+				// email address
+
+				assertTrue(
+						"Email text box in contact us form is not pre-populated with logged users email address",
+						driver.findElement(
+								By.id(XpathObjectRepo.contactUsFormEmailText_ID))
+								.getAttribute("value").trim()
+								.equals(UILablesRepo.EMAIL.trim()));
+				log.info("Email text box in contact us form is pre-populated with logged users email address");
+				log.info("The email address displayes is: "
+						+ driver.findElement(
+								By.id(XpathObjectRepo.contactUsFormEmailText_ID))
+								.getAttribute("value"));
+
+				log.info("");
+			}
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+
+}

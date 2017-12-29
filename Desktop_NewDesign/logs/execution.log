@@ -1,0 +1,1377 @@
+2015-02-12 18:20:05,438 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-02-12 18:20:20,166 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Menu Button
+2015-02-12 18:20:29,827 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on menu button
+
+2015-02-12 18:20:44,363 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Link
+2015-02-12 18:20:50,687 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login form is opened after clicking on Login link
+
+2015-02-12 18:21:38,615 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-02-12 18:21:53,062 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-02-12 18:21:59,263 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Menu Button
+2015-02-12 18:22:05,664 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-02-12 18:22:12,574 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Link
+2015-02-12 18:22:16,378 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Logout Button
+2015-02-12 18:22:21,960 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully logout from Watchable application...!
+2015-02-13 11:13:46,433 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-02-13 11:14:00,967 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Menu Button
+2015-02-13 11:14:08,090 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on menu button
+
+2015-02-13 11:14:23,524 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Link
+2015-02-13 11:14:29,886 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login form is opened after clicking on Login link
+
+2015-02-13 11:15:12,867 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-02-13 11:15:18,447 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-02-13 11:15:24,728 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Menu Button
+2015-02-13 11:15:31,077 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-02-13 11:15:37,328 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Link
+2015-02-13 11:15:40,501 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Logout Button
+2015-02-13 11:15:46,781 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully logout from Watchable application...!
+2015-02-13 15:56:13,096 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-02-13 15:56:28,473 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Menu Button
+2015-02-13 15:56:34,519 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on menu button
+
+2015-02-13 15:56:48,743 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Link
+2015-02-13 15:56:54,038 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login form is opened after clicking on Login link
+
+2015-02-13 15:56:54,213 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-02-13 15:56:54,376 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-02-13 15:56:54,648 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-02-13 15:56:54,927 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login cancel button is displayed in login form
+
+2015-02-13 15:56:56,006 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-02-13 15:56:56,705 - comcast.test.homepage.VerifyLoginFormContents - INFO - Not A Member Link is displayed in login form
+
+2015-02-17 16:01:51,313 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-02-17 16:02:05,988 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Menu Button
+2015-02-17 16:02:13,419 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on menu button
+
+2015-02-17 16:02:27,779 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Link
+2015-02-17 16:02:33,210 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login form is opened after clicking on Login link
+
+2015-02-17 16:02:33,363 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-02-17 16:02:33,535 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-02-17 16:02:33,640 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-02-17 16:02:34,081 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login cancel button is displayed in login form
+
+2015-02-17 16:02:35,279 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-02-17 16:02:36,003 - comcast.test.homepage.VerifyLoginFormContents - INFO - Not A Member Link is displayed in login form
+
+2015-02-23 11:19:56,307 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-02-23 11:20:11,290 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Menu Button
+2015-02-23 11:20:17,342 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on menu button
+
+2015-02-23 11:20:31,128 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Link
+2015-02-23 11:20:36,404 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login form is opened after clicking on Login link
+
+2015-02-23 11:20:36,544 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-02-23 11:20:36,686 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-02-23 11:20:36,974 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-02-23 11:20:37,206 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login cancel button is displayed in login form
+
+2015-02-23 11:20:38,200 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-02-23 11:20:38,787 - comcast.test.homepage.VerifyLoginFormContents - INFO - Not A Member Link is displayed in login form
+
+2015-06-12 16:36:11,597 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-12 16:36:22,550 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Menu Button
+2015-06-12 16:36:28,347 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on menu button
+
+2015-06-12 16:36:40,417 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Link
+2015-06-12 16:36:45,836 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login form is opened after clicking on Login link
+
+2015-06-12 16:37:23,447 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-15 18:00:58,468 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-15 18:50:36,141 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-15 18:54:41,181 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-15 18:54:41,418 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Home Page title 'WATCHABLE' is displayed 
+
+2015-06-15 18:57:33,792 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-15 18:57:33,910 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Home Page title 'WATCHABLE' is displayed 
+
+2015-06-15 18:57:44,899 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-15 18:57:52,071 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-16 16:23:47,548 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-16 16:23:47,840 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Home Page title 'WATCHABLE' is displayed 
+
+2015-06-16 16:25:18,352 - comcast.uiFunctions.GUIFunctions - ERROR - Element to click is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.36 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: e55dd627-2321-427b-9842-f3903b328510
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, platformName=Android, deviceName=emulator-5554, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-16 16:25:24,755 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-16 16:26:50,089 - comcast.uiFunctions.GUIFunctions - ERROR - Element to type data is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.33 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: e55dd627-2321-427b-9842-f3903b328510
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, platformName=Android, deviceName=emulator-5554, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-16 16:28:10,569 - comcast.uiFunctions.GUIFunctions - ERROR - Element to type data is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.48 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: e55dd627-2321-427b-9842-f3903b328510
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, platformName=Android, deviceName=emulator-5554, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-16 16:29:30,922 - comcast.uiFunctions.GUIFunctions - ERROR - Element to click is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.35 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: e55dd627-2321-427b-9842-f3903b328510
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, platformName=Android, deviceName=emulator-5554, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-16 16:29:36,020 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-16 17:28:06,100 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-16 17:28:06,323 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Home Page title 'WATCHABLE' is displayed 
+
+2015-06-16 17:29:36,582 - comcast.uiFunctions.GUIFunctions - ERROR - Element to click is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.17 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: 9b169c3f-e21d-4a65-b812-0e98e9a56412
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, platformName=Android, deviceName=emulator-5554, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-16 17:29:43,143 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-16 17:31:08,461 - comcast.uiFunctions.GUIFunctions - ERROR - Element to type data is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.31 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: 9b169c3f-e21d-4a65-b812-0e98e9a56412
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, platformName=Android, deviceName=emulator-5554, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-16 17:32:28,578 - comcast.uiFunctions.GUIFunctions - ERROR - Element to type data is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.12 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: 9b169c3f-e21d-4a65-b812-0e98e9a56412
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={app=E:\WK_Appium\AppiumComcastProject\app\Watchable.apk, platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, platformName=Android, deviceName=emulator-5554, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-16 17:37:11,979 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-16 17:37:12,138 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Home Page title 'WATCHABLE' is displayed 
+
+2015-06-16 17:37:23,228 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-16 17:37:30,408 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-16 17:38:00,687 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-16 17:39:26,248 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-16 17:48:23,456 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-16 17:50:56,347 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-16 17:50:56,559 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Home Page title 'WATCHABLE' is displayed 
+
+2015-06-16 18:23:51,352 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-16 18:23:51,667 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Home Page title 'WATCHABLE' is displayed 
+
+2015-06-16 18:24:02,807 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-16 18:24:09,811 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-16 18:24:40,359 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-16 18:26:05,939 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-16 18:36:07,493 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-16 18:36:07,742 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Home Page title 'WATCHABLE' is displayed 
+
+2015-06-16 18:36:18,765 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-16 18:36:25,665 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-16 18:36:56,989 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-16 18:40:29,139 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-16 18:40:29,358 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-16 18:40:40,749 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-16 18:40:47,619 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-16 18:41:18,081 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-16 18:41:23,744 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-16 18:41:24,095 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-18 15:29:50,895 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-18 15:29:51,047 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 15:30:01,945 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 15:30:08,656 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-18 15:30:38,705 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 15:30:43,852 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-18 15:30:43,946 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-18 16:26:52,770 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-18 16:26:52,934 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 16:27:03,702 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 16:27:10,700 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-18 16:27:11,026 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-18 16:27:11,115 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-18 16:27:11,195 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-18 16:28:31,366 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-18 16:39:52,991 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-18 16:39:53,403 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 16:40:04,246 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 16:40:11,013 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-18 16:40:11,328 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-18 16:40:11,403 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-18 16:40:11,474 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-18 16:40:11,932 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-18 16:40:12,043 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-18 17:01:05,394 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-18 17:01:05,588 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 17:01:15,636 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-18 17:01:15,778 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 17:01:26,773 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 17:01:33,786 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-18 17:01:47,210 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 17:01:53,295 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-18 17:02:23,168 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 17:02:28,252 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-18 17:03:48,390 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-18 17:13:16,274 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-18 17:13:16,440 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 17:13:26,570 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-18 17:13:26,766 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 17:13:37,625 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 17:13:44,313 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-18 17:13:57,786 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 17:14:03,820 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-18 17:14:33,440 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 17:14:38,748 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-18 17:15:59,064 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-18 18:29:39,140 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-18 18:29:39,320 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 18:29:49,446 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-18 18:29:49,686 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 18:30:00,780 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 18:30:07,783 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-18 18:30:21,251 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 18:30:27,281 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-18 18:30:58,712 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 18:31:03,839 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-18 18:32:24,846 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-18 18:52:44,718 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-18 18:52:44,956 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-18 18:52:55,942 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 18:53:02,895 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-18 18:53:33,838 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-18 18:53:38,911 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-18 18:53:39,240 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-22 17:09:47,582 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-22 17:09:47,852 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-22 17:09:59,153 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 17:10:06,176 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-22 17:10:06,492 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-22 17:10:06,613 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-22 17:10:07,014 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-22 17:10:07,515 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-22 17:10:07,611 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-22 17:12:08,444 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-22 17:12:08,609 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-22 17:12:19,619 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 17:12:26,604 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-22 17:12:26,934 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-22 17:12:27,091 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-22 17:12:27,170 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-22 17:12:27,650 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-22 17:12:27,763 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-22 17:16:36,996 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-22 17:16:37,355 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-22 17:16:48,448 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 17:16:55,459 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-22 17:17:26,871 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 17:17:32,173 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-22 17:17:32,534 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-22 17:25:46,219 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-22 17:25:46,492 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-22 17:25:57,576 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 17:26:04,255 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-22 17:26:04,662 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-22 17:26:05,067 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-22 17:26:05,286 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-22 17:26:05,892 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-22 17:26:05,998 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-22 17:38:30,047 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-22 17:38:30,275 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-22 17:38:41,312 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 17:38:48,026 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-22 17:39:18,578 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 17:39:23,694 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-22 17:39:23,805 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-22 17:40:28,717 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-22 17:40:29,039 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-22 17:40:39,885 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 17:40:45,951 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-22 17:40:46,270 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-22 17:40:46,349 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Email text box is displayed in login form
+
+2015-06-22 17:40:46,505 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Password text box is displayed in login form
+
+2015-06-22 17:40:47,075 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login button is  displayed in login form
+
+2015-06-22 17:40:47,179 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Forgot Password Link is displayed in login form
+
+2015-06-22 18:00:46,908 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-22 18:00:47,068 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-22 18:00:58,136 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 18:01:04,852 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-22 18:01:36,053 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-22 18:01:41,295 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-22 18:01:41,713 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 11:59:59,684 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 11:59:59,829 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 12:00:11,013 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 12:00:17,903 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 12:00:49,147 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 12:00:54,366 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-23 12:00:54,756 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 12:29:19,364 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 12:29:19,513 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 12:29:30,555 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 12:29:37,267 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 12:30:07,971 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 12:30:13,288 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-23 12:30:13,536 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 12:54:50,905 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 12:54:51,127 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 12:55:02,266 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 12:55:09,091 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 12:55:39,072 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 12:55:44,244 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-23 12:55:44,472 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 13:18:16,747 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 13:18:17,021 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 13:18:28,100 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 13:18:35,081 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 13:19:06,400 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 13:19:11,627 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-23 13:19:11,836 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 13:57:15,652 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 13:57:15,838 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 13:57:25,957 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 13:57:26,155 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 13:57:37,092 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 13:57:44,169 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 13:57:57,633 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 13:58:03,622 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 13:58:34,011 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 13:58:39,314 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-23 13:59:59,720 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 14:16:17,876 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 14:16:18,091 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 14:16:28,240 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 14:16:28,473 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 14:16:39,553 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 14:16:46,412 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 14:16:59,991 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 14:17:05,980 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 14:17:35,637 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 14:17:41,108 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-23 14:19:01,374 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 14:28:28,713 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 14:28:28,978 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 14:28:40,128 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 14:28:47,177 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 14:29:18,086 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 14:29:23,421 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-23 14:29:23,632 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 15:22:32,075 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 15:22:32,375 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 15:22:43,595 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 15:22:50,467 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 15:23:18,599 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 16:43:01,805 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-23 16:43:02,035 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 16:43:13,362 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 16:43:20,202 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-23 16:43:50,395 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 16:43:55,575 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-23 16:43:56,149 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 16:44:34,794 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-23 16:44:35,094 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 16:44:46,009 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 16:44:52,891 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-23 16:44:53,223 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-23 16:44:53,312 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-23 16:44:53,412 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-23 16:44:53,915 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-23 16:44:54,124 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-23 17:00:38,218 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-23 17:00:38,499 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 17:00:49,669 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 17:00:56,507 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-23 17:01:27,706 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 17:01:33,271 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-23 17:01:33,927 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-23 17:02:13,224 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-23 17:02:13,498 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 17:02:24,498 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 17:02:31,485 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-23 17:02:31,990 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-23 17:02:32,117 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-23 17:02:32,311 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-23 17:02:32,763 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-23 17:02:32,940 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-23 17:16:08,586 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-23 17:16:08,750 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 17:16:19,699 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 17:16:26,663 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-23 17:16:27,039 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-23 17:16:27,136 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-23 17:16:27,225 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-23 17:16:27,723 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-23 17:16:27,813 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-23 17:17:21,717 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-23 17:17:21,899 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-23 17:17:33,031 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 17:17:39,892 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-23 17:18:10,461 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-23 17:18:20,734 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-23 17:18:59,614 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-24 11:17:47,299 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 11:17:47,651 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 11:17:59,628 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 11:18:08,210 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 11:18:08,485 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-24 11:18:08,597 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-24 11:18:08,696 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-24 11:18:09,211 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-24 11:18:09,324 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-24 11:28:50,089 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 11:28:50,279 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 11:29:01,258 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 11:29:08,092 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 11:29:39,268 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 11:29:44,451 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-24 11:29:44,661 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-24 11:30:23,253 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 11:30:23,465 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 11:30:34,328 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 11:30:41,172 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 11:30:41,579 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-24 11:30:41,740 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-24 11:30:42,021 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-24 11:30:42,529 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-24 11:30:42,628 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-24 11:52:40,893 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 11:52:41,369 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 11:52:52,410 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 11:52:59,329 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 11:53:30,425 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 13:24:08,439 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 13:24:08,761 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 13:24:19,918 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 13:24:26,709 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 13:24:56,982 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 13:25:02,159 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-24 13:25:02,324 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-24 13:25:44,697 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 13:25:44,801 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 13:25:55,625 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 13:26:02,643 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 13:26:02,989 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-24 13:26:03,309 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-24 13:26:03,474 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-24 13:26:04,198 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-24 13:26:04,453 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-24 14:30:28,322 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 14:30:28,589 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 14:30:39,704 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 14:30:46,426 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 14:31:17,530 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 14:31:22,666 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-24 14:31:22,794 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-24 14:31:59,009 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 14:31:59,195 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 14:32:10,032 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 14:32:17,083 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 14:32:17,502 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-24 14:32:17,729 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-24 14:32:18,019 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-24 14:32:18,543 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-24 14:32:18,719 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-24 15:26:36,229 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 15:26:36,718 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 15:26:47,729 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 15:26:54,602 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 15:27:26,017 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 15:27:36,401 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-24 15:31:33,611 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 15:31:33,766 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 15:31:44,493 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 15:31:51,138 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 15:32:22,455 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 15:36:59,118 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 15:36:59,376 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 15:37:10,414 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 15:37:17,545 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 15:37:49,765 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 15:37:54,889 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-24 15:38:00,280 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-24 15:38:39,264 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 15:38:39,502 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 15:38:50,346 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 15:38:57,304 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 15:38:57,788 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-24 15:38:57,970 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-24 15:38:58,056 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-24 15:38:58,556 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-24 15:38:58,728 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-24 17:10:40,111 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 17:10:40,256 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 17:10:51,599 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 17:10:58,525 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 17:11:29,752 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 17:11:34,855 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-24 17:11:35,236 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-24 17:12:11,645 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 17:12:11,839 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 17:12:22,718 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 17:12:29,701 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 17:12:30,012 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-24 17:12:30,108 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-24 17:12:30,216 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-24 17:12:30,717 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-24 17:12:30,832 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-24 17:44:03,583 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 17:44:03,860 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 17:44:14,811 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 17:44:21,496 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 17:44:53,203 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 17:53:24,248 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 17:53:24,504 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 17:53:35,541 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 17:53:42,243 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 17:54:12,946 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 17:54:18,862 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-24 17:54:19,356 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-24 17:54:58,608 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-24 17:54:58,767 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-24 17:55:09,539 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-24 17:55:16,374 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-24 17:55:16,835 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-24 17:55:17,015 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-24 17:55:17,163 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-24 17:55:17,826 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-24 17:55:17,997 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-25 15:11:20,332 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-25 15:11:20,483 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-25 15:11:31,459 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-25 15:11:38,256 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-25 15:12:08,971 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-25 15:12:50,379 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully clicked on Login Button
+
+2015-06-25 15:12:50,936 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-25 15:13:28,298 - comcast.test.homepage.VerifyLoginFormContents - INFO - Watchable App is Opened Successfully
+
+2015-06-25 15:13:28,472 - comcast.test.homepage.VerifyLoginFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-25 15:13:39,225 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-25 15:13:46,038 - comcast.test.homepage.VerifyLoginFormContents - INFO - Successfully navigate to login page
+
+2015-06-25 15:13:46,682 - comcast.test.homepage.VerifyLoginFormContents - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-25 15:13:46,874 - comcast.test.homepage.VerifyLoginFormContents - INFO - Email text box is displayed in login form
+
+2015-06-25 15:13:46,942 - comcast.test.homepage.VerifyLoginFormContents - INFO - Password text box is displayed in login form
+
+2015-06-25 15:13:47,457 - comcast.test.homepage.VerifyLoginFormContents - INFO - Login button is  displayed in login form
+
+2015-06-25 15:13:47,548 - comcast.test.homepage.VerifyLoginFormContents - INFO - Forgot Password Link is displayed in login form
+
+2015-06-26 14:28:43,046 - comcast.test.homepage.VerifyWelcomePage - INFO - Watchable App is Opened Successfully
+
+2015-06-26 14:28:43,421 - comcast.test.homepage.VerifyWelcomePage - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 14:28:43,728 - comcast.test.homepage.VerifyWelcomePage - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-06-26 14:28:44,157 - comcast.test.homepage.VerifyWelcomePage - INFO - Sign up button is present in welcome page
+
+2015-06-26 14:28:44,233 - comcast.test.homepage.VerifyWelcomePage - INFO - Login button is present in welcome page
+
+2015-06-26 14:41:27,489 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 14:41:27,597 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 14:41:27,913 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-06-26 14:41:28,127 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Sign up button is present in welcome page
+
+2015-06-26 14:41:28,186 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login button is present in welcome page
+
+2015-06-26 14:42:04,473 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 14:42:04,734 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 14:42:15,669 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 14:42:22,534 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 14:42:23,069 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-26 14:42:23,197 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Email text box is displayed in login form
+
+2015-06-26 14:42:23,317 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Password text box is displayed in login form
+
+2015-06-26 14:42:23,827 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login button is  displayed in login form
+
+2015-06-26 14:42:23,954 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Forgot Password Link is displayed in login form
+
+2015-06-26 14:43:00,600 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 14:43:00,799 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 14:43:11,541 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 14:43:18,382 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 14:45:00,672 - comcast.uiFunctions.GUIFunctions - ERROR - Element to click is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.38 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: be21e342-5754-4a56-bfd9-bb890219a2e9
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, deviceName=emulator-5554, platformName=Android, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-26 14:50:52,024 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 14:50:52,246 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 14:50:52,526 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-06-26 14:50:52,692 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Sign up button is present in welcome page
+
+2015-06-26 14:50:52,760 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login button is present in welcome page
+
+2015-06-26 14:51:29,339 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 14:51:29,500 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 14:51:40,544 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 14:51:47,304 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 14:51:47,719 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-26 14:51:47,890 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Email text box is displayed in login form
+
+2015-06-26 14:51:48,041 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Password text box is displayed in login form
+
+2015-06-26 14:51:48,480 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login button is  displayed in login form
+
+2015-06-26 14:51:48,620 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Forgot Password Link is displayed in login form
+
+2015-06-26 14:52:24,815 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 14:52:24,959 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 14:52:35,669 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 14:52:42,731 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 14:54:25,136 - comcast.uiFunctions.GUIFunctions - ERROR - Element to click is not present org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.51 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:02:37'
+System info: host: 'VDC01DELW0204', ip: '192.168.162.28', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_40'
+Session ID: 5df8fcc6-9593-435c-9a0c-c477e9eff38e
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=LINUX, javascriptEnabled=true, appActivity=.activity.LoginActivity, browserName=, networkConnectionEnabled=true, desired={platformName=Android, deviceName=emulator-5554, browserName=, appActivity=.activity.LoginActivity, appPackage=com.comcast.watchablephone, version=4.4.2}, locationContextEnabled=false, appPackage=com.comcast.watchablephone, version=4.4.2, platformVersion=4.1, databaseEnabled=false, deviceName=emulator-5554, platformName=Android, webStorageEnabled=false, warnings={}, takesScreenshot=true}]
+2015-06-26 14:59:17,461 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 14:59:17,710 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 14:59:28,762 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 14:59:35,504 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 14:59:35,506 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - 
+2015-06-26 14:59:35,507 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - 
+2015-06-26 15:02:55,662 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 15:02:55,861 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 15:03:06,759 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 15:03:13,660 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 15:03:13,662 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - manoj498@rediffmail.com
+2015-06-26 15:03:13,662 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Demo1111
+2015-06-26 15:03:44,333 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 15:09:02,363 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 15:09:02,547 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 15:09:13,556 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 15:09:20,531 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 15:09:20,533 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - manoj498@rediffmail.com
+2015-06-26 15:09:20,533 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Demo1111
+2015-06-26 15:09:50,716 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 15:10:15,739 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-26 15:10:16,106 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-26 15:11:29,757 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 15:11:29,888 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 15:11:30,163 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-06-26 15:11:30,434 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Sign up button is present in welcome page
+
+2015-06-26 15:11:30,481 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login button is present in welcome page
+
+2015-06-26 15:12:11,016 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 15:12:11,153 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 15:12:21,891 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 15:12:28,718 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 15:12:28,992 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The Login Page title 'WELCOME BACK!' is displayed 
+
+2015-06-26 15:12:29,121 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Email text box is displayed in login form
+
+2015-06-26 15:12:29,268 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Password text box is displayed in login form
+
+2015-06-26 15:12:29,712 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Login button is  displayed in login form
+
+2015-06-26 15:12:29,813 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Forgot Password Link is displayed in login form
+
+2015-06-26 15:13:06,023 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-06-26 15:13:06,167 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 15:13:16,890 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 15:13:23,581 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully navigate to login page
+
+2015-06-26 15:13:53,825 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-06-26 15:14:27,051 - comcast.test.homepage.LoginToWatchableWithValidCredentials - INFO - Successfully clicked on Login Button
+
+2015-06-26 15:14:27,497 - comcast.common.asserts.pageAssertions.HomePageAssertions - INFO - Successfully login to Watchable application...!
+2015-06-26 16:15:52,010 - comcast.test.homepage.VerifyWelcomePage - INFO - Watchable App is Opened Successfully
+
+2015-06-26 16:15:52,258 - comcast.test.homepage.VerifyWelcomePage - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 16:15:52,515 - comcast.test.homepage.VerifyWelcomePage - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-06-26 16:15:52,733 - comcast.test.homepage.VerifyWelcomePage - INFO - Sign up button is present in welcome page
+
+2015-06-26 16:15:52,812 - comcast.test.homepage.VerifyWelcomePage - INFO - Login button is present in welcome page
+
+2015-06-26 16:21:30,722 - comcast.test.homepage.VerifyWelcomePage - INFO - Watchable App is Opened Successfully
+
+2015-06-26 16:21:31,179 - comcast.test.homepage.VerifyWelcomePage - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-06-26 16:21:31,559 - comcast.test.homepage.VerifyWelcomePage - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-06-26 16:21:31,967 - comcast.test.homepage.VerifyWelcomePage - INFO - Sign up button is present in welcome page
+
+2015-06-26 16:21:32,066 - comcast.test.homepage.VerifyWelcomePage - INFO - Login button is present in welcome page
+
+2015-07-01 17:23:22,064 - comcast.test.homepage.LoginToWatchableWithInvalidCredentials - INFO - Watchable App is Opened Successfully
+
+2015-07-01 17:23:22,221 - comcast.test.homepage.LoginToWatchableWithInvalidCredentials - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-01 17:23:33,204 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-01 17:23:40,131 - comcast.test.homepage.LoginToWatchableWithInvalidCredentials - INFO - Successfully navigate to login page
+
+2015-07-01 17:24:09,964 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-01 17:24:15,499 - comcast.test.homepage.LoginToWatchableWithInvalidCredentials - INFO - Successfully clicked on Login Button
+
+2015-07-01 17:24:15,523 - comcast.test.homepage.LoginToWatchableWithInvalidCredentials - INFO - Verify Error message is displayed with invalid credentials
+
+2015-07-01 17:24:15,755 - comcast.test.homepage.LoginToWatchableWithInvalidCredentials - INFO - The Error Message 'The username or password you entered 
+ are not valid' is displayed 
+
+2015-07-02 15:43:07,997 - comcast.test.homepage.LoginToWatchableWithInvalidEmail - INFO - Watchable App is Opened Successfully
+
+2015-07-02 15:43:08,138 - comcast.test.homepage.LoginToWatchableWithInvalidEmail - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-02 15:43:19,186 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-02 15:43:26,363 - comcast.test.homepage.LoginToWatchableWithInvalidEmail - INFO - Successfully navigate to login page
+
+2015-07-02 15:43:57,268 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-02 15:44:02,754 - comcast.test.homepage.LoginToWatchableWithInvalidEmail - INFO - Successfully clicked on Login Button
+
+2015-07-02 15:44:02,756 - comcast.test.homepage.LoginToWatchableWithInvalidEmail - INFO - Verify Error message is displayed with invalid email
+
+2015-07-02 15:44:02,986 - comcast.test.homepage.LoginToWatchableWithInvalidEmail - INFO - The Error Message 'The username or password you entered 
+ are not valid' is displayed 
+
+2015-07-03 13:27:29,031 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Watchable App is Opened Successfully
+
+2015-07-03 13:27:29,202 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-03 13:27:40,092 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-03 13:27:46,863 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Successfully navigate to login page
+
+2015-07-03 13:27:47,385 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-03 13:27:52,603 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Successfully navigate to Forgot Password page
+
+2015-07-03 13:27:52,740 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Back button is displayed in Forgot Password form
+
+2015-07-03 13:27:53,097 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - The Forgot Password Page title 'Forgot your Password ?' is displayed 
+
+2015-07-03 13:27:53,223 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Email label is displayed in Forgot Password form
+
+2015-07-03 13:27:53,311 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Email text box is displayed in Forgot Password form
+
+2015-07-03 13:27:54,003 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Send button is  displayed in Forgot Password form
+
+2015-07-03 13:38:20,404 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Watchable App is Opened Successfully
+
+2015-07-03 13:38:20,594 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-03 13:38:31,518 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-03 13:38:38,457 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Successfully navigate to login page
+
+2015-07-03 13:38:39,032 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-03 13:38:44,277 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Successfully navigate to Forgot Password page
+
+2015-07-03 13:38:44,403 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Back button is displayed in Forgot Password form
+
+2015-07-03 13:38:44,707 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - The Forgot Password Page title 'Forgot your Password ?' is displayed 
+
+2015-07-03 13:38:44,854 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Email label is displayed in Forgot Password form
+
+2015-07-03 13:38:44,954 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Email text box is displayed in Forgot Password form
+
+2015-07-03 13:38:45,696 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Send button is  displayed in Forgot Password form
+
+2015-07-03 13:42:33,800 - comcast.test.homepage.VerifyWelcomePage - INFO - Watchable App is Opened Successfully
+
+2015-07-03 13:42:33,937 - comcast.test.homepage.VerifyWelcomePage - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-03 13:42:34,203 - comcast.test.homepage.VerifyWelcomePage - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-07-03 13:42:34,471 - comcast.test.homepage.VerifyWelcomePage - INFO - Sign up button is present in welcome page
+
+2015-07-03 13:42:34,544 - comcast.test.homepage.VerifyWelcomePage - INFO - Login button is present in welcome page
+
+2015-07-03 13:46:08,907 - comcast.test.homepage.VerifyWelcomePage - INFO - Watchable App is Opened Successfully
+
+2015-07-03 13:46:09,134 - comcast.test.homepage.VerifyWelcomePage - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-03 13:46:09,470 - comcast.test.homepage.VerifyWelcomePage - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-07-03 13:46:09,697 - comcast.test.homepage.VerifyWelcomePage - INFO - Sign up button is present in welcome page
+
+2015-07-03 13:46:09,799 - comcast.test.homepage.VerifyWelcomePage - INFO - Login button is present in welcome page
+
+2015-07-03 13:47:45,828 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Watchable App is Opened Successfully
+
+2015-07-03 13:47:45,975 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-03 13:47:56,968 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-03 13:48:04,184 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Successfully navigate to login page
+
+2015-07-03 13:48:04,903 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-03 13:48:10,149 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Successfully navigate to Forgot Password page
+
+2015-07-03 13:48:10,276 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Back button is displayed in Forgot Password form
+
+2015-07-03 13:48:10,612 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - The Forgot Password Page title 'Forgot your Password ?' is displayed 
+
+2015-07-03 13:48:10,696 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Email label is displayed in Forgot Password form
+
+2015-07-03 13:48:10,796 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Email text box is displayed in Forgot Password form
+
+2015-07-03 13:48:11,547 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Send button is  displayed in Forgot Password form
+
+2015-07-09 11:59:17,689 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Watchable App is Opened Successfully
+
+2015-07-09 11:59:18,022 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-09 11:59:28,879 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-09 11:59:35,691 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Successfully navigate to login page
+
+2015-07-09 11:59:36,486 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-09 11:59:41,834 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Successfully navigate to Forgot Password page
+
+2015-07-09 11:59:41,937 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Back button is displayed in Forgot Password form
+
+2015-07-09 11:59:42,284 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - The Forgot Password Page title 'Forgot your Password ?' is displayed 
+
+2015-07-09 11:59:42,394 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Email label is displayed in Forgot Password form
+
+2015-07-09 11:59:42,553 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Email text box is displayed in Forgot Password form
+
+2015-07-09 11:59:43,225 - comcast.test.homepage.VerifyForgotPasswordFormContents - INFO - Send button is  displayed in Forgot Password form
+
+2015-07-09 15:04:01,031 - comcast.test.homepage.VerifyForgotPasswordWithInvalidEmail - INFO - Watchable App is Opened Successfully
+
+2015-07-09 15:04:01,350 - comcast.test.homepage.VerifyForgotPasswordWithInvalidEmail - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-09 15:04:12,316 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-09 15:04:19,107 - comcast.test.homepage.VerifyForgotPasswordWithInvalidEmail - INFO - Successfully navigate to login page
+
+2015-07-09 15:04:19,694 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-09 15:04:25,046 - comcast.test.homepage.VerifyForgotPasswordWithInvalidEmail - INFO - Successfully navigate to Forgot Password page
+
+2015-07-09 15:04:41,687 - comcast.test.homepage.VerifyForgotPasswordWithInvalidEmail - INFO - The entered invalid email address is: manoj498@rediffmail.com.com
+
+2015-07-09 15:04:42,063 - comcast.test.homepage.VerifyForgotPasswordWithInvalidEmail - INFO - The Error message displayed 'Account not found' is displayed 
+
+2015-07-09 15:38:51,724 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Watchable App is Opened Successfully
+
+2015-07-09 15:38:51,908 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-09 15:39:02,712 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-09 15:39:09,763 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate to login page
+
+2015-07-09 15:39:10,380 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-09 15:39:15,928 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate to Forgot Password page
+
+2015-07-09 15:39:19,389 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Back Button
+2015-07-09 15:39:24,899 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate back to login page after clicking on back button from frogot password page
+
+2015-07-09 15:40:46,655 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Watchable App is Opened Successfully
+
+2015-07-09 15:40:46,784 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-09 15:40:57,793 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-09 15:41:04,607 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate to login page
+
+2015-07-09 15:41:05,187 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-09 15:41:10,567 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate to Forgot Password page
+
+2015-07-09 15:41:14,004 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Back Button
+2015-07-09 15:41:19,499 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate back to login page after clicking on back button from frogot password page
+
+2015-07-09 17:19:14,719 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Watchable App is Opened Successfully
+
+2015-07-09 17:19:14,957 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-09 17:19:25,935 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-09 17:19:32,753 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate to login page
+
+2015-07-09 17:19:33,373 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-09 17:19:38,693 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate to Forgot Password page
+
+2015-07-09 17:19:42,088 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Back Button
+2015-07-09 17:19:47,598 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate back to login page after clicking on back button from frogot password page
+
+2015-07-10 14:56:31,287 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Watchable App is Opened Successfully
+
+2015-07-10 14:56:31,491 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-10 14:56:42,462 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-10 14:56:49,101 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate to login page
+
+2015-07-10 14:56:50,304 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Forgot Password Link
+2015-07-10 14:56:55,671 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate to Forgot Password page
+
+2015-07-10 14:56:59,087 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Back Button
+2015-07-10 14:57:04,568 - comcast.test.homepage.VerifyForgotPasswordFormBackButton - INFO - Successfully navigate back to login page after clicking on back button from frogot password page
+
+2015-07-10 15:30:59,140 - comcast.test.homepage.VerifyLoginFormBackButton - INFO - Watchable App is Opened Successfully
+
+2015-07-10 15:30:59,326 - comcast.test.homepage.VerifyLoginFormBackButton - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-10 15:31:10,403 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Login Button
+2015-07-10 15:31:17,269 - comcast.test.homepage.VerifyLoginFormBackButton - INFO - Successfully navigate to login page
+
+2015-07-10 15:31:20,801 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Back Button
+2015-07-10 15:31:25,897 - comcast.test.homepage.VerifyLoginFormBackButton - INFO - Successfully navigate back to welcome page after clicking on back button from login page
+
+2015-07-10 16:51:12,607 - comcast.test.homepage.VerifySignUpFormContents - INFO - Watchable App is Opened Successfully
+
+2015-07-10 16:51:12,832 - comcast.test.homepage.VerifySignUpFormContents - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-10 16:51:23,948 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Sign Up Button
+2015-07-10 16:51:29,254 - comcast.test.homepage.VerifySignUpFormContents - INFO - Successfully navigate to Sign Up page
+
+2015-07-10 16:51:29,538 - comcast.test.homepage.VerifySignUpFormContents - INFO - The Sign Up Page title 'SIGN UP' is displayed 
+
+2015-07-10 16:51:29,654 - comcast.test.homepage.VerifySignUpFormContents - INFO - User name text box is displayed in Sign Up form
+
+2015-07-10 16:51:29,796 - comcast.test.homepage.VerifySignUpFormContents - INFO - Email text box is displayed in Sign Up form
+
+2015-07-10 16:51:29,904 - comcast.test.homepage.VerifySignUpFormContents - INFO - Password text box is displayed in Sign Up form
+
+2015-07-10 16:51:30,146 - comcast.test.homepage.VerifySignUpFormContents - INFO - Back button is displayed in Sign Up form
+
+2015-07-10 16:51:31,340 - comcast.test.homepage.VerifySignUpFormContents - INFO - Done button is displayed in Sign Up form
+
+2015-07-10 16:51:31,469 - comcast.test.homepage.VerifySignUpFormContents - INFO - Footer text is  displayed in Sign Up form
+
+2015-07-10 17:42:02,107 - comcast.test.homepage.VerifySignUpFormBackButton - INFO - Watchable App is Opened Successfully
+
+2015-07-10 17:42:02,288 - comcast.test.homepage.VerifySignUpFormBackButton - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-10 17:42:13,336 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Sign Up Button
+2015-07-10 17:42:18,742 - comcast.test.homepage.VerifySignUpFormBackButton - INFO - Successfully navigate to Sign Up page
+
+2015-07-10 17:42:22,193 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Back Button
+2015-07-10 17:42:27,281 - comcast.test.homepage.VerifySignUpFormBackButton - INFO - Successfully navigate back to welcome page after clicking on back button from Sign Up page
+
+2015-07-16 14:59:08,900 - comcast.test.homepage.VerifyWelcomePage - INFO - Watchable App is Opened Successfully
+
+2015-07-16 14:59:09,111 - comcast.test.homepage.VerifyWelcomePage - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-16 14:59:09,400 - comcast.test.homepage.VerifyWelcomePage - INFO - The subtitle 'Video without limits' is displayed 
+
+2015-07-16 14:59:09,732 - comcast.test.homepage.VerifyWelcomePage - INFO - Sign up button is present in welcome page
+
+2015-07-16 14:59:09,835 - comcast.test.homepage.VerifyWelcomePage - INFO - Login button is present in welcome page
+
+2015-07-16 17:41:19,253 - comcast.test.homepage.VerifySignUpFormUsernameErrorMsg - INFO - Watchable App is Opened Successfully
+
+2015-07-16 17:41:19,426 - comcast.test.homepage.VerifySignUpFormUsernameErrorMsg - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-16 17:41:30,631 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Sign Up Button
+2015-07-16 17:41:35,933 - comcast.test.homepage.VerifySignUpFormUsernameErrorMsg - INFO - Successfully navigate to Sign Up page
+
+2015-07-16 17:47:27,986 - comcast.test.homepage.VerifySignUpFormUsernameErrorMsg - INFO - Watchable App is Opened Successfully
+
+2015-07-16 17:47:28,250 - comcast.test.homepage.VerifySignUpFormUsernameErrorMsg - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-16 17:47:39,173 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Sign Up Button
+2015-07-16 17:47:44,478 - comcast.test.homepage.VerifySignUpFormUsernameErrorMsg - INFO - Successfully navigate to Sign Up page
+
+2015-07-16 17:48:24,590 - comcast.test.homepage.VerifySignUpFormUsernameErrorMsg - INFO - Successfully entered the invalid user name: abcde
+
+2015-07-16 17:48:25,294 - comcast.test.homepage.VerifySignUpFormUsernameErrorMsg - INFO - The error message 'User name is invalid' is displayed after entering invalid user name 
+
+2015-07-16 17:54:19,977 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - Watchable App is Opened Successfully
+
+2015-07-16 17:54:20,169 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-16 17:54:31,569 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Sign Up Button
+2015-07-16 17:54:36,829 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - Successfully navigate to Sign Up page
+
+2015-07-16 17:55:18,453 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - Successfully entered the invalid email: manoj498@rediffmail.com.com
+
+2015-07-16 17:57:53,437 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - Watchable App is Opened Successfully
+
+2015-07-16 17:57:53,677 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-16 17:58:04,970 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Sign Up Button
+2015-07-16 17:58:10,140 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - Successfully navigate to Sign Up page
+
+2015-07-16 17:58:51,068 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - Successfully entered the invalid email: test310gmail.com
+
+2015-07-16 17:58:51,456 - comcast.test.homepage.VerifySignUpFormEmailErrorMsg - INFO - The error message 'Please enter a valid email address' is displayed after entering invalid email 
+
+2015-07-16 18:03:40,834 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - Watchable App is Opened Successfully
+
+2015-07-16 18:03:41,041 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-16 18:03:52,193 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Sign Up Button
+2015-07-16 18:03:57,361 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - Successfully navigate to Sign Up page
+
+2015-07-16 18:04:36,752 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - Successfully entered the invalid password: test310gmail.com
+
+2015-07-16 18:06:54,163 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - Watchable App is Opened Successfully
+
+2015-07-16 18:06:54,330 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - The App home Page title 'WATCHABLE' is displayed 
+
+2015-07-16 18:07:05,219 - comcast.uiFunctions.GUIFunctions - INFO - Successfully clicked on element: Sign Up Button
+2015-07-16 18:07:10,436 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - Successfully navigate to Sign Up page
+
+2015-07-16 18:07:50,456 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - Successfully entered the invalid password: abc
+
+2015-07-16 18:07:50,880 - comcast.test.homepage.VerifySignUpFormPasswordErrorMsg - INFO - The error message 'Must contain atleast 6 characters' is displayed after entering invalid password 
+
+2016-09-06 15:22:35,416 - comcast.test.homepage.VerifyHomePageSections - INFO - Successfully navigated to Watchable Home page  
+
+2016-09-06 15:23:55,407 - comcast.test.homepage.VerifyHomePageSections - INFO - Successfully navigated to Watchable Home page  
+
+2016-09-06 15:46:26,408 - comcast.test.homepage.VerifyHomePageSections - INFO - The Home page Title displayed is : Watchable | Web’s Best Shows and Networks - Curated Daily
+
+2016-09-06 15:46:26,592 - comcast.test.homepage.VerifyHomePageSections - INFO - Successfully navigated to Watchable Home page  
+
+2016-09-10 17:11:48,894 - comcast.test.homepage.VerifyHomePageSections - INFO - The Home page Title displayed is : Watchable | Web’s Best Shows and Networks - Curated Daily
+
+2016-09-10 17:11:48,992 - comcast.test.homepage.VerifyHomePageSections - INFO - Successfully navigated to Watchable Home page  
+
+2016-09-16 12:28:52,590 - comcast.test.homepage.VerifyHomePageSections_Old - INFO - Successfully navigated to Watchable Home page  
+
+2016-09-16 14:04:29,593 - comcast.test.homepage.VerifyHomePageSections - INFO - Successfully navigated to Watchable Home page  
+
+2016-09-16 14:07:23,252 - comcast.test.homepage.VerifyHomePageSections - INFO - Successfully navigated to Watchable Home page  
+
+2016-09-16 14:53:18,851 - comcast.test.homepage.VerifyHomePageSections - INFO - Successfully navigated to Watchable Home page  
+

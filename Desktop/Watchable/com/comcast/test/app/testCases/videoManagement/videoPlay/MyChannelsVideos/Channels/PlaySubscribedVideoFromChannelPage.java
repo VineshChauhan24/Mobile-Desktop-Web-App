@@ -1,0 +1,215 @@
+package comcast.test.app.testCases.videoManagement.videoPlay.MyChannelsVideos.Channels;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.subscriptionsPage.common.SubscriptionsPageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.subscribeFreePopularChannelFromHome.DS_SubscribeAFreeChannelFromHomePopularChannels;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: PlaySubscribedVideoFromChannelPage Description: This test case is
+ * to play the video by clicking a channel displayed in 'My Channels' screen by
+ * logging into Watchable application with registered user.
+ */
+
+public class PlaySubscribedVideoFromChannelPage extends BaseTest {
+
+	// Manoj: Code Refactoring done
+
+	// DS_SubscribeAFreeChannelFromHomeFeatured subscribeFreeHomeChannel=new
+	// DS_SubscribeAFreeChannelFromHomeFeatured();
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	DS_SubscribeAFreeChannelFromHomePopularChannels subscribeFreeHomeChannel = new DS_SubscribeAFreeChannelFromHomePopularChannels();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	SubscriptionsPageCommonFunctions subscriptionsPageCommonFun = new SubscriptionsPageCommonFunctions();
+
+	@Test
+	public void testPlaySubscribedVideoFromChannelPage() throws Exception {
+
+		try {
+			/*
+			 * This Method is to register new user using Gazeebo application and
+			 * to change a password.
+			 */
+			// subscribeFreeHomeChannel.RegisterAndSubscribeAFreeChannelHomeFeatured();
+
+			subscribeFreeHomeChannel
+					.RegisterAndSubscribeAFreeChannelFromHomePopularChannels();
+
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+			int loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+				Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+						.subscribedChannelDetails();
+				List<VideoDetails> subscribedChannels = videoDetails
+						.get("subscribedChannels");
+				List<VideoDetails> subscribedChannelsVideo = videoDetails
+						.get("subscribedVideo");
+
+				Actions actions = new Actions(driver);
+				int durationInSeconds = 0;
+				int durationInMins = 0;
+
+				// This method is to navigate My Channels Page.
+				subscriptionsPageCommonFun.navigateToMyChannelsPage();
+
+				// Click on Subscribed Channel.
+				Thread.sleep(sleepTime);
+				driver.findElement(
+						By.linkText(subscribedChannels.get(
+								XidioConstant.selectSubscribedChannel)
+								.getTitle())).click();
+
+				// Click on Subscribed Channel > Episode.
+				Thread.sleep(sleepTime);
+				driver.findElement(
+						By.linkText(subscribedChannelsVideo.get(
+								XidioConstant.selectVideo).getTitle())).click();
+
+				Thread.sleep(sleepTime);
+				Thread.sleep(sleepTime);
+				Thread.sleep(sleepTime);
+
+				// Manoj: Checking Selected video is partially played
+				Thread.sleep(sleepTime);
+
+				WebElement playFromPresent = driver.findElement(By
+						.xpath(XpathObjectRepo.VIDEOPLAYFROMBUTTON_XPATH));
+
+				if (playFromPresent.isDisplayed() == true) {
+					// Thread.sleep(sleepTime);
+					// Thread.sleep(sleepTime);
+					driver.findElement(
+							By.xpath(XpathObjectRepo.VIDEOPLAYFROMBUTTON_XPATH))
+							.click();
+				}
+
+				Thread.sleep(sleepTime);
+				Thread.sleep(sleepTime);
+				Thread.sleep(sleepTime);
+
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches(subscribedChannelsVideo.get(XidioConstant.selectVideo).getTitle()));
+
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+subscribedChannelsVideo.get(XidioConstant.selectVideo).getTitle()+"[\\s\\S]*$"));
+
+				assertTrue(driver
+						.findElement(
+								By.xpath(XpathObjectRepo.VIDEODECURRENTVIDEOTITLE_XPATH))
+						.getText()
+						.contains(
+								subscribedChannelsVideo.get(
+										XidioConstant.selectVideo).getTitle()));
+
+				durationInSeconds = subscribedChannelsVideo.get(
+						XidioConstant.selectVideo).getDuration();
+				durationInMins = durationInSeconds / 60;
+
+				int duration = 0;
+				if (durationInMins < 5)
+					duration = durationInMins;
+				else
+					duration = 5;
+
+				for (int i = 0; i < duration; i++) {
+					Thread.sleep(XidioConstant.OneMinSTForVideoPlay);
+					// Manoj: Object changed during Re-Working
+					// WebElement videoPage =
+					// driver.findElement(By.xpath(".//*[@id='content-video']"));
+					WebElement videoPage = driver.findElement(By
+							.xpath(XpathObjectRepo.VIDEODETAILSPAGE_XPATH));
+					actions.moveToElement(videoPage);
+					actions.perform();
+
+					// Manoj: Object changed during Re-Working
+					// String
+					// getVideoPlayState=driver.findElement(By.id("playorpause")).getAttribute("class");
+					// assertEquals("pause",getVideoPlayState);
+
+					// Manoj: Object changed during Re-Working
+					// String
+					// getVideoPlayState=driver.findElement(By.id("playorpause")).getAttribute("class");
+					// assertEquals("pause",getVideoPlayState);
+
+					if (driver
+							.findElement(
+									By.xpath(XpathObjectRepo.VIDEOSTARTPOINTBUTTON_XPATH))
+							.isDisplayed()) {
+						String getVideoPlayState = driver
+								.findElement(
+										By.xpath(XpathObjectRepo.VIDEOSTARTPOINTBUTTON_XPATH))
+								.getText();
+						assertEquals(
+								UILablesRepo.VIDEOPLAYFROMSTARTBUTTON_TEXT,
+								getVideoPlayState);
+					} else {
+						String getVideoPlayState = driver
+								.findElement(
+										By.xpath(XpathObjectRepo.VIDEOPLAYORPAUSEBUTTON_XPATH))
+								.getAttribute("class");
+						assertEquals(UILablesRepo.VIDEOPAUSEBUTTON_TEXT,
+								getVideoPlayState);
+					}
+
+					// Manoj: Object Modified and moved to XpathObjectRepo file
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+subscribedChannelsVideo.get(XidioConstant.selectVideo).getTitle()+"[\\s\\S]*$"));
+
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.VIDEODECURRENTVIDEOTITLE_XPATH))
+							.getText()
+							.contains(
+									subscribedChannelsVideo.get(
+											XidioConstant.selectVideo)
+											.getTitle()));
+
+					// This method asserts Home and My Channels inactive link
+					// when
+					// user clicks on Bundle/Channel/Show.
+					assertionFunction.assertAllInActiveLink();
+
+					// This method is to assert Up Next Header
+					assertionFunction.assertUpNextTitle();
+				}
+
+				// This method asserts Footer Logo and It's Text.
+				assertionFunction.assertFooterLogo();
+
+				// This method asserts Footer Copy Right Links.
+				assertionFunction.assertFooterCopyRight();
+
+				Thread.sleep(sleepTimeForVideoPlay);
+				// This method is used to logout from Gazeebo Application.
+				userLogin.LogOut(driver);
+			}
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

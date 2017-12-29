@@ -1,0 +1,123 @@
+package comcast.test.app.testCases.videoManagement.videoSubscriptionManagement.freeSubscribedChannels.MyChannelsPage;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.subscriptionsPage.common.SubscriptionsPageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.dataServices.subscribeFreeFeaturedChannelFromHome.DS_SubscribeAFreeChannelFromHomeFeatured;
+
+/**
+ * Class Name: EnsureRowsChannelsAndShowsAreDisplayedInSubscriptions
+ * Description: This test case is to ensure if 'CHANNELS', 'CATEGORIES',
+ * 'UNWATCHED' and 'LAST UPDATED' links are displayed on My Channels screen by
+ * logging into Watchable application.
+ */
+
+public class VerifyMyChannelsPageDetails extends BaseTest {
+
+	DS_SubscribeAFreeChannelFromHomeFeatured subscribeFreeHomeChannel = new DS_SubscribeAFreeChannelFromHomeFeatured();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	SubscriptionsPageCommonFunctions subscriptionsPageCommonFun = new SubscriptionsPageCommonFunctions();
+
+	@Test
+	public void testEnsureRowsChannelsAndShowsAreDisplayedInSubscriptions()
+			throws Exception {
+
+		try {
+			/*
+			 * This Method is to register new user using Gazeebo application and
+			 * to change a password.
+			 */
+			subscribeFreeHomeChannel
+					.RegisterAndSubscribeAFreeChannelHomeFeatured();
+			
+			driver.findElement(By.xpath(XpathObjectRepo.WATCHABLE_LOGO))
+			.click();
+
+			// driver.findElement(By.linkText("LOG IN")).click();
+			driver.findElement(By.xpath(XpathObjectRepo.TOPMENULOGIN_XPATH))
+					.click();
+
+			// This Method is used to enter user name and password credentials
+			userLogin.UserLoginCredentials(driver);
+
+			// driver.findElement(By.id("user_login")).click();
+			driver.findElement(By.xpath(XpathObjectRepo.LOGINBUTTON_XPATH))
+					.click();
+			Thread.sleep(sleepTime);
+			int loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+
+				// This method is to navigate My Channels Page.
+				subscriptionsPageCommonFun.navigateToMyChannelsPage();
+
+				// This method asserts Gazeebo Logo.
+				// assertionFunction.assertGazeeboLogo();
+
+				// This method asserts Help link.
+				assertionFunction.assertHelpLink();
+
+				// This method asserts Search Text Box and its value.
+				assertionFunction.assertSearchTextBox();
+
+				// This method is to ensure My Channels is Active page when
+				// Login
+				// into Application.
+				assertionFunction.assertMyChannelsActiveLink();
+
+				// This method asserts ROWS active link.
+				// assertionFunction.assertSubscriptionsROWSActiveLink();
+				// MYCHANNELS_TITLE_LABEL_XPATH
+
+				Thread.sleep(sleepTime);
+
+				// String
+				// getPageHeader=driver.findElement(By.xpath(".//*[@id='content-wrap']/article/header/h1")).getText();
+				String getPageHeader = driver.findElement(
+						By.xpath(XpathObjectRepo.MYCHANNELS_TITLE_LABEL_XPATH))
+						.getText();
+				assertEquals(UILablesRepo.MYCHANNEL_TITLE, getPageHeader);
+
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*CHANNELS[\\s\\S]*$"));
+				assertTrue(driver
+						.findElement(
+								By.xpath(XpathObjectRepo.MYCHANNELS_CHANNEL_LABEL_XPATH))
+						.getText().matches("CHANNELS"));
+
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*CATEGORIES[\\s\\S]*$"));
+				assertTrue(driver
+						.findElement(
+								By.xpath(XpathObjectRepo.MYCHANNELS_CATEGORIES_LABEL_XPATH))
+						.getText().matches("CATEGORIES"));
+
+				// This method asserts Footer Logo and It's Text.
+				assertionFunction.assertFooterLogo();
+
+				// This method asserts Footer Copy Right Links.
+				assertionFunction.assertFooterCopyRight();
+
+				// This method is used to logout from Gazeebo Application.
+				userLogin.LogOut(driver);
+			}
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

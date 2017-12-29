@@ -1,0 +1,182 @@
+package comcast.test.app.testCases.search.searchFunctions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+
+public class searchFun extends BaseTest {
+	
+	
+	
+	/**
+	 * Method Name: clickOnSearchButton Description: This method
+	 * used to click on search icon
+	 * 
+	 */
+	public static void clickOnSearchButton()
+			throws Exception {
+
+		// Click on search icon to make search text box visible
+		driver.findElement(By.xpath(XpathObjectRepo.searchButton_XPATH))
+				.click();
+		log.info("Successfully clicked on Search icon");
+
+		
+
+	}
+
+	/**
+	 * Method Name: enterSearchStringClickOnSearchIcon Description: This method
+	 * used to enter search string and press enter key
+	 * 
+	 * @param searchKey
+	 *            : search Key word
+	 */
+	public static void enterSearchStringPressEnterKey(String searchKey)
+			throws Exception {
+		
+		// Enter Search text
+		driver.findElement(By.xpath(XpathObjectRepo.searchText_XPATH)).clear();
+		driver.findElement(By.xpath(XpathObjectRepo.searchText_XPATH))
+				.sendKeys(searchKey);
+
+		log.info("The search key entered is : " + searchKey);
+
+		/*
+		 * // Click on search icon
+		 * driver.findElement(By.xpath(XpathObjectRepo.searchButton_XPATH))
+		 * .click(); log.info("Successfully clicked on Search icon");
+		 */
+
+		// Press Enter Key
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ENTER).build().perform();
+
+		Thread.sleep(sleepTime);
+		// Verifying user is navigated to search result page
+		AssertionRepoFunctions.assertSearchResultPageTitle();
+
+	}
+
+	/**
+	 * Method Name: clickonBackToHomePageLink Description: This method used to
+	 * click on back to home page link when there is no search result.
+	 * 
+	 * */
+	public static void clickonBackToHomePageLink() throws Exception {
+
+		HomePageCommonFunctions.scrollToVideoResultMsgSection();
+
+		// Click on Back to Home page link
+		driver.findElement(
+				By.xpath(XpathObjectRepo.searchNoResultHomeLink_XPATH)).click();
+		log.info("Successfully clicked on back to home page link");
+
+		Thread.sleep(sleepTime);
+
+	}
+	
+	
+	
+	/**
+	 * Method Name: clickonShowTitleFromShowSection Description: This method used to
+	 * click on first show title from shows section of search result.
+	 * 
+	 * */
+	public static void clickonShowTitleFromShowSection() throws Exception {
+
+		
+		// Click on Shows title
+		driver.findElement(
+				By.xpath(XpathObjectRepo.searchResultFirstShowTitle_XPATH)).click();
+		log.info("Successfully clicked on first show title link");
+
+		Thread.sleep(sleepTime);
+
+	}
+	
+	
+	
+	/**
+	 * Method Name: clickonShowTitleFromVideoSection Description: This method used to
+	 * click on first show title from video section of search result.
+	 * 
+	 * */
+	public static void clickonShowTitleFromVideoSection() throws Exception {
+
+		
+		// Click on Shows title
+		driver.findElement(
+				By.xpath(XpathObjectRepo.searchResultFirstVideoShowTitle_XPATH)).click();
+		log.info("Successfully clicked on first show title link");
+
+		Thread.sleep(sleepTime);
+
+	}
+
+	/**
+	 * Method Name: clickonShowAllLink Description: This method used to click on
+	 * 'SHOW ALL' link from channel section, if it is present in search result.
+	 * 
+	 * */
+	public static void clickonShowAllLink() throws Exception {
+		
+		// Verify 'SHOW ALL' link is present or not
+		int ahowLinkCount = driver.findElements(
+				By.xpath(XpathObjectRepo.searchResultShowAllLink_XPATH)).size();
+
+		if (ahowLinkCount > 0) {
+
+			// Click on 'SHOW ALL' link
+
+			if (driver.findElement(
+					By.xpath(XpathObjectRepo.searchResultShowAllLink_XPATH))
+					.isDisplayed()) {
+
+				driver.findElement(
+						By.xpath(XpathObjectRepo.searchResultShowAllLink_XPATH))
+						.click();
+				log.info("Successfully clicked on SHOW ALL link");
+
+				Thread.sleep(sleepTime);
+			}
+		}
+
+	}
+	
+	
+	/**
+	 * Method Name: clickonShowLessLink Description: This method used to click on
+	 * 'SHOW LESS' link from channel section.
+	 * 
+	 * */
+	public static void clickonShowLessLink() throws Exception {
+		
+		// Verify 'SHOW LESS' link is present or not
+		int ahowLinkCount = driver.findElements(
+				By.xpath(XpathObjectRepo.searchResultShowAllLink_XPATH)).size();
+
+		if (ahowLinkCount > 0) {
+
+			// Click on 'SHOW LESS' link
+
+			if (driver.findElement(
+					By.xpath(XpathObjectRepo.searchResultShowAllLink_XPATH))
+					.isDisplayed()) {
+
+				driver.findElement(
+						By.xpath(XpathObjectRepo.searchResultShowAllLink_XPATH))
+						.click();
+				log.info("Successfully clicked on SHOW LESS link");
+
+				Thread.sleep(sleepTime);
+			}
+		}
+
+	}
+
+}

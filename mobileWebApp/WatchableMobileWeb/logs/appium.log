@@ -1,0 +1,54 @@
+2016-03-22 07:04:20:944 - info: [Appium] Welcome to Appium v1.5.0
+2016-03-22 07:04:20:947 - info: [Appium] Non-default server args:
+2016-03-22 07:04:20:948 - info: [Appium]   log: 'F:\\WK_Mobile_Web\\WatchableMobileWeb/logs/appium.log'
+2016-03-22 07:04:21:372 - info: [Appium] Appium REST http interface listener started on 0.0.0.0:4723
+2016-03-22 07:04:23:693 - info: [HTTP] --> POST /wd/hub/session 
+2016-03-22 07:04:23:859 - info: [MJSONWP] Calling AppiumDriver.createSession() with args: [{"deviceName":"Android","platformName":"Android","browserName":"Chrome"},null,null,null]
+2016-03-22 07:04:23:862 - info: [Appium] Creating new AndroidDriver session
+2016-03-22 07:04:23:862 - info: [Appium] Capabilities:
+2016-03-22 07:04:23:876 - info: [Appium]   deviceName: 'Android'
+2016-03-22 07:04:23:876 - info: [Appium]   platformName: 'Android'
+2016-03-22 07:04:23:877 - info: [Appium]   browserName: 'Chrome'
+2016-03-22 07:04:23:884 - info: [BaseDriver] Session created with session id: c4df83b6-aa92-46ce-a5d5-eb2f1b7cebd3
+2016-03-22 07:04:23:885 - info: [debug] [AndroidDriver] Getting Java version
+2016-03-22 07:04:23:969 - info: [AndroidDriver] Java version is: 1.7.0_67
+2016-03-22 07:04:23:969 - info: [AndroidDriver] We're going to run a Chrome-based session
+2016-03-22 07:04:23:969 - info: [AndroidDriver] Chrome-type package and activity are com.android.chrome and com.google.android.apps.chrome.Main
+2016-03-22 07:04:23:972 - info: [ADB] Checking whether adb is present
+2016-03-22 07:04:23:977 - info: [ADB] Using adb.exe from C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe
+2016-03-22 07:04:23:978 - info: [AndroidDriver] Retrieving device list
+2016-03-22 07:04:23:978 - info: [debug] [ADB] Trying to find a connected android device
+2016-03-22 07:04:23:979 - info: [debug] [ADB] Getting connected devices...
+2016-03-22 07:04:28:102 - info: [debug] [ADB] 1 device(s) connected
+2016-03-22 07:04:28:104 - info: [AndroidDriver] Using device: 4d007fd64c1f4179
+2016-03-22 07:04:28:106 - info: [ADB] Checking whether adb is present
+2016-03-22 07:04:28:109 - info: [ADB] Using adb.exe from C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe
+2016-03-22 07:04:28:110 - info: [debug] [ADB] Setting device id to 4d007fd64c1f4179
+2016-03-22 07:04:28:110 - info: [AndroidDriver] App file was not listed, instead we're going to run com.android.chrome directly on the device
+2016-03-22 07:04:28:110 - info: [debug] [AndroidDriver] Checking whether package is present on the device
+2016-03-22 07:04:28:111 - info: [debug] [ADB] Getting connected devices...
+2016-03-22 07:04:28:169 - info: [debug] [ADB] 1 device(s) connected
+2016-03-22 07:04:28:175 - info: [debug] [ADB] Running C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe with args: ["-P",5037,"-s","4d007fd64c1f4179","shell","pm","list","packages","com.android.chrome"]
+2016-03-22 07:04:29:490 - info: [AndroidDriver] Starting Android session
+2016-03-22 07:04:29:494 - info: [debug] [ADB] Running C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe with args: ["-P",5037,"-s","4d007fd64c1f4179","wait-for-device"]
+2016-03-22 07:04:29:555 - info: [debug] [ADB] Getting connected devices...
+2016-03-22 07:04:29:597 - info: [debug] [ADB] 1 device(s) connected
+2016-03-22 07:04:29:598 - info: [debug] [ADB] Running C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe with args: ["-P",5037,"-s","4d007fd64c1f4179","shell","echo","ping"]
+2016-03-22 07:04:29:656 - info: [debug] [Logcat] Starting logcat capture
+2016-03-22 07:04:29:720 - info: [debug] [AndroidDriver] Pushing settings apk to device...
+2016-03-22 07:04:29:721 - info: [debug] [ADB] Running C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe with args: ["-P",5037,"-s","4d007fd64c1f4179","install","C:\\Users\\manoj.paragen\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\io.appium.settings\\bin\\settings_apk-debug.apk"]
+2016-03-22 07:04:32:331 - info: [debug] [AndroidDriver] Pushing unlock helper app to device...
+2016-03-22 07:04:32:332 - info: [debug] [ADB] Running C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe with args: ["-P",5037,"-s","4d007fd64c1f4179","install","C:\\Users\\manoj.paragen\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-unlock\\bin\\unlock_apk-debug.apk"]
+2016-03-22 07:04:33:820 - info: [ADB] Getting device platform version
+2016-03-22 07:04:33:821 - info: [debug] [ADB] Getting connected devices...
+2016-03-22 07:04:33:878 - info: [debug] [ADB] 1 device(s) connected
+2016-03-22 07:04:33:879 - info: [debug] [ADB] Running C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe with args: ["-P",5037,"-s","4d007fd64c1f4179","shell","getprop","ro.build.version.release"]
+2016-03-22 07:04:33:945 - info: [debug] [AndroidBootstrap] Watching for bootstrap disconnect
+2016-03-22 07:04:33:947 - info: [debug] [ADB] Forwarding system: 4724 to device: 4724
+2016-03-22 07:04:33:947 - info: [debug] [ADB] Running C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe with args: ["-P",5037,"-s","4d007fd64c1f4179","forward","tcp:4724","tcp:4724"]
+2016-03-22 07:04:33:950 - info: [debug] [UiAutomator] Starting UiAutomator
+2016-03-22 07:04:33:950 - info: [debug] [UiAutomator] Moving to state 'starting'
+2016-03-22 07:04:33:951 - info: [debug] [UiAutomator] Parsing uiautomator jar
+2016-03-22 07:04:33:951 - info: [debug] [UiAutomator] Found jar name: 'AppiumBootstrap.jar'
+2016-03-22 07:04:33:951 - info: [debug] [ADB] Running C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe with args: ["-P",5037,"-s","4d007fd64c1f4179","push","C:\\Users\\manoj.paragen\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-bootstrap\\bootstrap\\bin\\AppiumBootstrap.jar","/data/local/tmp/"]
+2016-03-22 10:04:24:106 - info: [debug] [ADB] Attempting to kill all uiautomator processes

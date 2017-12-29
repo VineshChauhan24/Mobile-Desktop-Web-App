@@ -1,0 +1,159 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.PopularChannelsCategoryTestCases.ChannelTestCases.RowsCategory;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyDuplicateShowsWhenDoubleClickOnShowsLink Description: This
+ * test case validates if duplicate Shows are displayed after double clicking on
+ * SHOWS link in channel page for the channel present under Popular Channels
+ * section in Home page by logging registered user into Gazeebo application.
+ * **/
+
+public class VerifyDuplicateShowsWhenDoubleClickOnShowsLink extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyDuplicateShowsWhenDoubleClickOnShowsLink()
+			throws Exception {
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.allPopularChannelsList();
+		List<VideoDetails> channelList = videoDetails
+				.get("popularChannelsList");
+
+		try {
+			/*
+			 * This Method is to register new user using Gazeebo application and
+			 * to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method asserts Popular Channels title.
+			assertionFunction.assertPopularChannelsTitle();
+
+			if (channelList != null) {
+				Actions action = new Actions(driver);
+				action.sendKeys(Keys.DOWN).perform();
+				for (int i = 0; i < 7; i++) {
+					driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+					Thread.sleep(1000);
+				}
+
+				// This Method verifies Channel present in Popular Channel
+				// Section and selects a Channel.
+				homePageCommonFun.selectPopularChannel(channelList.get(
+						XidioConstant.selectPopularChannel).getTitle());
+
+				// This Method is to navigate Shows detail page.
+				homePageCommonFun.clickOnShowsLink();
+
+				Thread.sleep(sleepTime);
+				action.doubleClick(driver.findElement(By.linkText("SHOWS")));
+				action.perform();
+
+				int divSectionNo = 1 + Integer.parseInt(channelList.get(0)
+						.getNumOfShows());
+
+				Thread.sleep(sleepTime);
+				boolean isDuplicate = driver
+						.findElements(
+								By.xpath(".//*[@id='content-wrap']/article/section/article/div/div/div/div["
+										+ divSectionNo + "]/div/section"))
+						.size() > 0;
+				if (isDuplicate == true) {
+					String getFirstSectionShowTitle = driver
+							.findElement(
+									By.xpath(".//*[@id='content-wrap']/article/section/article/div/div/div/div[1]/div/section/ul/li/article/h1/a"))
+							.getText();
+					String getSectondSectionShowTitle = driver
+							.findElement(
+									By.xpath(".//*[@id='content-wrap']/article/section/article/div/div/div/div["
+											+ divSectionNo
+											+ "]/div/section/ul/li/article/h1/a"))
+							.getText();
+
+					if (getFirstSectionShowTitle
+							.equalsIgnoreCase(getSectondSectionShowTitle)) {
+						assertFalse(driver
+								.findElement(By.cssSelector("BODY"))
+								.getText()
+								.matches(
+										"^[\\s\\S]*"
+												+ getSectondSectionShowTitle
+												+ "[\\s\\S]*$"));
+					} else
+						assertTrue(driver
+								.findElement(By.cssSelector("BODY"))
+								.getText()
+								.matches(
+										"^[\\s\\S]*" + getFirstSectionShowTitle
+												+ "[\\s\\S]*$"));
+				}
+			} else {
+				boolean isPresent;
+				isPresent = driver
+						.findElement(
+								By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul"))
+						.findElements(
+								By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul/li[1]/article/h1/a"))
+						.size() > 0;
+				if (isPresent == true) {
+					String channelName = driver
+							.findElement(
+									By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul"))
+							.findElement(
+									By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul/li[1]/article/h1/a"))
+							.getText();
+					assertFalse(driver.findElement(By.cssSelector("BODY"))
+							.getText()
+							.matches("^[\\s\\S]*" + channelName + "[\\s\\S]*$"));
+				}
+			}
+
+			// This method asserts Gazeebo Logo.
+			assertionFunction.assertWatchableLogo();
+
+			// This method asserts Footer Logo and It's Text.
+			assertionFunction.assertFooterLogo();
+
+			// This method asserts Footer Copy Right Links.
+			assertionFunction.assertFooterCopyRight();
+
+			// This method is used to logout from Gazeebo Application.
+			userLogin.LogOut(driver);
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

@@ -1,0 +1,72 @@
+package comcast.test.app.testCases.userManagement.profileManagement.RegisteredUserTestCasesForChangeActivationCode.ChangeActivationCodeWithValidAC;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.profileManagement.common.ProfileManagementScenarioBasedFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+
+/**  
+ * Class Name: VerifyUserActivationCodeUpdatesSuccessfully
+ * Description: This test case validates activation code is updated successfully
+ * by logging registered user into Gazeebo application.
+ * **/
+
+public class VerifyUserActivationCodeUpdatesSuccessfully extends BaseTest{
+	
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass=new RegisterToXidioApplicationAndChangeAPassword();
+	ProfileManagementScenarioBasedFunctions profManagementScenario=new ProfileManagementScenarioBasedFunctions();
+	AssertionRepoFunctions assertionFunction=new AssertionRepoFunctions();
+	UserLoginFunctions userLogin=new UserLoginFunctions();
+	
+	@Test
+	public void testVerifyUserActivationCodeUpdatesSuccessfully() throws Exception {
+		
+		try{
+			/* This Method is to register new user using Gazeebo application 
+			 * and to change a password. 
+			 */	
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+			
+			//This method is to navigate Profile Management Account details page.
+			Thread.sleep(sleepTime);		
+			userLogin.navigateToAccountDetailsPage(driver);
+		    
+		    driver.findElement(By.linkText("Change activation code")).click();
+		    
+		    //This method is used to update activation code
+		    profManagementScenario.UpdateActivationCode(driver,proUtil.getProperty("UPD_ACTIVATION_CODE"));
+		    	    
+		    //Click on Activate Button.
+		    driver.findElement(By.name("commit")).click();
+		  
+			//This method asserts Home and My Channels inactive link when user clicks on Bundle/Channel/Show.
+			assertionFunction.assertAllInActiveLink();
+		   	 	    	   
+			//This method asserts Gazeebo Logo.
+			assertionFunction.assertWatchableLogo();
+			
+			//This method is to assert Join Gazeebo Header in Sign Up page.
+			assertionFunction.assertJoinGazeeboBanner();
+			
+		    /*.........Ensuring the updated Activation code is pending............*/
+			
+		    //This method asserts Footer Copy Right Links.
+		    assertionFunction.assertFooterCopyRight();
+		    
+			//This method is used to logout from application.
+			userLogin.LogOut(driver);
+		    
+		    //This method is to ensure Login page is displayed when user Sign Out from Application.
+		    assertionFunction.assertLoginPageDetails();
+		}
+		catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	
+	}
+}

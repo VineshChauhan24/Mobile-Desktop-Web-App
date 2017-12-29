@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="Selenium_Web_Driver">
+
+<target name="clearLog">
+<tstamp>
+<format property="build.date" pattern="ddMMyyyy" />
+<format property="backup.deletedate" pattern="MM/dd/yyyy HH:mm aa" offset="-30"/>
+<format property="build.time" pattern="HHmmss" />
+</tstamp>
+<property name="current.build.artifacts" value="${build.date}" />
+
+<echo message="Deleting log directories created on or before ${backup.deletedate}" />       
+    <delete includeemptydirs="true"> 
+        <fileset dir="Log_History"  includes="**/*">               
+            <date datetime="${backup.deletedate}" when="before" checkdirs="true" />
+        </fileset>
+    </delete>
+
+<move todir="Log_History/${build.date}/${build.time}">
+    <fileset dir="Logs">
+	<include name="**/*"/>
+	</fileset>
+  </move>
+</target>
+
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="WebDriver.classpath">
+    	<pathelement location="bin"/>
+       <pathelement location="../Automation/lib/selenium-server-standalone-2.43.1.jar"/>    
+	   <pathelement location="../Automation/lib/log4j-1.2.17.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="com">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac includeantruntime="false" debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="com"/>
+            <classpath refid="WebDriver.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+	
+		
+	<target name="runSeleniumTestCasesForRegressionQA" depends="clean,build,Firefox_Browser,junitreport"> 
+	     </target>
+		  	<target name="Firefox_Browser" >
+		        <mkdir dir="${junit.output.dir}"/>
+		        <junit fork="yes" printsummary="withOutAndErr">
+		            <formatter type="xml"/>
+		            <test name="comcast.test.testSuite.runSeleniumTestCasesForRegressionQA" todir="${junit.output.dir}"/>
+		            <classpath refid="WebDriver.classpath"/>
+		        </junit>
+			</target>
+						
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+   
+</project>

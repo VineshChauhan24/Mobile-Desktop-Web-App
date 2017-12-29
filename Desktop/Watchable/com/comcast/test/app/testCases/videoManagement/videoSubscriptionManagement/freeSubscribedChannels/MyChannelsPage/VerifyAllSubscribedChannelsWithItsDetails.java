@@ -1,0 +1,265 @@
+package comcast.test.app.testCases.videoManagement.videoSubscriptionManagement.freeSubscribedChannels.MyChannelsPage;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.subscriptionsPage.common.SubscriptionsPageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.JsonParser;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.configServices.utils.UrlFactoryUtil;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.subscribeFreeFeaturedChannelFromHome.DS_SubscribeAFreeChannelFromHomeFeatured;
+import comcast.test.config.dataServices.subscribeFreePopularChannelFromHome.DS_SubscribeAFreeChannelFromHomePopularChannels;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyAllSubscribedChannelsWithItsDetails Description: This test
+ * case is to verify whether all subscribed channels are displayed under My
+ * Channels by logging into Watchable Application user.
+ * **/
+
+public class VerifyAllSubscribedChannelsWithItsDetails extends BaseTest {
+
+	DS_SubscribeAFreeChannelFromHomeFeatured subscribeFreeHomeChannel = new DS_SubscribeAFreeChannelFromHomeFeatured();
+
+	// DS_SubscribeAFreeChannelFromHomePopularChannels subscribeFreeHomeChannel
+	// =new DS_SubscribeAFreeChannelFromHomePopularChannels();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	SubscriptionsPageCommonFunctions subscriptionsPageCommonFun = new SubscriptionsPageCommonFunctions();
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	int loginError;
+	WebElement playFromPresent;
+
+	@Test
+	public void testVerifyAllSubscribedChannelsWithItsDetails()
+			throws Exception {
+		Map<String, List<VideoDetails>> featuredChannelDetails = RestAPIServices
+				.featuredChannelsList();
+		List<VideoDetails> channelList = featuredChannelDetails
+				.get("featuredChannelsList");
+		String sessionToken = RestAPIServices.executeGenreAuthentication();
+
+		try {
+			/*
+			 * This Method is to register new user using Watchable application
+			 * and to change a password.
+			 */
+			subscribeFreeHomeChannel
+					.RegisterAndSubscribeAFreeChannelHomeFeatured();
+
+			// This list contains all the subscribed channels.
+			Thread.sleep(sleepTime);
+			Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+					.SubscriptionsAPI();
+			List<VideoDetails> subscribedChannels = videoDetails
+					.get("allSubscribedChannelsList");
+
+			if (!driver
+					.findElement(
+							By.xpath(XpathObjectRepo.TOP_MENU_HOME_BUTTON_XPATH))
+					.getAttribute("class").contains("active")) {
+				driver.findElement(
+						By.xpath(XpathObjectRepo.TOP_MENU_HOME_BUTTON_XPATH))
+						.click();
+
+			}
+
+			if (!driver
+					.findElement(By.xpath(XpathObjectRepo.TOPMENULOGIN_XPATH))
+					.getAttribute("class").contains("active")) {
+				driver.findElement(By.xpath(XpathObjectRepo.TOPMENULOGIN_XPATH))
+						.click();
+
+			}
+
+			// This Method is used to enter user name and password credentials
+			userLogin.UserLoginCredentials(driver);
+
+			driver.findElement(By.xpath(XpathObjectRepo.LOGINBUTTON_XPATH))
+					.click();
+			Thread.sleep(sleepTime);
+			loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+
+				// This method is to navigate My Channels Page.
+				subscriptionsPageCommonFun.navigateToMyChannelsPage();
+				// subscriptionsPageCommonFun.subscribeChannel(channelName);
+				if (subscribedChannels != null) {
+					int loopIndexMax = 0;
+					if (subscribedChannels.size() < 4) {
+						loopIndexMax = subscribedChannels.size();
+					} else {
+						loopIndexMax = 4;
+					}
+
+					for (int index = 0; index < loopIndexMax; index++) {
+						VideoDetails subscribedChannelDetails = subscribedChannels
+								.get(index);
+						Thread.sleep(sleepTime);
+						int ele1 = driver
+								.findElements(
+										By.linkText(subscribedChannelDetails
+												.getTitle())).size();
+						if (ele1 == 1) {
+							driver.findElement(
+									By.linkText(subscribedChannelDetails
+											.getTitle())).click();
+							assertTrue(driver
+									.findElement(
+											By.xpath(XpathObjectRepo.CHANNELDETAILCHANNELTITLE_XPATH))
+									.getText()
+									.equalsIgnoreCase(
+											subscribedChannelDetails.getTitle()));
+
+							// Verify Shows and click on it.
+							String ChannelsShowsResponse = RestAPIServices
+									.getSessionTokenResponse(
+											UrlFactoryUtil.getInstance()
+													.getSubShowURL(
+															subscribedChannelDetails
+																	.getId()),
+											sessionToken);
+							List<VideoDetails> featuredShowsList = JsonParser
+									.parseShowsResponse(ChannelsShowsResponse);
+
+							if (featuredShowsList != null) {
+								int showloopIndexMax = 0;
+								if (featuredShowsList.size() < 2) {
+									showloopIndexMax = featuredShowsList.size();
+								} else {
+									showloopIndexMax = 2;
+								}
+								for (int show = 0; show < showloopIndexMax; show++) {
+									VideoDetails showList = featuredShowsList
+											.get(show);
+
+									int ele = driver.findElements(
+											By.linkText(showList.getTitle()))
+											.size();
+									if (ele == 1) {
+										driver.findElement(
+												By.linkText(showList.getTitle()))
+												.click();
+										Thread.sleep(sleepTime);
+										assertTrue(driver
+												.findElement(
+														By.xpath(XpathObjectRepo.SHOWDETAILSHOWTITLE_XPATH))
+												.getText()
+												.equalsIgnoreCase(
+														showList.getTitle()));
+
+										// Get Video Details and verify all
+										// response.
+										String videoResponse = RestAPIServices
+												.getSessionTokenResponse(
+														UrlFactoryUtil
+																.getInstance()
+																.getVideoDetailsURL(
+																		showList.getId(),
+																		10),
+														sessionToken);
+										List<VideoDetails> channelShowsVideoList = JsonParser
+												.parseChannelShowsVideosResponse(videoResponse);
+
+										if (channelShowsVideoList != null) {
+											int videoloopIndexMax = 0;
+											if (channelShowsVideoList.size() < 2) {
+												videoloopIndexMax = channelShowsVideoList
+														.size();
+											} else {
+												videoloopIndexMax = 2;
+											}
+											for (int video = 0; video < videoloopIndexMax; video++) {
+
+												int position = video + 1;
+												VideoDetails videoList = channelShowsVideoList
+														.get(video);
+												driver.findElement(
+														By.linkText(videoList
+																.getTitle()))
+														.click();
+												// Manoj: Checking Selected
+												// video is
+												// partially played
+												Thread.sleep(sleepTime);
+
+												try {
+													playFromPresent = driver
+															.findElement(By
+																	.xpath(XpathObjectRepo.VIDEOPLAYFROMBUTTON_XPATH));
+												} catch (NoSuchElementException noelement) {
+													log.error("Channel not present");
+
+												}
+
+												if (playFromPresent != null) {
+													if (playFromPresent
+															.isDisplayed() == true) {
+														Thread.sleep(sleepTime);
+														Thread.sleep(sleepTime);
+														driver.findElement(
+																By.xpath(XpathObjectRepo.VIDEOPLAYFROMBUTTON_XPATH))
+																.click();
+														Thread.sleep(XidioConstant.OneMinSTForVideoPlay);
+													}
+
+													Thread.sleep(sleepTime);
+													Thread.sleep(sleepTime);
+													Thread.sleep(sleepTime);
+													assertTrue(driver
+															.findElement(
+																	By.xpath(XpathObjectRepo.VIDEODETAILSPAGETITLE_XPATH))
+															.getText()
+															.equalsIgnoreCase(
+																	videoList
+																			.getTitle()));
+												}
+												driver.navigate().back();
+											}
+
+										}
+										driver.navigate().back();
+										Thread.sleep(sleepTime);
+
+									}
+									break;
+								}
+							}
+						}
+					}
+				}
+
+				// This method unsubscribe a subscribed channels.
+				subscriptionsPageCommonFun.unSubscribeASubscribedChannels();
+
+				// This method is used to logout from Watchable Application.
+				userLogin.LogOut(driver);
+			}
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			// assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+
+			captureScreenshot();
+			collector.addError(t);
+
+		}
+	}
+}

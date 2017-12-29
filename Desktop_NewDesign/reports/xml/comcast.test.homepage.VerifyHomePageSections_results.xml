@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="VerifyHomePageSections"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="11.649">
+  <properties />
+  
+  
+            <testcase name="Step01_NavigeteToURL" time="11.649" classname="comcast.test.homepage.VerifyHomePageSections" />
+      
+</testsuite>

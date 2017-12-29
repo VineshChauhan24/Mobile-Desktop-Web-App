@@ -1,0 +1,127 @@
+package comcast.test.app.testCases.playerVideoPage;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.app.testCases.playerVideoPage.playerPageFunctions.PlayerPageFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyNavigatingToVideoPageFromMyWatchlistPage Description: This
+ * test case verifies all header item after login Author: Manoj
+ * **/
+
+public class VerifyNavigatingToVideoPageFromMyWatchlistPage extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyNavigatingToVideoPageFromMyWatchlistPage()
+			throws Exception {
+
+		try {
+
+			log.info("Script: VerifyNavigatingToVideoPageFromMyWatchlistPage");
+			log.info("******************************************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Login to Watchable application
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.EMAIL,
+					UILablesRepo.PASSWORD);
+
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// Verifying My Watchlist menu is present in header
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"My Watchlist menu is not present in header",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.myWatchlistMenu_XPATH)));
+				log.info("My Watchlist menu is present in header");
+
+				// Click on My Watch list Menu
+
+				PlayerPageFun.clickOnMyWatchlistMenu();
+
+				// Verify User successfully Navigated to MY Watchlist page
+				AssertionRepoFunctions.assertMyWatchlistPageTitle();
+
+				// Verify Video present in my watch list
+
+				int videoCount = driver.findElements(
+						By.xpath(XpathObjectRepo.myWatchlistVideoIcon_XPATH))
+						.size();
+				if (videoCount > 0) {
+
+					// Click on first video from my watch listsection
+					PlayerPageFun.clickOnMyWatchlistVideoTitle();
+
+					int nowPlaying = driver.findElements(
+							By.xpath(XpathObjectRepo.nowPlayingTitle_XPATH))
+							.size();
+
+					if (nowPlaying > 0) {
+
+						if (driver
+								.findElement(
+										By.xpath(XpathObjectRepo.nowPlayingTitle_XPATH))
+								.isDisplayed()) {
+
+							// Checking whether selected video is partially
+							// played
+							WebElement playFromStartPresent = driver
+									.findElement(By
+											.id(XpathObjectRepo.playFromStartButton_ID));
+
+							boolean btnPresent = playFromStartPresent
+									.isDisplayed();
+
+							log.info(btnPresent);
+							if (btnPresent == true) {
+
+								log.info("play from start present");
+
+								driver.findElement(
+										By.id(XpathObjectRepo.playFromStartButton_ID))
+										.click();
+								Thread.sleep(sleepTime);
+								Thread.sleep(sleepTime);
+							}
+						}
+					}
+					// Verify User is navigated to video page
+					AssertionRepoFunctions.assertVideoPageTitle();
+
+					// Verify video player is displayed in video page
+					AssertionRepoFunctions.assertVideoPlayer();
+
+				} else {
+					log.error("My Watchlist section does not contain videos");
+					log.info("");
+				}
+
+			}
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

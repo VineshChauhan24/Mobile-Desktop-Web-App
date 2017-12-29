@@ -1,0 +1,91 @@
+package comcast.test.app.testCases.userManagement.userRegistration;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.userManagement.userRegistration.common.UserRegistrationFunction;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: RegisterToWatchableUsingValidCredentials Description: This test
+ * case validates user registration functionality in the Watchable application.
+ * **/
+
+public class RegisterToWatchableUsingValidCredentials extends BaseTest {
+
+	UserRegistrationFunction userRegFun = new UserRegistrationFunction();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testRegisterToWatchableUsingValidCredentials() throws Exception {
+
+		driver.get(proUtil.getProperty("APPURL"));
+		try {
+			Thread.sleep(sleepTime);
+			assertTrue(driver
+					.findElement(By.xpath(XpathObjectRepo.TOPMENULOGIN_XPATH))
+					.getText().equalsIgnoreCase(UILablesRepo.TOPMENU_LOGIN));
+
+			driver.findElement(By.xpath(XpathObjectRepo.TOPMENUSIGNUP_XPATH))
+					.click();
+
+			// This method is ensure Sign Up is Active page.
+			assertionFunction.assertSignUpActiveLink();
+
+			// This method is to assert Join Watchab;e Header in Sign Up page.
+			// assertionFunction.assertJoinWatchableBanner();
+
+			// This method asserts Footer Copy Right Links.
+			assertionFunction.assertFooterCopyRight();
+
+			// This method asserts Footer Logo and It's Text.
+			assertionFunction.assertFooterLogo();
+
+			// This method is used to register new user into Watchable
+			// Application
+			userRegFun.RegistrationDetails(driver, proUtil.getProperty("ZIP"),
+					proUtil.getProperty("REG_PASSWORD"),
+					proUtil.getProperty("REG_PASSWORD"));
+
+			// Select terms and condition check box.
+			userRegFun.termsAndConfitionChkBox();
+
+			driver.findElement(By.xpath(XpathObjectRepo.LOGINBUTTON_XPATH))
+					.click();
+
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method asserts Gazeebo Logo.
+			assertionFunction.assertWatchableLogo();
+
+			// This method is to assert Gazeebo Top Middle Menu and to ensure
+			// its collapsed.
+			assertionFunction.assertGazeeboTopMiddleMenu();
+
+			// This method asserts footer links.
+			assertionFunction.assertFooterCopyRight();
+
+			// This method asserts Search Text Box and its value.
+			assertionFunction.assertSearchTextBox();
+
+			// This method is used to logout from application.
+			userLogin.LogOut(driver);
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

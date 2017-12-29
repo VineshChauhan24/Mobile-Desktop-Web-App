@@ -1,0 +1,84 @@
+package comcast.test.app.testCases.playLists;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.app.testCases.playLists.playListsFunctions.PlayListsFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyUserNavigatingToHomePageLogoutFromAllPlayListsPage
+ * Description: This test case verifies user is navigating back to home page if
+ * user logout from All Play Lists page. Author: Manoj
+ * **/
+
+public class VerifyUserNavigatingToHomePageLogoutFromAllPlayListsPage extends
+		BaseTest {
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyUserNavigatingToHomePageLogoutFromAllPlayListsPage()
+			throws Exception {
+
+		try {
+
+			log.info("Script: VerifyUserNavigatingToHomePageLogoutFromAllPlayListsPage");
+			log.info("***************************************************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			Thread.sleep(sleepTime);
+
+			// Login to Watchable application
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.EMAIL,
+					UILablesRepo.PASSWORD);
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// Verify Play List menu is present
+				assertTrue(
+						"Play List menu is not present",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.playLists_XPATH)));
+				log.info("Play List menu is present");
+
+				// Click on Playlists menu
+				PlayListsFun.clickOnPlaylistsMenu();
+
+				// Verify user navigated to All Play Lists page
+				AssertionRepoFunctions.assertAllPlayListsPageTitle();
+
+				// Logout from Watchable Application.
+				LoginFun.logOut(driver);
+
+				// Verify user is navigate back to Home Page after logout from
+				// My Shows Page
+				AssertionRepoFunctions.assertWatchableTitle();
+				log.info("Successfully navigate back to Home Page after logout from All Play Lists Page");
+
+				log.info("");
+			}
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+
+}

@@ -1,0 +1,143 @@
+#:Object Repository Properties.
+#------------------------------
+
+#Home page Header links
+UPNEXT=Watching
+FEATURED=Featured
+POPULARSHOWS=Popular Shows
+POPULARCHANNELS=Popular Channels
+
+#/*Header Links*/
+SHOWSLINK=SHOWS
+EPISODESLINK=EPISODES
+UNWATCHEDLINK=UNWATCHED
+CHANNELSLINK=CHANNELS
+CATEGORIESLINK=CATEGORIES
+LASTUPDATEDLINK=LAST UPDATED
+MYCHANNELSLINK=MY CHANNELS
+HOME_LINK = Home
+HELP_LINK = Help
+LOGOUT_TEXT = Log Out
+
+#/*Main Sections xpaths*/
+FEATURED_SECTION=.//*[@id='featured']/div/section/div/div/ul[1]
+FEATURED_SECTION_NEXTLINK=//*[@id='featured']/div/section/a[2]
+
+POPULAR_CHANNELS_SECTION=//*[@id='popular_channels']/div/section/div/div/ul
+POPULAR_SECTION_NEXTLINK=//*[@id='popular_channels']/div/section/a[2]
+
+POPULAR_SHOWS_SECTION=.//*[@id='featured']/div/section
+
+#/*Genres Category Names*/
+ANIMATION=Animation
+ART=Art
+COMEDY=Funny
+EDUCATION=Education
+FASHIONANDSTYLE=Fashion & Style
+FILM=Entertainment
+MUSIC=Music
+NEWSANDPOLITICS=News
+NONPROFIT=Non Profit
+SCIANDTECHNOLOGY=Science and Technology
+SPORTS=Sports
+TRAVELSANDEVENTS=Travel & Events
+
+# ======================== Common ====================#
+popularListPages_XPATH = //div[@class='populars']/descendant::ul
+popularChnlShwList_XPATH = //div[@class='populars']/descendant::ul[1]/li[contains(@class,'cell-channel')]
+popularNextImg_XPATH = //div[@class='populars']/descendant::a[@class='next']
+
+homeNavMenu_XPATH = //div[@id='nav-menu']/descendant::a[@class='home-bttn']
+userNameToolMenu_XPATH = //div[@id='tool-menu']/descendant::div[@class='js-user-name']
+userNameAccountNavMenu_XPATH = //div[@id='tool-menu']/descendant::a[@class='user-nav'][1]
+myChannelsNavMenu_XPATH = //div[@id='nav-menu']/descendant::a[contains(@class,'mychannels')]
+#======= Home Page ===================#
+applicationLogo_ID=logo
+downArrow_ID = dwn
+article_XPATH = //article[contains(@class,'content')]
+appFooterLogoImg_XPATH = //div[@id='footerlogo']/a/img
+appFooterCopyRtsDetails_ID = footercopyright
+loginMenu_XPATH = //div[@id='access-menu']/descendant::a[@class='login-bttn']
+featuredPanel_ID = featured
+featuredHeaderLabel_XPATH = //div[@id='featured']/descendant::header/h1
+featuredChannelContainer_XPATH = //div[@id='featured']/descendant::li[contains(@class,'cell-channel')]
+featuredShowContainer_XPATH=//div[@id='featured']/descendant::li[contains(@class,'cell-show')]
+#below xpaths are always used with the featuredChannelConatiner Xpath 
+chnlShwLink_XPATH = /descendant::h1/a
+featuredChannelShowCount_XPATH = /descendant::div[@class='subtitle']
+featuredEpisodeContainer_XPATH=//div[@id='featured']/descendant::li[contains(@class,'cell-episode')]
+youAreWatchingList_XPATH = //div[@id='upNext']/descendant::section[@class='view-row']
+youAreWatchingEpisodeContainer_XPATH = //div[@id='upNext']/descendant::li[contains(@class,'cell-episode')]
+youAreWatchingHeaderLabel_XPATH = //div[@id='upNext']/descendant::h1[1]
+youAreWatchingPaginationBtn_XPATH = //div[@id='upNext']/descendant::a[@class='next']/span
+homeContentList_XPATH = //div[@id='content-wrap']/descendant::section[@class='content-list']
+youAreWatchingContainer_XPATH = //div[@id='upNext']/descendant::h1
+youAreWatchingEpisodeList_XPATH = //div[@id='upNext']/descendant::li[contains(@class,'episode')]/descendant::h1
+homeFeaturedContainerLabel_XPATH = //div[@id='featured']/descendant::h1[1]
+homeSearchQueryId_XPATH = //input[@id='search-query']
+homeSearchButton_XPATH = //input[@id='go-search']
+homeSearchBoxMenu_XPATH = //div[contains(@id,'menu')]/div[contains(@class,'search')]
+homeYRWatchingEpisodeLabel_XPATH = //div[@id='upNext']/descendant::li[1]/descendant::h1
+homeGenresChnnlHeaderLabel_XPATH = //div[@class='genre-header']/descendant::a[contains(@class,'icn-tile')]
+homePopularChnnlTitleLabel_XPATH = //div[@id='popular_channels']/descendant::li[contains(@class,'cell-channel')]
+
+#====================== LogIn Page ================================= #
+loginForm_ID = login
+userNameTxtBox_ID = login_username
+passwordTxtBox_ID = login_psd
+loginBtn_ID = user_login
+EMAILTEXT=Email
+PASSWORDTEXT=Password
+
+
+# =========================== Channel/Show Page ============================== #
+channelMetaData_XPATH = //div[@class='content-metadata']
+chnlShwDetails_XPATH = //div[@class='content-metadata']/descendant::li
+chnlShwLabel_XPATH = //div[@id='content-wrap']/descendant::h1[contains(@class,'label')]
+chnlShwTitleLable_XPATH = //div[@id='content-wrap']/descendant::h1[contains(@class,'title')]
+chnlShwPublisherName_XPATH = //div[@id='content-wrap']/descendant::div[contains(@class,'publisher')]/a
+shwEpisodeList_ID = seq-row-list
+episodeList_XPATH = //div[@id='seq-row-list']/descendant::li[contains(@class,'cell-episode')]
+showList_XPATH = //div[@id='seq-row-list']/descendant::li[contains(@class,'cell-show')]
+showEpisodeList_XPATH = //div[@id='seq-row-list']/descendant::li[1]/descendant::h1
+chnlChannelTitlelabel_XPATH = //div[@class='content-main']/descendant::h1[@class='content-title']
+chnlFollowNowImage_XPATH = //div[@id='content-wrap']/descendant::input[contains(@src,'_subscribe')]
+chnlUnfollowImage_XPATH = //div[@id='content-wrap']/descendant::input[contains(@src,'_unsubscribe')]
+
+#=============================== Footer ======================================== #
+footerVideoCatContainer_XPATH = //div[@id='footerCatNav']/descendant::li[contains(@class,'footerlist')]
+# Always used with the footerVideoCatContainer_XPATH
+footerVideoCatLink_XPATH = /descendant::a
+
+
+#============================ Category Page ===================================#
+categoryLable = //div[@id='content-wrap']/descendant::section[contains(@class,'fixed')]/descendant::h1
+categoryTitle = //div[@id='content-wrap']/descendant::section[contains(@class,'fixed')]/descendant::h2
+
+
+#============================ Video Details Page ===================================#
+
+videoMetaDataTitleLabel_XPATH = //div[@class='video-metadata']/descendant::h3
+videoContentDetailsLabel_XPATH = //div[@id='content-wrap']
+videoPlayStateBtn_ID = playorpause
+videoPlayStatePauseBtn_ID = pause
+videoYouAreWatchingNowPlayingDiv_XPATH = //div[@id='nowplaying']
+videoYouAreWatchingStartPointBtn_XPATH = //div[@id='startpoint']
+videoYouAreWatchingHeaderTitle_XPATH = //div[@id='upNext']/descendant::header
+
+#============================ Search page ===================================#
+
+searchEmptyMessage_XPATH = //div[@id='content-wrap']/descendant::div[@class='empty-data empty-msg']
+
+#============================ My Channels ===================================#
+
+myChnlChnlTitleLabel_XPATH = //div[@id='seq-row-list']/descendant::li[contains(@class,'cell-channel')]
+myChnlEmptyDataMessage_XPATH = //div[@id='seq-row-list']/descendant::div[@class='empty-data empty-msg']
+
+#/*RESET PASSWORD CONFIRMATION MESSAGES*/
+
+RESETPASSMISMATCHWARNINGXPATH=//div[@id='registration-tabs']/descendant::label[contains(@class,'error')]
+
+CURRENTPASSWDVERIFICATIONMSG_XPATH=//div[@id='content-wrap']/descendant::label
+
+

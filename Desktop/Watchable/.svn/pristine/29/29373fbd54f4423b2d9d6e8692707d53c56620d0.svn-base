@@ -1,0 +1,308 @@
+package comcast.test.app.testCases.playLists.playListsFunctions;
+
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.config.configServices.utils.BaseTest;
+
+public class PlayListsFun extends BaseTest {
+
+	/**
+	 * Method Name: clickOnPlaylistsMenu Description: This method used click On
+	 * PLAYLISTS from header
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnPlaylistsMenu() throws Exception {
+
+		// click On 'PLAYLISTS' menu
+
+		String playListTitle = driver.findElement(
+				By.xpath(XpathObjectRepo.playLists_XPATH)).getText();
+
+		driver.findElement(By.xpath(XpathObjectRepo.playLists_XPATH))
+				.click();
+
+		log.info("Successfully clicked on title '" + playListTitle
+				+ "' from Header menu");
+		Thread.sleep(sleepTime);
+	}
+	
+	
+	
+	
+	/**
+	 * Method Name: clickOnWatchLinkFromPlayList Description: This method used to
+	 * click on watch link from first play list from all play lists page.
+	 * 
+	 * */
+	public static void clickOnWatchLinkFromPlayList() throws Exception {
+
+		// Click on watch link from play list
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistWatchLink_XPATH))
+				.click();
+		log.info("Successfully clicked on watch link from play list");
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+	
+	
+	/**
+	 * Method Name: clickOnPlayIconFromPlayList Description: This method used to
+	 * click on play icon from first play list from all play lists page. 
+	 * 
+	 * */
+	public static void clickOnPlayIconFromPlayList() throws Exception {
+
+		// Click on watch link from play list
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistPlayIcon_XPATH))
+				.click();
+		log.info("Successfully clicked on play icon from play list");
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+	
+	
+	/**
+	 * Method Name: clickOnPlayIconFromPlayList Description: This method used to
+	 * click on genre button from first play list from all play lists page.  
+	 * 
+	 * */
+	public static void clickOnGenreButtonFromPlayList() throws Exception {
+
+		// Click on genre button from play list
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistGenreButton_XPATH))
+				.click();
+		log.info("Successfully clicked genre button from play list");
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+	
+	
+	/**
+	 * Method Name: clickOnPlayListImgFromPlayList Description: This method used to
+	 * click on play list image from first play list from all play lists page.  
+	 * 
+	 * */
+	public static void clickOnPlayListImgFromPlayList() throws Exception {
+
+		// Click on play list image from play list
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistFirstIcon_XPATH))
+				.click();
+		log.info("Successfully clicked play list image from play list");
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+	
+	
+
+	/**
+	 * Method Name: clickOnPlayListDataFromPlayList Description: This method used to
+	 * click on play list data from first play list from all play lists page.  
+	 * 
+	 * */
+	public static void clickOnPlayListDataFromPlayList() throws Exception {
+
+		// Click on play list data from play list
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistData_XPATH))
+				.click();
+		log.info("Successfully clicked play list data from play list");
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+	
+	/**
+	 * Method Name: clickOnPlayListImgFromPlayList Description: This method used to
+	 * click on play list title from first play list from all play lists page.  
+	 * 
+	 * */
+	public static void clickOnPlayListTitleFromPlayList() throws Exception {
+
+		// Click on play list title from play list
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistTitle_XPATH))
+				.click();
+		log.info("Successfully clicked play list title from play list");
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+	
+	
+	/**
+	 * Method Name: clickOnPlayListImgFromPlayList Description: This method used to
+	 * click on play list description from first play list from all play lists page.  
+	 * 
+	 * */
+	public static void clickOnPlayListDescFromPlayList() throws Exception {
+
+		// Click on play list description from play list
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistDesc_XPATH))
+				.click();
+		log.info("Successfully clicked play list description from play list");
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+	
+	
+	/**
+	 * Method Name: clickOnPlayListImgFromPlayList Description: This method used to
+	 * click on play list video detail from first play list from all play lists page.  
+	 * 
+	 * */
+	public static void clickOnPlayListVideoDetailFromPlayList() throws Exception {
+
+		// Click on play list video detail from play list
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistVideoDetail_XPATH))
+				.click();
+		log.info("Successfully clicked play list video detail from play list");
+
+		Thread.sleep(sleepTimeForVideoPlay);
+
+	}
+	
+	
+	/**
+	 * Method Name: clickOnPlayListEmailShareButton Description: This method used to
+	 * click on play list email share button from play lists share menu.
+	 * 
+	 * */
+	public static void clickOnPlayListEmailShareButton() throws Exception {
+		
+		// Mouse over Play List share button
+		CommonFun.mouseOverElement(driver, driver.findElement(By
+				.xpath(XpathObjectRepo.playlistShareButton_XPATH)));
+
+		// Click on play list email share button
+		driver.findElement(
+				By.id(XpathObjectRepo.playlistShareEmail_ID))
+				.click();
+		log.info("Successfully clicked on play list email share button");
+
+		Thread.sleep(sleepTime);
+
+	}
+	
+	
+	
+	/**
+	 * Method Name: clickOnPlayListTwitterShareButton Description: This method used to
+	 * click on play list twitter share button from play lists share menu. 
+	 * 
+	 * */
+	public static void clickOnPlayListTwitterShareButton() throws Exception {
+		
+		// Mouse over Play List share button
+		CommonFun.mouseOverElement(driver, driver.findElement(By
+				.xpath(XpathObjectRepo.playlistShareButton_XPATH)));
+
+		// Click on play list twitter share button
+		driver.findElement(
+				By.id(XpathObjectRepo.playlistShareTW_ID))
+				.click();
+		log.info("Successfully clicked on play list twitter share button");
+
+		Thread.sleep(sleepTime);
+
+	}
+	
+	
+	
+	/**
+	 * Method Name: clickOnPlayListTwitterShareButton Description: This method used to
+	 * click on play list face book share button from play lists share menu. 
+	 * 
+	 * */
+	public static void clickOnPlayListFaceBookShareButton() throws Exception {
+		
+		// Mouse over Play List share button
+		CommonFun.mouseOverElement(driver, driver.findElement(By
+				.xpath(XpathObjectRepo.playlistShareButton_XPATH)));
+
+		// Click on play list face book share button
+		driver.findElement(
+				By.id(XpathObjectRepo.playlistShareFB_ID))
+				.click();
+		log.info("Successfully clicked on play list face book share button");
+
+		Thread.sleep(sleepTime);
+
+	}
+	
+
+	/**
+	 * Method Name: FormCloseIcon Description: This method used to
+	 * click on close button from play list sharing form
+	 * 
+	 * */
+	public static void clickOnPlayListFormCloseIcon() throws Exception {
+		
+		
+		// Click on close button
+		driver.findElement(
+				By.xpath(XpathObjectRepo.playlistemailShareFormCloseButton_XPATH))
+				.click();
+		log.info("Successfully clicked on close button from share form");
+
+		Thread.sleep(sleepTime);
+
+	}
+	
+	
+	/**
+	 * Method Name: emterFromToEmailAddress Description: This method used to
+	 * from and to email address in play list sharing window
+	 * 
+	 * */
+	public static void emterFromToEmailAddress(String toEmail)
+			throws Exception {
+
+		// Enter From Email
+	/*	driver.findElement(By.xpath(XpathObjectRepo.playlistPopupFromEmailText_XPATH))
+				.clear();
+		driver.findElement(By.xpath(XpathObjectRepo.playlistPopupFromEmailText_XPATH))
+				.sendKeys(fromEmail);
+
+		log.info("The From email address entered is: " + fromEmail);*/
+
+		// Enter To Email
+		driver.findElement(By.xpath(XpathObjectRepo.playlistPopupToEmailText_XPATH))
+				.clear();
+		driver.findElement(By.xpath(XpathObjectRepo.playlistPopupToEmailText_XPATH))
+				.sendKeys(toEmail);
+
+		log.info("The To email address entered is: " + toEmail);
+
+	}
+	
+	/**
+	 * Method Name: clickonEmailFormSendBUtton Description: This method used to
+	 * click on send button from email sharing window
+	 * 
+	 * */
+	public static void clickonEmailFormSendButton() throws Exception {
+
+		// Click on send button
+		driver.findElement(By.xpath(XpathObjectRepo.playlistPopupSendButton_XPATH))
+				.click();
+		log.info("Successfully clicked on send button  from email sharing window");
+
+		Thread.sleep(sleepTime);
+
+	}
+
+}

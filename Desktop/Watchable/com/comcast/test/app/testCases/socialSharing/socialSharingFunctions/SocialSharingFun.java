@@ -1,0 +1,276 @@
+package comcast.test.app.testCases.socialSharing.socialSharingFunctions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.playerVideoPage.playerPageFunctions.PlayerPageFun;
+import comcast.test.config.configServices.utils.BaseTest;
+
+public class SocialSharingFun extends BaseTest {
+
+	/**
+	 * Method Name: clickonFacebooButton Description: This method used to click
+	 * on Face book button from video page.
+	 * 
+	 * */
+	public static void clickonFacebooButton() throws Exception {
+
+		// Click on Face book button
+		driver.findElement(By.id(XpathObjectRepo.facebookButton_ID)).click();
+		log.info("Successfully clicked on Face book button");
+
+		Thread.sleep(sleepTime);
+
+	}
+
+	/**
+	 * Method Name: clickonEmailButton Description: This method used to click on
+	 * clickonEmailButton button from video page.
+	 * 
+	 * */
+	public static void clickonEmailButton() throws Exception {
+
+		// Click on email button
+		driver.findElement(By.id(XpathObjectRepo.emailButton_ID)).click();
+		log.info("Successfully clicked on clickonEmailButton button");
+
+		Thread.sleep(sleepTime);
+
+	}
+
+	/**
+	 * Method Name: clickonFacebooButtonFromPlayer Description: This method used
+	 * to click on Face book button from video player controls.
+	 * 
+	 * */
+	public static void clickonFacebookButtonFromPlayer() throws Exception {
+
+		// Mouse over video player
+		PlayerPageFun.mouseOverVideoPlayer();
+		
+		if (driver.findElement(
+				By.xpath(XpathObjectRepo.playerShareButton_XPATH))
+				.isDisplayed() == true) {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath(XpathObjectRepo.playerShareButton_XPATH)));
+
+		driver.findElement(By.xpath(XpathObjectRepo.playerShareButton_XPATH))
+				.click();
+
+		/*CommonFun.mouseOverElement(driver, driver.findElement(By
+				.xpath(XpathObjectRepo.videoControlFacebookButton_XPATH)));
+
+		CommonFun.mouseOverElementAndClick(driver, driver.findElement(By
+				.xpath(XpathObjectRepo.videoControlFacebookButton_XPATH)),
+				"FB Button");*/
+
+		// Click on Face book button
+		
+		new WebDriverWait(driver, 30)
+		.until(ExpectedConditions.elementToBeClickable(By
+				.xpath(XpathObjectRepo.videoControlFacebookButton_XPATH)));
+		
+		 driver.findElement(
+		 By.xpath(XpathObjectRepo.videoControlFacebookButton_XPATH)) .click();
+		 
+		log.info("Successfully clicked on Face book button from player controls");
+
+		Thread.sleep(sleepTime);
+		}
+
+	}
+
+	/**
+	 * Method Name: clickonEmailButtonFromPlayer Description: This method used
+	 * to click on Email button from video player controls.
+	 * 
+	 * */
+	public static void clickonEmailButtonFromPlayer() throws Exception {
+
+		// Mouse over video player
+		PlayerPageFun.mouseOverVideoPlayer();
+
+		if (driver.findElement(
+				By.xpath(XpathObjectRepo.playerShareButton_XPATH))
+				.isDisplayed() == true) {
+
+			new WebDriverWait(driver, 30).until(ExpectedConditions
+					.elementToBeClickable(By
+							.xpath(XpathObjectRepo.playerShareButton_XPATH)));
+
+			driver.findElement(
+					By.xpath(XpathObjectRepo.playerShareButton_XPATH)).click();
+
+			// Click on Email button
+
+			new WebDriverWait(driver, 30)
+					.until(ExpectedConditions.elementToBeClickable(By
+							.xpath(XpathObjectRepo.videoControlemailButton_XPATH)));
+
+			CommonFun.mouseOverElementAndClick(driver, driver.findElement(By
+					.xpath(XpathObjectRepo.videoControlemailButton_XPATH)),
+					"Email Button");
+
+			/*
+			 * driver.findElement(
+			 * By.xpath(XpathObjectRepo.videoControlemailButton_XPATH))
+			 * .click();
+			 */
+			log.info("Successfully clicked on Email button from player controls");
+
+			Thread.sleep(sleepTime);
+		}
+
+	}
+	
+	
+	
+	/**
+	 * Method Name: clickonCopyUrlButtonFromPlayer Description: This method used
+	 * to click on Copy URL button from video player controls.
+	 * 
+	 * */
+	public static void clickonCopyUrlButtonFromPlayer() throws Exception {
+
+		// Mouse over video player
+		PlayerPageFun.mouseOverVideoPlayer();
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions
+				.elementToBeClickable(By
+						.xpath(XpathObjectRepo.playerShareButton_XPATH)));
+
+		driver.findElement(By.xpath(XpathObjectRepo.playerShareButton_XPATH))
+				.click();
+
+		// Click on Copy URL button
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions
+				.elementToBeClickable(By
+						.xpath(XpathObjectRepo.copyUrlButton_XPATH)));
+		
+		CommonFun.mouseOverElementAndClick(driver, driver.findElement(By
+				.xpath(XpathObjectRepo.copyUrlButton_XPATH)),
+				"Copy URL Button");
+
+	/*	driver.findElement( 
+				By.xpath(XpathObjectRepo.videoControlemailButton_XPATH))
+				.click(); */
+		log.info("Successfully clicked on Copy URL button from player controls");
+
+		Thread.sleep(sleepTime);
+
+	}
+
+
+	/**
+	 * Method Name: clickonTwitterButton Description: This method used to click
+	 * on Twitter button from video page.
+	 * 
+	 * */
+	public static void clickonTwitterButton() throws Exception {
+
+		// Click on Twitter button
+		driver.findElement(By.id(XpathObjectRepo.twitterButton_ID)).click();
+		log.info("Successfully clicked on Twitter button");
+
+		Thread.sleep(sleepTime);
+
+	}
+
+	/**
+	 * Method Name: clickonTwitterButtonFromPlayer Description: This method used
+	 * to click on Twitter button from video player controls.
+	 * 
+	 * */
+	public static void clickonTwitterButtonFromPlayer() throws Exception {
+
+		// Mouse over video player
+		PlayerPageFun.mouseOverVideoPlayer();
+		
+		if (driver.findElement(
+				By.xpath(XpathObjectRepo.playerShareButton_XPATH))
+				.isDisplayed() == true) {
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions
+				.elementToBeClickable(By
+						.xpath(XpathObjectRepo.playerShareButton_XPATH)));
+
+		driver.findElement(By.xpath(XpathObjectRepo.playerShareButton_XPATH))
+				.click();
+
+		// Click on Twitter button
+
+		new WebDriverWait(driver, 30)
+				.until(ExpectedConditions.elementToBeClickable(By
+						.xpath(XpathObjectRepo.videoControltwitterButton_XPATH)));
+
+		driver.findElement(
+				By.xpath(XpathObjectRepo.videoControltwitterButton_XPATH))
+				.click();
+		log.info("Successfully clicked on Twitter button from player controls");
+
+		Thread.sleep(sleepTime);
+		}
+
+	}
+
+	/**
+	 * Method Name: clickonEmailFormCloseIcon Description: This method used to
+	 * click on close icon from email sharing window
+	 * 
+	 * */
+	public static void clickonEmailFormCloseIcon() throws Exception {
+
+		// Click on close button
+		driver.findElement(
+				By.xpath(XpathObjectRepo.emailPopupClosoButton_XPATH)).click();
+		log.info("Successfully clicked on close icon from email sharing window");
+
+		Thread.sleep(sleepTime);
+
+	}
+
+	/**
+	 * Method Name: clickonEmailFormSendBUtton Description: This method used to
+	 * click on send button from email sharing window
+	 * 
+	 * */
+	public static void clickonEmailFormSendButton() throws Exception {
+
+		// Click on send button
+		driver.findElement(By.xpath(XpathObjectRepo.emailPopupSendButton_XPATH))
+				.click();
+		log.info("Successfully clicked on send button  from email sharing window");
+
+		Thread.sleep(sleepTime);
+
+	}
+
+	/**
+	 * Method Name: emterFromToEmailAddress Description: This method used to
+	 * from and to email address in sharing window
+	 * 
+	 * */
+	public static void emterFromToEmailAddress(String toEmail)
+			throws Exception {
+
+		// Enter From Email
+		/*driver.findElement(By.xpath(XpathObjectRepo.emailPopupFromEmailText_XPATH))
+				.clear();
+		driver.findElement(By.xpath(XpathObjectRepo.emailPopupFromEmailText_XPATH))
+				.sendKeys(fromEmail);
+
+		log.info("The From email address entered is: " + fromEmail);*/
+
+		// Enter To Email
+		driver.findElement(By.xpath(XpathObjectRepo.emailPopupToEmailText_XPATH))
+				.clear();
+		driver.findElement(By.xpath(XpathObjectRepo.emailPopupToEmailText_XPATH))
+				.sendKeys(toEmail);
+
+		log.info("The To email address entered is: " + toEmail);
+
+	}
+
+}

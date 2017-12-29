@@ -1,0 +1,67 @@
+package comcast.test.app.testCases.userManagement.userLogin.ValidateLoginScreen;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyLoginPageDetailsWithEmptyFields Description: VerifyLoginPageDetailsWithEmptyFields in
+ * Watchable application.
+ * **/
+
+public class VerifyLoginPageDetailsWithEmptyFields extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyLoginPageDetailsWithEmptyFields() throws Exception {
+
+		driver.get(DataServiceProperties.APPURL);
+		try {
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			assertionFunction.assertLoginActiveLink();
+
+			// This method is to assert all Header links.
+			assertionFunction.assertAllHeaderLink();
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+
+			// This method asserts Watchable Logo.
+			assertionFunction.assertWatchableLogo();
+
+			// Ensure Email text box is displayed
+			// assertEquals("",
+			// driver.findElement(By.name("user[user_name]")).getAttribute("value"));
+			assertEquals(
+					"",
+					driver.findElement(By.xpath(XpathObjectRepo.USERNAME_XPATH))
+							.getAttribute("value"));
+
+			// Ensure Password text box is displayed
+			// assertEquals("",
+			// driver.findElement(By.name("user[password]")).getAttribute("value"));
+			assertEquals(
+					"",
+					driver.findElement(By.xpath(XpathObjectRepo.PASSWORD_XPATH))
+							.getAttribute("value"));
+
+			// This method asserts Footer Logo and It's Text.
+			assertionFunction.assertFooterCategoryLinks();
+
+			// This method asserts footer links.
+			assertionFunction.assertFooterCopyRight();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

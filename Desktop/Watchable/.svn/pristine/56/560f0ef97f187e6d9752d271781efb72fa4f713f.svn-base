@@ -1,0 +1,73 @@
+package comcast.test.app.testCases.userManagement.userRegistration.UserRegistrationTestCasesForEmail.UserRegWithInvalidEmailID;
+
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.userManagement.userRegistration.common.UserRegistrationValidationFuncitons;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+
+/** Class Name: RegToGazeeboByEnteringExistingEmailID
+ *  Description: This test case is to validated registration by providing existing user email
+ * **/
+
+public class RegToWatchableByEnteringExistingEmailID extends BaseTest{
+	
+	UserRegistrationValidationFuncitons userRegValidationFun=new UserRegistrationValidationFuncitons();
+	AssertionRepoFunctions assertionFunction=new AssertionRepoFunctions();
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass=new RegisterToXidioApplicationAndChangeAPassword();
+	UserLoginFunctions userLogin=new UserLoginFunctions();
+	
+	@Test
+	public void testRegToWatchableByEnteringExistingEmailID() throws Exception {
+	
+		try{
+			 /* This Method is to register new user using Gazeebo application 
+			 * and to change a password. 
+			 */	
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+			
+			//This method is used to logout from application.
+			userLogin.LogOut(driver);
+			
+			//This method is used to update the Email Data Properties fields
+			//proUtil.updateEmailDataPropertiesFields();
+			proUtil.load(new FileInputStream(new File("com/data.properties")));
+			
+			String Email=proUtil.getProperty("EMAIL");
+			
+		    driver.findElement(By.xpath(XpathObjectRepo.TOPMENUSIGNUP_XPATH)).click();
+		    
+		    //This method is used to validate invalid Email in registration page
+		    userRegValidationFun.validateInvalidEmailID(driver,Email,proUtil.getProperty("ZIP"),proUtil.getProperty("REG_PASSWORD"));
+	
+		    driver.findElement(By.xpath(XpathObjectRepo.LOGINBUTTON_XPATH)).click();
+		    
+		    Thread.sleep(sleepTime);	    
+		    //assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Email is already in use[\\s\\S]*$"));
+		    assertTrue(driver.findElement(By.xpath(XpathObjectRepo.SIGNUP_DUPEMAILID_USAGE_WARNING_XPATH)).getText().equalsIgnoreCase(UILablesRepo.SIGNUP_DUPEMAILID_USAGE_WARNING_MSG));
+	 	   	 	    	   
+	 		//This method asserts Gazeebo Logo.
+	 		assertionFunction.assertWatchableLogo();
+
+			//This method is to assert Join Watchable Header in Sign Up page.
+			assertionFunction.assertJoinWatchableBanner();
+			
+		    //This method asserts footer links.
+		    assertionFunction.assertFooterCopyRight();
+		}
+		catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+  }
+}

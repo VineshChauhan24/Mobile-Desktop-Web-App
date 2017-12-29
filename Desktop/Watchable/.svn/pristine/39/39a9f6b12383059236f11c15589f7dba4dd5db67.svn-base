@@ -1,0 +1,721 @@
+package comcast.test.app.common.videoManagement.homePage.common;
+
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.xml.sax.SAXException;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+public class HomePageCommonFunctions extends BaseTest {
+
+	// Below functionality is removed from the application. So not doing
+	// refactoring of below method
+
+	public void selectBundle() throws XPathExpressionException,
+			ParserConfigurationException, SAXException, IOException,
+			InterruptedException {
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.FeaturedBundleAPI();
+		List<VideoDetails> BundlesList = videoDetails.get("bundlesList");
+
+		Thread.sleep(sleepTime);
+		boolean isPresent;
+		do {
+			isPresent = driver.findElements(
+					By.linkText(BundlesList.get(XidioConstant.selectBundle)
+							.getTitle())).size() > 0;
+			if (isPresent == true) {
+				assertTrue(driver
+						.findElement(By.cssSelector("BODY"))
+						.getText()
+						.matches(
+								"^[\\s\\S]*"
+										+ BundlesList.get(
+												XidioConstant.selectBundle)
+												.getTitle() + "[\\s\\S]*$"));
+				driver.findElement(
+						By.linkText(BundlesList.get(XidioConstant.selectBundle)
+								.getTitle())).click();
+			} else {
+				String isNextEnable = driver.findElement(
+						By.xpath("//*[@id='featured']/div/section/a[2]"))
+						.getAttribute("class");
+				if (!isNextEnable.equalsIgnoreCase("next hidden")
+						&& !isNextEnable.equalsIgnoreCase("next disabled")) {
+					driver.findElement(
+							By.xpath("//*[@id='featured']/div/section/a[2]"))
+							.click();
+					Thread.sleep(sleepTime);
+				}
+				assertTrue(driver
+						.findElement(By.cssSelector("BODY"))
+						.getText()
+						.matches(
+								"^[\\s\\S]*"
+										+ BundlesList
+												.get(XidioConstant.selectFeaturedChannel)
+												.getTitle() + "[\\s\\S]*$"));
+				break;
+			}
+
+		} while (isPresent == false);
+	}
+
+	public void selectFeaturedChannel(String featuredChannelTitle)
+			throws XPathExpressionException, ParserConfigurationException,
+			SAXException, IOException, InterruptedException {
+		boolean isPresent;
+		boolean isVideoPresent = false;
+		do {
+			// Lekshmi : Change the object identifier.
+			isPresent = driver
+					.findElement(
+							By.xpath(XpathObjectRepo.HOMEFEATUREDLIST_XPATH))
+					.findElements(By.linkText(featuredChannelTitle)).size() > 0;
+			// isPresent =
+			// driver.findElements(By.linkText(featuredChannelTitle)).size() >
+			// 0;
+			if (isPresent == true) {
+				isVideoPresent = true;
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+channelList.get(XidioConstant.selectFeaturedChannel).getTitle()+"[\\s\\S]*$"));
+				driver.findElement(
+						By.xpath(XpathObjectRepo.HOMEFEATUREDLIST_XPATH))
+						.findElement(By.linkText(featuredChannelTitle)).click();
+
+			} else {
+				String isNextEnable = driver.findElement(
+						By.xpath(XpathObjectRepo.HOMEFEATUREDNEXTBUTTON_XPATH))
+						.getAttribute("class");
+				if (!isNextEnable
+						.equalsIgnoreCase(UILablesRepo.PAGINATIONNEXTHIDDEN_CLASS)
+						&& !isNextEnable
+								.equalsIgnoreCase(UILablesRepo.PAGINATIONNEXTDISABLED_CLASS)) {
+					/*
+					 * driver.findElement(
+					 * By.xpath(XpathObjectRepo.HOMEFEATUREDNEXTBUTTON_XPATH))
+					 * .click();
+					 */
+					WebElement nextBtn = driver
+							.findElement(By
+									.xpath(XpathObjectRepo.HOMEFEATUREDNEXTBUTTON_XPATH));
+
+					assertTrue("Next button is not visible",
+							nextBtn.isDisplayed());
+					nextBtn.click();
+
+					Thread.sleep(sleepTime);
+				} else {
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+featuredChannelTitle+"[\\s\\S]*$"));
+					break;
+				}
+			}
+		} while (isPresent == false);
+	}
+
+	/*
+	 * Method Name: selectFeaChannelHasOnlyEpisodes
+	 */
+	public void selectFeaChannelHasOnlyEpisodes(String channelTitle)
+			throws XPathExpressionException, ParserConfigurationException,
+			SAXException, IOException, InterruptedException {
+		Thread.sleep(sleepTime);
+		boolean isPresent;
+		do {
+			/*
+			 * isPresent = driver .findElement(
+			 * By.xpath(orProUtil.getProperty("FEATURED_SECTION")))
+			 * .findElements(By.partialLinkText(channelTitle)).size() > 0;
+			 */
+			isPresent = driver
+					.findElement(By.xpath(XpathObjectRepo.FEATUREDROW_XPATH))
+					.findElements(By.partialLinkText(channelTitle)).size() > 0;
+			if (isPresent == true) {
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+channelTitle+"[\\s\\S]*$"));
+				driver.findElement(By.xpath(XpathObjectRepo.FEATUREDROW_XPATH))
+						.findElement(By.linkText(channelTitle)).click();
+			} else {
+				/*
+				 * String isNextEnable = driver.findElement(
+				 * By.xpath("//*[@id='featured']/div/section/a[2]"))
+				 * .getAttribute("class");
+				 */
+
+				String isNextEnable = driver.findElement(
+						By.xpath(XpathObjectRepo.HOMEFEATUREDNEXTBUTTON_XPATH))
+						.getAttribute("class");
+
+				if (!isNextEnable.equalsIgnoreCase("next hidden")
+						&& !isNextEnable.equalsIgnoreCase("next disabled")) {
+					driver.findElement(
+							By.xpath(XpathObjectRepo.HOMEFEATUREDNEXTBUTTON_XPATH))
+							.click();
+					Thread.sleep(sleepTime);
+				} else {
+					/*
+					 * assertTrue(driver .findElement(By.cssSelector("BODY"))
+					 * .getText() .matches("^[\\s\\S]*" + channelTitle +
+					 * "[\\s\\S]*$"));
+					 */
+
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.FEATUREDROW_XPATH))
+							.getText().contains(channelTitle));
+					break;
+				}
+			}
+		} while (isPresent == false);
+	}
+
+	/*
+	 * 
+	 */
+	public void selectPopularShows(String popularShowTitle)
+			throws XPathExpressionException, ParserConfigurationException,
+			SAXException, IOException, InterruptedException {
+		boolean isPresent;
+		do {
+
+			// Manoj: Object changed during Re-Working
+
+			// isPresent=driver.findElement(By.xpath(".//*[@id='popular_shows']/div/section/div/div/ul[1]")).findElements(By.linkText(popularShowTitle)).size()>0;
+			isPresent = driver
+					.findElement(
+							By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSMARGINRIGHT_XPATH))
+					.findElements(By.linkText(popularShowTitle)).size() > 0;
+			if (isPresent == true) {
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularShowList.get(XidioConstant.selectPopularShow).getTitle()+"[\\s\\S]*$"));
+
+				// Manoj: Object changed during Re-Working
+				// driver.findElement(By.xpath(".//*[@id='popular_shows']/div/section/div/div/ul[1]")).findElement(By.linkText(popularShowTitle)).click();
+
+				driver.findElement(
+						By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSMARGINRIGHT_XPATH))
+						.findElement(By.linkText(popularShowTitle)).click();
+				Thread.sleep(sleepTime);
+			} else {
+				// Manoj: Object changed during Re-Working
+				// String
+				// isNextEnable=driver.findElement(By.xpath("//*[@id='popular_shows']/div/section/a[2]")).getAttribute("class");
+
+				String isNextEnable = driver
+						.findElement(
+								By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSBUTTONNEXT_XPATH))
+						.getAttribute("class");
+
+				if (!isNextEnable.equalsIgnoreCase("next hidden")
+						&& !isNextEnable.equalsIgnoreCase("next disabled")) {
+
+					// Manoj: Object changed during Re-Working
+					// driver.findElement(By.xpath(".//*[@id='popular_shows']/div/section")).findElement(By.xpath("//*[@id='popular_shows']/div/section/a[2]")).click();
+
+					driver.findElement(
+							By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSVIEWROW_XPATH))
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSBUTTONNEXT_XPATH))
+							.click();
+					Thread.sleep(sleepTime);
+				} else {
+					// Manoj: Object changed during Re-Working
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularShowTitle+"[\\s\\S]*$"));
+
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARSHOWSFIRSTTITLELABEL_XPATH))
+							.getText().matches(popularShowTitle));
+					break;
+				}
+
+			}
+		} while (isPresent == false);
+	}
+
+	/*
+	 * Method Name: selectPopularChannel
+	 */
+	public void selectPopularChannel(String popularChannelTitle)
+			throws XPathExpressionException, ParserConfigurationException,
+			SAXException, IOException, InterruptedException {
+		boolean isPresent;
+		do {
+			// Lekshmi : Change the object identifiers
+			// isPresent=driver.findElement(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul")).findElements(By.partialLinkText(popularChannelTitle)).size()>0;
+			isPresent = driver
+					.findElement(
+							By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSLIST_XPATH))
+					.findElements(By.linkText(popularChannelTitle)).size() > 0;
+			if (isPresent == true) {
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularChannelTitle+"[\\s\\S]*$"));
+				scrollToSection();
+				/*
+				 * driver.findElement(
+				 * By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSLIST_XPATH))
+				 * .findElement(By.linkText(popularChannelTitle)) .click();
+				 */
+				WebElement chnaaelTitle = driver
+						.findElement(
+								By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSLIST_XPATH))
+						.findElement(By.partialLinkText(popularChannelTitle));
+				chnaaelTitle.click();
+				Thread.sleep(sleepTime);
+				Thread.sleep(sleepTime);
+			} else {
+				String isNextEnable = driver.findElement(
+						By.xpath(XpathObjectRepo.PAGINATIONNEXTBUTTON_XPATH))
+						.getAttribute("class");
+				if (!isNextEnable
+						.equalsIgnoreCase(UILablesRepo.PAGINATIONNEXTHIDDEN_CLASS)
+						&& !isNextEnable
+								.equalsIgnoreCase(UILablesRepo.PAGINATIONNEXTDISABLED_CLASS)) {
+					driver.findElement(
+							By.xpath(XpathObjectRepo.PAGINATIONNEXTBUTTON_XPATH))
+							.click();
+					Thread.sleep(sleepTime);
+				} else {
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularChannelTitle+"[\\s\\S]*$"));
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.CHANNELDETAILSPAGETITLE_XPATH))
+							.getText().equalsIgnoreCase(popularChannelTitle));
+					break;
+				}
+			}
+		} while (isPresent == false);
+	}
+
+	/*
+	 * Method Name: selectHomeFeaturedShow
+	 */
+	public void selectHomeFeaturedShow(String showName)
+			throws XPathExpressionException, ParserConfigurationException,
+			SAXException, IOException, InterruptedException {
+		boolean isPresent;
+		do {
+			isPresent = driver
+					.findElement(
+							By.xpath(XpathObjectRepo.HOMEFEATUREDLIST_XPATH))
+					.findElements(By.linkText(showName)).size() > 0;
+			if (isPresent == true) {
+
+				// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+showName+"[\\s\\S]*$"));
+				driver.findElement(
+						By.xpath(XpathObjectRepo.HOMEFEATUREDLIST_XPATH))
+						.findElement(By.linkText(showName)).click();
+
+				Thread.sleep(sleepTime);
+				Thread.sleep(sleepTime);
+				Thread.sleep(sleepTime);
+				WebElement playFromStart = driver.findElement(By
+						.xpath(XpathObjectRepo.VIDEOPLAYSTARTBUTTON_XPATH));
+
+				if (playFromStart.isDisplayed()) {
+					driver.findElement(
+							By.xpath(XpathObjectRepo.VIDEOPLAYSTARTBUTTON_XPATH))
+							.click();
+					Thread.sleep(sleepTime);
+					Thread.sleep(sleepTime);
+					Thread.sleep(sleepTime);
+
+				}
+
+			} else {
+				String isNextEnable = driver.findElement(
+						By.xpath(XpathObjectRepo.HOMEFEATUREDNEXTBUTTON_XPATH))
+						.getAttribute("class");
+				if (!isNextEnable
+						.equalsIgnoreCase(UILablesRepo.PAGINATIONNEXTDISABLED_CLASS)) {
+
+					/*
+					 * driver.findElement(
+					 * By.xpath(XpathObjectRepo.HOMEFEATUREDNEXTBUTTON_XPATH))
+					 * .click();
+					 */
+
+					WebElement nextBtn = driver
+							.findElement(By
+									.xpath(XpathObjectRepo.HOMEFEATUREDNEXTBUTTON_XPATH));
+
+					assertTrue("Next button is not visible",
+							nextBtn.isDisplayed());
+					nextBtn.click();
+
+					Thread.sleep(sleepTime);
+				} else {
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+showName+"[\\s\\S]*$"));
+					break;
+				}
+			}
+		} while (isPresent == false);
+	}
+
+	/*
+	 * Method Name: clickOnShowsLink
+	 */
+	public void clickOnShowsLink() {
+		// driver.findElement(By.linkText("SHOWS")).click();
+		// Lekshmi : change the Object identifier.
+		driver.findElement(
+				By.xpath("//div[@id='seq-row-list']/descendant::li[contains(@class,'cell-show')]"))
+				.click();
+		driver.findElement(
+				By.xpath(XpathObjectRepo.CHANNEL_DETAIL_SHOW_LINK_XPATH))
+				.click();
+	}
+
+	// Below method is not using in any test case now
+	// So not refactoring.
+	public void clickOnChannelsLink() {
+		driver.findElement(By.linkText("CHANNELS")).click();
+	}
+
+	public void clickOnCategoryLink() {
+		driver.findElement(By.linkText("CATEGORIES")).click();
+	}
+
+	public void clickOnUnwatchedLink() {
+		driver.findElement(By.linkText("UNWATCHED")).click();
+	}
+
+	public void clickOnLastUpdatedLink() {
+		driver.findElement(By.linkText("LAST UPDATED")).click();
+	}
+
+	/*
+	 * Method: scrollToPopularChannelsSection Description: This method scroll to
+	 * Featured shows Section.
+	 */
+	public static void scrollToPopularChannelsSection()
+			throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 15; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(100);
+		}
+	}
+	
+	
+	/*
+	 * Method: scrollToPopularChannelsSection Description: This method scroll to
+	 * featured video Section featured shows section
+	 */
+	public static void scrollToVideoSectionFromChannelSection()
+			throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 12; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(100);
+		}
+	}
+
+	/*
+	 * Method: scrollToPopularChannelsSection Description: This method scroll to
+	 * Popular Channels Section.
+	 */
+	public static void scrollToVideoResultSection() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 16; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(100);
+		}
+		Thread.sleep(1000);
+	}
+
+	/*
+	 * Method: scrollToVideoResultMsgSection Description: This method scroll to
+	 * Video result message Section.
+	 */
+	public static void scrollToVideoResultMsgSection()
+			throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 6; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.UP);
+			Thread.sleep(100);
+		}
+
+	}
+	
+	
+	/*
+	 * Method: scrollOverPlayer Description: This method scroll over video player
+	 */
+	public static void scrollOverPlayer() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 2; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+		}
+		}
+
+	/*
+	 * Method: scrollToSection Description: This method scroll to Popular
+	 * Channels Section.
+	 */
+	public static void scrollToSection() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 2; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(100);
+		}
+
+		// Do consider below code for page down while refactoring
+		/*
+		 * Actions builder = new Actions(driver);
+		 * builder.moveToElement(driver.findElement
+		 * (By.xpath("//div[@id='popular_channels']/descendant::ul"
+		 * ))).build().perform();
+		 */
+	}
+
+	/*
+	 * Method: scrollToWatchableSections Description: This method scroll to
+	 * Popular Channels Section.
+	 */
+	public void scrollToWatchableSections() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 14; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(100);
+		}
+
+		// Do consider below code for page down while refactoring
+		/*
+		 * Actions builder = new Actions(driver);
+		 * builder.moveToElement(driver.findElement
+		 * (By.xpath("//div[@id='popular_channels']/descendant::ul"
+		 * ))).build().perform();
+		 */
+	}
+
+	/**
+	 * Method: scrollToSection Description: This method scroll to Popular
+	 * Channels Section.
+	 */
+	public static void scrollToSocilaMediaSection() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 4; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(100);
+		}
+	}
+
+	/*
+	 * Method: scrollToGenresSection Description: This method scroll to Popular
+	 * Channels Section.
+	 */
+	public void scrollToGenresSection() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 28; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(100);
+		}
+		Thread.sleep(1000);
+
+		// Do consider below code for page down while refactoring
+		/*
+		 * Actions builder = new Actions(driver);
+		 * builder.moveToElement(driver.findElement
+		 * (By.xpath("//div[@id='popular_channels']/descendant::ul"
+		 * ))).build().perform();
+		 */
+	}
+
+	/*
+	 * Method: scrollToFooterSection Description: This method scroll to footer
+	 * Section.
+	 */
+	public static void scrollToFooterSection() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 250; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(25);
+		}
+		Thread.sleep(1000);
+	}
+
+	/*
+	 * Method: scrollToPopularShowsSection Description: This method scroll to
+	 * Popular Shows Section.
+	 */
+	public static void scrollToPopularShowsSection() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.DOWN).perform();
+		for (int i = 0; i < 5; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
+			Thread.sleep(100);
+		}
+	}
+
+	/*
+	 * Method: navigateGenreCategoryDetailsPage Description: This method
+	 * navigate Genre Category Details page by clicking on Genre Footer Link.
+	 */
+	public void navigateGenreCategoryDetailsPage() throws InterruptedException,
+			FileNotFoundException, IOException {
+		orProUtil.load(new FileInputStream(new File("com/OR.properties")));
+		/*
+		 * driver.findElement( By.xpath(".//*[@id='footercontainer']").linkText(
+		 * orProUtil.getProperty("ANIMATIONANDGAMES"))).click();
+		 */
+
+		driver.findElement(
+				By.xpath(XpathObjectRepo.FOOTERCATEGORIES_ANIMATION_XPATH))
+				.click();
+		;
+
+		Thread.sleep(sleepTime);
+	}
+
+	/*
+	 * Method: assertSectionOrPageHeaders Description: This method assert
+	 * Section or Page Header in a page.
+	 */
+	public void assertSectionOrPageHeaders(String assertionText)
+			throws InterruptedException {
+		/*
+		 * assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+		 * .matches("^[\\s\\S]*" + assertionText + "[\\s\\S]*$"));
+		 */
+
+		assertTrue(driver.findElement(By.xpath(XpathObjectRepo.HEADER_XPATH))
+				.getText().contains(assertionText));
+	}
+
+	/*
+	 * Method: searchAnAsset Description: This method is to enter serach
+	 */
+	public void searchAnAsset(String keyword) throws XPathExpressionException,
+			ParserConfigurationException, SAXException, IOException,
+			InterruptedException {
+		/*
+		 * driver.findElement(By.id("search-query")).clear();
+		 * driver.findElement(By.id("search-query")).sendKeys(keyword);
+		 * driver.findElement(By.id("go-search")).click();
+		 */
+
+		/*
+		 * driver.findElement(
+		 * By.xpath("//div[contains(@id,'menu')]/div[contains(@class,'search')]"
+		 * )) .click();
+		 */
+
+		/*
+		 * driver.findElement(
+		 * By.xpath("//div[@id='tool-menu']/descendant::div[@class='search']"))
+		 * .click();
+		 * 
+		 * 
+		 * driver.findElement(By.xpath("//input[@id='search-query']")).sendKeys(
+		 * keyword);
+		 * driver.findElement(By.xpath("//input[@id='go-search']")).click();
+		 */
+
+		driver.findElement(By.xpath(XpathObjectRepo.SEARCHNAVMENU_XPATH))
+				.click();
+		Thread.sleep(sleepTime);
+		driver.findElement(By.xpath(XpathObjectRepo.HOMESEARCHQUERYID_XPATH))
+				.clear();
+		driver.findElement(By.xpath(XpathObjectRepo.HOMESEARCHQUERYID_XPATH))
+				.sendKeys(keyword);
+		driver.findElement(By.xpath(XpathObjectRepo.HOMESEARCHBUTTON_XPATH))
+				.click();
+
+		driver.findElement(By.xpath("//div[@id='content-wrap']")).click();
+		Thread.sleep(sleepTime);
+
+	}
+
+	/*
+	 * Method: searchAShow Description: This method is to enter serach
+	 */
+	public void searchAShow(String keyword) throws XPathExpressionException,
+			ParserConfigurationException, SAXException, IOException,
+			InterruptedException {
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.FeaturedAPI();
+		List<VideoDetails> showList = videoDetails.get("featuredSubShowsList");
+
+		/*
+		 * driver.findElement(By.id("search-query")).clear();
+		 * driver.findElement(By.id("search-query")).sendKeys(
+		 * showList.get(XidioConstant.selectShow).getTitle());
+		 * driver.findElement(By.id("go-search")).click();
+		 */
+
+		driver.findElement(By.xpath(XpathObjectRepo.SEARCHNAVMENU_XPATH))
+				.click();
+		Thread.sleep(sleepTime);
+		driver.findElement(By.xpath(XpathObjectRepo.HOMESEARCHQUERYID_XPATH))
+				.clear();
+		driver.findElement(By.xpath(XpathObjectRepo.HOMESEARCHQUERYID_XPATH))
+				.sendKeys(showList.get(XidioConstant.selectShow).getTitle());
+		driver.findElement(By.xpath(XpathObjectRepo.HOMESEARCHBUTTON_XPATH))
+				.click();
+
+	}
+
+	/*
+	 * Method: mouseOverOnVideoPlayer Description: This method perform mous over
+	 * on Video player.
+	 */
+	public void mouseOverOnVideoPlayer() throws XPathExpressionException,
+			ParserConfigurationException, SAXException, IOException,
+			InterruptedException {
+		Actions actions = new Actions(driver);
+		// Lekshmi : change the object identifier.
+		WebElement videoPage = driver.findElement(By
+				.xpath(XpathObjectRepo.VIDEOPLAYER_XPATH));
+		actions.moveToElement(videoPage);
+		actions.perform();
+	}
+
+	/*
+	 * Method: selectPublisher Description: This method selects publisher.
+	 */
+	public void selectPublisher(String publisherName)
+			throws XPathExpressionException, ParserConfigurationException,
+			SAXException, IOException, InterruptedException {
+		driver.findElement(By.linkText(publisherName)).click();
+		Thread.sleep(sleepTime);
+	}
+
+	/*
+	 * Method: navigateToHomePage Description: This method navigate Home page.
+	 */
+	public void navigateToHomePage() throws InterruptedException,
+			FileNotFoundException, IOException {
+		// driver.findElement(By.linkText("Home")).click();
+		driver.findElement(By.xpath(XpathObjectRepo.TOP_MENU_HOME_BUTTON_XPATH))
+				.click();
+		Thread.sleep(sleepTime);
+	}
+
+}

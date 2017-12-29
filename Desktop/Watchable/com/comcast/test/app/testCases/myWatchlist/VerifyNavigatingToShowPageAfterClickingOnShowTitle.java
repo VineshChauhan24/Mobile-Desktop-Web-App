@@ -1,0 +1,180 @@
+package comcast.test.app.testCases.myWatchlist;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.app.testCases.myWatchlist.myWatchlistFunctions.MyWatchlistFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyNavigatingToShowPageAfterClickingOnShowTitle Description:
+ * This test case verifies navigating to show page by clicking on show title of
+ * followed video section. Author: Manoj
+ * **/
+
+public class VerifyNavigatingToShowPageAfterClickingOnShowTitle extends
+		BaseTest {
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyNavigatingToShowPageAfterClickingOnShowTitle()
+			throws Exception {
+
+		try {
+
+			log.info("Script: VerifyNavigatingToShowPageAfterClickingOnShowTitle");
+			log.info("********************************************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			Thread.sleep(sleepTime);
+
+			// Login to Watchable application
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.EMAIL,
+					UILablesRepo.PASSWORD);
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// Verify My Shows menu is present
+				assertTrue(
+						"My Shows menu is not present",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.myWatchlistMenu_XPATH)));
+				log.info("My Shows menu is present");
+
+				// Click on My Shows menu
+				MyWatchlistFun.clickOnMyWatchlistMenu();
+
+				// Verify user is navigated to My Shows list page
+				AssertionRepoFunctions.assertMyWatchlistPageTitle();
+
+				// Verify Video present in my watch list
+
+				int videoCount = driver.findElements(
+						By.xpath(XpathObjectRepo.myWatchlistVideoIcon_XPATH))
+						.size();
+				if (videoCount > 0) {
+
+					int channelCount = driver
+							.findElements(
+									By.xpath(XpathObjectRepo.myWatchlistChannelCount_XPATH))
+							.size();
+
+					log.info(videoCount + " Vedeos present under "
+							+ channelCount + " show(s) in My Shows page");
+
+					// GO TO CHANNEL option is removed from new implementation
+
+					/*
+					 * // Verify GO TO CHANNEL option int goToMyChannelPresent =
+					 * driver .findElements(
+					 * By.xpath(XpathObjectRepo.myWatchlistGoToChannelLink_XPATH
+					 * )) .size(); if (goToMyChannelPresent > 0) {
+					 * 
+					 * log.info(
+					 * "GO TO CHANNEL option is present in My Watch list page when it contains Videos "
+					 * );
+					 * 
+					 * // Navigating to channel Page by clicking on GO TO //
+					 * CHANNEL option for (int i = 1; i <= channelCount; i++) {
+					 * // Getting channel title from My Watchlist page String
+					 * myWatchlistChannelTitle = driver .findElement(
+					 * By.xpath(XpathObjectRepo
+					 * .myWatchlistChannelTitlePartOne_XPATH + i +
+					 * XpathObjectRepo.myWatchlistChannelTitlePartTwo_XPATH))
+					 * .getText();
+					 * 
+					 * // Click on GO TO CHANNEL option
+					 * 
+					 * driver.findElement( By.xpath(XpathObjectRepo.
+					 * myWatchlistGoToChannelLinkPartOne_XPATH + i +
+					 * XpathObjectRepo.myWatchlistGoToChannelLinkPartTwo_XPATH))
+					 * .click(); Thread.sleep(sleepTime); log.info(
+					 * "Successfully clicked on GO TO CHANNEL option of video section of the channel '"
+					 * + myWatchlistChannelTitle + "'");
+					 * 
+					 * // Verify success fully navigated channel page
+					 * AssertionRepoFunctions.assertChannelPageTitle();
+					 * 
+					 * String channelPageChannelTitle = driver .findElement(
+					 * By.xpath(XpathObjectRepo.channelPageChannelTitle_XPATH))
+					 * .getText();
+					 * 
+					 * assertTrue(
+					 * "Failed to Navigate to Chaanel details page of the channel '"
+					 * + myWatchlistChannelTitle + "'", channelPageChannelTitle
+					 * .contains(myWatchlistChannelTitle));
+					 * 
+					 * log.info(
+					 * "Successfully navigated to the channel page of the channel '"
+					 * + channelPageChannelTitle +
+					 * "' after clicking on GO TO CHANNEL option");
+					 * 
+					 * // Navigate back to My Watchlist page
+					 * CommonFun.navigateBack(driver);
+					 * 
+					 * }
+					 * 
+					 * } else { log.error(
+					 * "GO TO CHANNEL option is NOT present in My Watch list page when it contains Videos "
+					 * ); }
+					 */
+
+					// Getting first Shows title from My shows page
+					String myShowsShowTitle = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.myShowsPageFirstShowTitle_XPATH))
+							.getText();
+
+					// Click on first shows title from video section
+					MyWatchlistFun.clickOnFirstShowsTitle();
+
+					// Verify success fully navigated Shows page
+					AssertionRepoFunctions.assertChannelPageTitle();
+
+					String showsPageShowTitle = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.channelPageChannelTitle_XPATH))
+							.getText();
+					// showsPageShowTitle = showsPageShowTitle.toUpperCase();
+
+					assertTrue(
+							"Failed to Navigate to Shows details page of the Shows '"
+									+ myShowsShowTitle + "'",
+							showsPageShowTitle.contains(myShowsShowTitle));
+
+					log.info("Successfully navigated to the Shows page of the Shows '"
+							+ showsPageShowTitle);
+
+					log.info("");
+				}
+
+				else {
+					log.error("My Shows section does not contain videos");
+					log.info("");
+				}
+			}
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+
+}

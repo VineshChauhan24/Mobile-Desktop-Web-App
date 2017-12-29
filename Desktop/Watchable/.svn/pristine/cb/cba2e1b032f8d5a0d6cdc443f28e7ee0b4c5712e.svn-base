@@ -1,0 +1,39 @@
+package comcast.test.app.testCases.videoManagement.videoPlay.videoStreamingTestCases;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.config.configServices.FlashObjectWebDriver;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+
+public class Testing extends BaseTest{
+	
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass=new RegisterToXidioApplicationAndChangeAPassword();
+	UserLoginFunctions userLogin=new UserLoginFunctions();
+	
+	@Test
+	public void testVideoSeekWithMultipleNextPositions() throws Exception {
+		FlashObjectWebDriver flashApp = new FlashObjectWebDriver(driver, "PlayerPlatformAPI");
+		
+		RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+		
+		Thread.sleep(sleepTime);		
+		driver.findElement(By.linkText("Ouya Review")).click();
+		
+		Thread.sleep(10000);
+		flashApp.callFlashObject("setVolume","0.0");
+		
+		String volume=flashApp.callFlashObject("playState");
+		String buffer=flashApp.callFlashObject("onBufferStart");
+		String playStateChanged=flashApp.callFlashObject("onPlayStateChanged","playorpause");
+		String state=flashApp.callFlashObject("playorpause");
+		String getEndPosition=flashApp.callFlashObject("getDuration");
+		
+
+		Thread.sleep(sleepTime);
+		//This method is used to logout from Gazeebo Application.
+		    userLogin.LogOut(driver);
+	}
+}

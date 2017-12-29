@@ -1,0 +1,15 @@
+#Valid login credentials
+email = manoj498@rediffmail.com
+password = Demo1111
+invalidpass = Demo11112222
+invalidemail = manoj498@rediffmail.com.com
+invalidsignupPass=abc
+invalidusername=abcde
+sigmupemail=test310@gmail.com
+sigmupinvalidemail=test310gmail.com
+url=http://qa3web.xidio.net
+# driverName can be CHROME, FF, IE & SAFARI
+driverName=CHROME
+#driverName=FF
+# OS can be WINDOWS & MAC
+os=WINDOWS

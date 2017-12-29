@@ -1,0 +1,160 @@
+package comcast.test.app.testCases.homePage;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyFooterlinksWithLogin Description: This test case validates
+ * whether all footer links are displayed in Home page into Watchable
+ * application, after logins to the application.
+ * **/
+
+// Author : Lekshmi
+
+public class VerifyFooterlinksWithLogin extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyFooterlinksWithLogin() throws Exception {
+
+		try {
+			log.info("Script: VerifyFooterlinksWithLogin");
+			log.info("**********************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Login to Watchable application
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.EMAIL,
+					UILablesRepo.PASSWORD);
+
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// Scroll to Footer section
+				HomePageCommonFunctions.scrollToFooterSection();
+
+				// Verifying Watchable Logo is present in footer
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Watchable Logo is not present in footer",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.footerwatchableLogo_XPATH)));
+				log.info("Watchable Logo is present in footer");
+
+				// Verifying Home link is present in the footer
+				Thread.sleep(LessSleepTime);
+				assertTrue("Home link is not present in footer",
+						CommonFun.isElementPresent(driver, By
+								.id(XpathObjectRepo.footerHomeLinkHomePage_ID)));
+				log.info("Home link is present in footer");
+
+				// Verifying Sign Up link is present in the footer
+				// Sign Up link is removed from footer
+				/*
+				 * Thread.sleep(LessSleepTime);
+				 * assertTrue("Sign Up link is not present in footer",
+				 * CommonFun.isElementPresent(driver, By
+				 * .id(XpathObjectRepo.footerAfterLoginSignUpLink_ID)));
+				 * log.info("Sign Up link is present in footer");
+				 */
+
+				// Verifying Help Link is present in the footer
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Help link is not present in footer",
+						CommonFun.isElementPresent(driver,
+								By.xpath(XpathObjectRepo.footerHelpLink_XPATH)));
+				log.info("Help link is present in footer");
+
+				// Verifying Contact Us Link is present in the footer
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Contact Us link is not present in footer",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.footerContactUsLink_XPATH)));
+				log.info("Contact Us link is present in footer");
+
+				// Verifying Privacy Policy Link is present in footer
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Privacy Policy link is not present in footer",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.footerPrivacyPolicyLink_XPATH)));
+				log.info("Privacy Policy link is present in footer");
+
+				// Verifying Terms of Use Link is present in the footer
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Terms of Use link is not present in footer",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.footerTermsOfUseLink_XPATH)));
+				log.info("Terms of Use link is present in footer");
+
+				// Verifying Ad Choices Link is present in the footer
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Ad Choices link is not present in footer",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.footerAdChoicesLink_XPATH)));
+				log.info("Ad Choices link is present in footer");
+
+				// Verifying Footer CopyRight is present
+				Thread.sleep(LessSleepTime);
+				assertTrue(
+						"Copyright text is not present in footer",
+						CommonFun.isElementPresent(
+								driver,
+								By.xpath(XpathObjectRepo.footerCopyRightText_XPATH)));
+				log.info("Copyright text is present in footer");
+
+				// Verify Sign Up is not clickable after login
+				// Sign Up link is removed from footer
+				/*
+				 * boolean match = false;
+				 * CommonFun.isElementClickable(driver.findElement(By
+				 * .id(XpathObjectRepo.footerAfterLoginSignUpLink_ID)),
+				 * "Sign Up Link", false);
+				 * 
+				 * log.info(match);
+				 * assertFalse("The SIGN UP button is clickable after login",
+				 * match);
+				 * 
+				 * log.info("The SIGN UP button is not clickable after login");
+				 */
+
+				// Logout from Watchable Application.
+				// LoginFun.logOut(driver);
+				log.info("");
+
+			}
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

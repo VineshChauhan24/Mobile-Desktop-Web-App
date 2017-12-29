@@ -1,0 +1,119 @@
+package comcast.test.app.testCases.signUp;
+
+import static org.junit.Assert.*;
+
+import java.util.Set;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.signUp.signUpFunctions.SignUpFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyCaptchaHelpPage Description: This test case verifies
+ * captcha help page opened after clicking on capcha help button. 
+ * Author: Manoj
+ * **/
+
+public class VerifyCaptchaHelpPage extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyCaptchaHelpPage() throws Exception {
+
+		try {
+
+			log.info("Script: VerifyCaptchaHelpPage");
+			log.info("*****************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Click on Sign UP button from header menu
+			SignUpFun.clickOnSignUpButton();
+
+			// Verify sign up form opened successfully
+			assertTrue(
+					"Sign Up form is not opened",
+					CommonFun.isElementPresent(driver,
+							By.xpath(XpathObjectRepo.signUpForm_XPATH)));
+			log.info("Sign Up form opened successfully");
+			if (driver.findElements(
+					By.xpath(XpathObjectRepo.signUpFormCaptchaImage_XPATH))
+					.size() > 0) {
+
+				// Click on captcha help icon
+				SignUpFun.clickOnCaptchaHelpButton();
+
+				String parentWindow = driver.getWindowHandle();
+				Set<String> handles = driver.getWindowHandles();
+
+				for (String windowHandle : handles) {
+					if (!windowHandle.equals(parentWindow)) {
+						driver.switchTo().window(windowHandle);
+						Thread.sleep(sleepTime);
+
+						assertTrue(
+								"Failed to open captcha help page",
+								driver.getTitle().contains(
+										UILablesRepo.CAPTCHA_HELP_PAGE_TITLE));
+
+						log.info("Successfully opened captcha help page");
+
+						// Verify Capcha page title
+						assertTrue(
+								"Title is not present in capcha help page",
+								CommonFun.isElementPresent(
+										driver,
+										By.xpath(XpathObjectRepo.reCapchaHelpHeader_XPATH)));
+						log.info("The Title '"
+								+ driver.findElement(
+										By.xpath(XpathObjectRepo.reCapchaHelpHeader_XPATH))
+										.getText()
+								+ "' is displayed in captcha help page");
+
+						driver.close(); // closing child window
+					}
+					Thread.sleep(sleepTime);
+					driver.switchTo().window(parentWindow); // cntrl to parent
+															// window
+				}
+			}
+			if (driver.findElements(
+					By.xpath(XpathObjectRepo.signUpFormCaptchaImage_XPATH))
+					.size() > 0) {
+				if (driver.findElement(
+						By.xpath(XpathObjectRepo.signUpFormCaptchaImage_XPATH))
+						.isDisplayed() == true) {
+					// Close the Sign Up form
+					SignUpFun.clickOnSignUpFormCloseIcon();
+
+					// Verify Sign Up form is closed successfully
+					assertFalse(
+							"Sign Up Form is not closed",
+							driver.findElement(
+									By.xpath(XpathObjectRepo.signUpForm_XPATH))
+									.isDisplayed());
+					log.info("Sign Up form is closed");
+				}
+			}
+
+			log.info("");
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

@@ -1,0 +1,172 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.FeaturedCategoryTestCases.FeaturedCategoryPageTestCases;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.JsonParser;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.configServices.utils.UrlFactoryUtil;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyHomeFeaturedChannelsWithItsDetails Description: This test
+ * case is to verify Home/Featured category Channels with its details which are
+ * displayed under Channel like Shows and Videos for registered Gazeebo
+ * Application user.
+ * **/
+
+public class VerifyHomeFeaturedChannelsWithItsDetails extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+
+	@Test
+	public void testVerifyHomeFeaturedChannelsWithItsDetails() throws Exception {
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.nFeaturedAPI();
+		List<VideoDetails> featuredChannelsList = videoDetails
+				.get("featuredChannelsList");
+		String sessionToken = RestAPIServices.executeGenreAuthentication();
+
+		try {
+			/*
+			 * This Method is to register new user using Gazeebo application and
+			 * to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			// assertionFunction.assertHomeActiveLink();
+
+			// This method is to assert Gazeebo Top Middle Menu and to ensure
+			// its collapsed.
+			// assertionFunction.assertGazeeboTopMiddleMenu();
+
+			// This method asserts featured title.
+			assertionFunction.assertFeaturedTitle();
+
+			if (featuredChannelsList != null) {
+				int loopIndexMax = 0;
+				if (featuredChannelsList.size() < 5)
+					loopIndexMax = featuredChannelsList.size();
+				else
+					loopIndexMax = 5;
+
+				for (int channel = 0; channel < loopIndexMax; channel++) {
+					VideoDetails channelList = featuredChannelsList
+							.get(channel);
+					// This Method verifies Channel present in Featured list and
+					// selects a Channel.
+					homePageCommonFun.selectFeaturedChannel(channelList
+							.getTitle());
+
+					// Verify Shows and click on it.
+					String ChannelsShowsResponse = RestAPIServices
+							.getSessionTokenResponse(
+									UrlFactoryUtil.getInstance().getSubShowURL(
+											channelList.getId()), sessionToken);
+					List<VideoDetails> featuredShowsList = JsonParser
+							.parseShowsResponse(ChannelsShowsResponse);
+
+					if (featuredShowsList != null) {
+						int showloopIndexMax = 0;
+						if (featuredShowsList.size() < 5)
+							showloopIndexMax = featuredShowsList.size();
+						else
+							showloopIndexMax = 5;
+
+						for (int index = 0; index < showloopIndexMax; index++) {
+							VideoDetails showList = featuredShowsList
+									.get(index);
+							driver.findElement(By.linkText(showList.getTitle()))
+									.click();
+							Thread.sleep(sleepTime);
+
+							// Manoj: Object modified and moved to
+							// XpathObjectRepo file
+							/*
+							 * assertTrue(driver
+							 * .findElement(By.cssSelector("BODY")) .getText()
+							 * .matches( "^[\\s\\S]*" + showList.getTitle() +
+							 * "[\\s\\S]*$"));
+							 */
+
+							assertTrue(driver
+									.findElement(
+											By.xpath(XpathObjectRepo.SHOWDETAILSHOWTITLE_XPATH))
+									.getText().matches(showList.getTitle()));
+
+							// Get Video Details and verify all response.
+							String videoResponse = RestAPIServices
+									.getSessionTokenResponse(
+											UrlFactoryUtil.getInstance()
+													.getVideoDetailsURL(
+															showList.getId(),
+															10), sessionToken);
+							List<VideoDetails> channelShowsVideoList = JsonParser
+									.parseChannelShowsVideosResponse(videoResponse);
+
+							if (channelShowsVideoList != null) {
+								int videoloopIndexMax = 0;
+								if (channelShowsVideoList.size() < 5)
+									videoloopIndexMax = channelShowsVideoList
+											.size();
+								else
+									videoloopIndexMax = 5;
+
+								for (int video = 0; video < videoloopIndexMax; video++) {
+									VideoDetails videoList = channelShowsVideoList
+											.get(video);
+
+									// Manoj: Object modified and moved to
+									// XpathObjectRepo file
+									/*
+									 * assertTrue(driver
+									 * .findElement(By.cssSelector("BODY"))
+									 * .getText() .matches( "^[\\s\\S]*" +
+									 * videoList .getTitle() + "[\\s\\S]*$"));
+									 */
+
+									assertTrue(driver
+											.findElement(
+													By.xpath(XpathObjectRepo.SHOWDETAILVIDEOLIST_XPATH))
+											.getText()
+											.contains(videoList.getTitle()));
+
+								}
+								driver.navigate().back();
+								Thread.sleep(sleepTime);
+							}
+						}
+						driver.navigate().back();
+						Thread.sleep(sleepTime);
+					}
+				}
+			}
+			// This method is used to logout from Gazeebo Application.
+			userLogin.LogOut(driver);
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

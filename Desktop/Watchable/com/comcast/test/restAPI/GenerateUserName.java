@@ -1,0 +1,42 @@
+package comcast.test.restAPI;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+
+public class GenerateUserName {
+
+	public static String emailId;
+	public static long mobileNumber;
+
+	public String generateEmail() {
+
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		Date date = new Date();
+
+		String emailId = "Gazeebo" + dateFormat.format(date) + "@test.com";
+		System.out.println("Email ID : " + emailId);
+		return null;
+	}
+
+	public long createRandomInteger() {
+		long aStart = 9980000000L;
+		long aEnd = 9999999999L;
+		Random aRandom = new Random();
+		long range = aEnd - (long) aStart + 1;
+		long fraction = (long) (range * aRandom.nextDouble());
+		long randomNumber = fraction + (long) aStart;
+
+		mobileNumber = randomNumber;
+
+		System.out.println("Mobile Numebr: " + mobileNumber);
+		return randomNumber;
+	}
+
+	public static void main(String args[]) {
+		GenerateUserName un = new GenerateUserName();
+		un.generateEmail();
+		un.createRandomInteger();
+	}
+}

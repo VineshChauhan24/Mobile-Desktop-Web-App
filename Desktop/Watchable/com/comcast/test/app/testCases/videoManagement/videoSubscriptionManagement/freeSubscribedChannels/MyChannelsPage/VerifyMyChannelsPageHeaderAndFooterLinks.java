@@ -1,0 +1,119 @@
+package comcast.test.app.testCases.videoManagement.videoSubscriptionManagement.freeSubscribedChannels.MyChannelsPage;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.subscriptionsPage.common.SubscriptionsPageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.TestDataGenerator;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+
+/**
+ * Class Name: VerifyMyChannelsPageHeaderAndFooterLinks Description: This test
+ * case is to verify whether the Watchable logo, link and welcome message is
+ * displayed in My Channels page by logging into Watchable application.
+ */
+
+public class VerifyMyChannelsPageHeaderAndFooterLinks extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	TestDataGenerator proUtil = new TestDataGenerator();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	SubscriptionsPageCommonFunctions subscriptionsPageCommonFun = new SubscriptionsPageCommonFunctions();
+
+	@Test
+	public void testVerifyMyChannelsPageHeaderAndFooterLinks() throws Exception {
+
+		// This method is used to get update Data Properties fields
+		proUtil.load(new FileInputStream(new File("com/data.properties")));
+
+		try {
+			/*
+			 * This Method is to register new user using Gazeebo application and
+			 * to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+			int loginError = driver
+					.findElements(
+							By.xpath(XpathObjectRepo.SIGNUPPAGE_INCORRECT_CREDENTIALS_MSG_XPATH))
+					.size();
+
+			if (loginError == 0) {
+
+				// This method is to ensure Home is Active page when Login into
+				// Application.
+				assertionFunction.assertHomeActiveLink();
+
+				// This method is to navigate My Channels Page.
+				subscriptionsPageCommonFun.navigateToMyChannelsPage();
+
+				// This method is to ensure My Channels is Active page when
+				// Login
+				// into Application.
+				assertionFunction.assertMyChannelsActiveLink();
+
+				// This method asserts Watchable Logo.
+				assertionFunction.assertWatchableLogo();
+
+				// This method asserts Help link.
+				assertionFunction.assertHelpLink();
+
+				// This method asserts Search Text Box and its value.
+				assertionFunction.assertSearchTextBox();
+
+				// String
+				// Hellomsg=driver.findElement(By.xpath("//*[@id='topright_menu']/ul/li[3]/a/span[1]")).getText();
+				// String
+				// msg=driver.findElement(By.xpath(".//*[@id='top_menu']/ul/li[2]/a/span[2]")).getText();
+
+				// String WelcomeMsg = Hellomsg+" "+msg;
+				// String
+				// RegisteredUserName=Hellomsg+" "+proUtil.getProperty("USER_NAME");
+
+				String RegisteredUserName = UILablesRepo.USERNAME;
+
+				assertEquals(
+						RegisteredUserName,
+						driver.findElement(
+								By.xpath(XpathObjectRepo.USERNAME_TOPMENU_XPATH))
+								.getText());
+
+				// boolean
+				// Compare=WelcomeMsg.equalsIgnoreCase(RegisteredUserName);
+
+				// if(Compare==false)
+				// assertEquals(Hellomsg+" "+proUtil.getProperty("USER_NAME"),WelcomeMsg);
+				// else
+
+				// This method asserts Footer Logo and It's Text.
+				assertionFunction.assertFooterLogo();
+
+				// This method asserts Footer Copy Right Links.
+				assertionFunction.assertFooterCopyRight();
+
+				// This method is used to logout from Watchable Application.
+				userLogin.LogOut(driver);
+			}
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+
+	}
+
+}

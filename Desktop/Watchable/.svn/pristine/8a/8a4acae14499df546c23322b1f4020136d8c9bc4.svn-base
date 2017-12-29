@@ -1,0 +1,173 @@
+package comcast.test.app.testCases.videoManagement.videoHomeManagement.PopularChannelsCategoryTestCases.ChannelTestCases.RowsCategory;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.constant.XidioConstant;
+import comcast.test.app.common.userManagement.userLogin.common.UserLoginFunctions;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.config.configServices.utils.BaseTest;
+import comcast.test.config.configServices.utils.RestAPIServices;
+import comcast.test.config.dataServices.registerToXidioApplicationAndChangeAPassword.RegisterToXidioApplicationAndChangeAPassword;
+import comcast.test.config.dataServices.vo.VideoDetails;
+
+/**
+ * Class Name: VerifyShowsAndVideosInRowsForHomePopularChannels Description:
+ * This test case validates whether Shows and Videos are displayed after
+ * clicking on SHOWS link in channel page for the channel present under Popular
+ * Channels section in Home page by logging registered user into Watchable
+ * application.
+ * **/
+
+public class VerifyShowsAndVideosInRowsForHomePopularChannels extends BaseTest {
+
+	RegisterToXidioApplicationAndChangeAPassword RegUserAndChangePass = new RegisterToXidioApplicationAndChangeAPassword();
+	HomePageCommonFunctions homePageCommonFun = new HomePageCommonFunctions();
+	UserLoginFunctions userLogin = new UserLoginFunctions();
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyShowsAndVideosInRowsForHomePopularChannels()
+			throws Exception {
+
+		Map<String, List<VideoDetails>> videoDetails = RestAPIServices
+				.nPopularAPI();
+		List<VideoDetails> channelList = videoDetails
+				.get("popularChannelsList");
+		List<VideoDetails> popularChannelShowList = videoDetails
+				.get("popularChannelShowsList");
+		List<VideoDetails> popularChannelShowVideoList = videoDetails
+				.get("popularChannelShowVideosList");
+
+		try {
+			/*
+			 * This Method is to register new user using Watchable application
+			 * and to change a password.
+			 */
+			RegUserAndChangePass.RegisterToComcastAppAndChangePassword(driver);
+
+			// This method is to ensure Home is Active page when Login into
+			// Application.
+			assertionFunction.assertHomeActiveLink();
+
+			// This method is to assert Watchable Top Middle Menu and to ensure
+			// its collapsed.
+			// assertionFunction.assertGazeeboTopMiddleMenu();//This feature
+			// doesnt exist now.
+
+			// This method asserts Popular Channels title.
+			assertionFunction.assertPopularChannelsTitle();
+
+				//This Method verifies Channel present in Popular Channel Section and selects a Channel. 
+			    homePageCommonFun.selectPopularChannel(channelList.get(XidioConstant.selectPopularChannel).getTitle());
+			    
+			    if(popularChannelShowList!=null)
+			    {
+			    	Thread.sleep(sleepTime);
+				   // assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches(popularChannelShowList.get(XidioConstant.selectPopularShow).getTitle()));
+				    		
+				   // assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches(popularChannelShowVideoList.get(XidioConstant.selectVideo).getTitle()));
+
+				// This Method verifies Channel present in Popular Channel
+				// Section and selects a Channel.
+				//homePageCommonFun.selectPopularChannel(channelList.get(XidioConstant.selectPopularChannel).getTitle());
+			    
+				if (popularChannelShowList != null) {
+					Thread.sleep(sleepTime);
+
+					// Manoj: Object modified and moved to XpathObjectRepo file
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularChannelShowList.get(XidioConstant.selectPopularShow).getTitle()+"[\\s\\S]*$"));
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.SHOWDETAILSHOWLIST_XPATH))
+							.getText()
+							.contains(
+									popularChannelShowList.get(
+											XidioConstant.selectPopularShow)
+											.getTitle()));
+
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularChannelShowVideoList.get(XidioConstant.selectVideo).getTitle()+"[\\s\\S]*$"));
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.SHOWDETAILVIDEOLIST_XPATH))
+							.getText()
+							.contains(
+									popularChannelShowVideoList.get(
+											XidioConstant.selectVideo)
+											.getTitle()));
+
+					// Click on Show and verify videos.
+					driver.findElement(
+							By.linkText(popularChannelShowList.get(
+									XidioConstant.selectShow).getTitle()))
+							.click();
+
+					Thread.sleep(sleepTime);
+					// assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*"+popularChannelShowVideoList.get(XidioConstant.selectVideo).getTitle()+"[\\s\\S]*$"));
+					assertTrue(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.SHOWDETAILVIDEOLIST_XPATH))
+							.getText()
+							.contains(
+									popularChannelShowVideoList.get(
+											XidioConstant.selectVideo)
+											.getTitle()));
+
+				}
+			} else {
+				boolean isPresent;
+				// Manoj: Object changed and moved to XpathObjectRepo
+				// file
+
+				// isPresent=driver.findElement(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul")).findElements(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul/li[1]/article/h1/a")).size()>0;
+				isPresent = driver
+						.findElement(
+								By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSROW_XPATH))
+						.findElements(
+								By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSFIRSTTITLELABEL_XPATH))
+						.size() > 0;
+				if (isPresent == true) {
+					// String
+					// channelName=driver.findElement(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul")).findElement(By.xpath(".//*[@id='popular_channels']/div/section/div/div/ul/li[1]/article/h1/a")).getText();
+					String channelName = driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSROW_XPATH))
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSFIRSTTITLELABEL_XPATH))
+							.getText();
+					assertFalse(driver
+							.findElement(
+									By.xpath(XpathObjectRepo.HOMEPOPULARCHANNELSROW_XPATH))
+							.getText().contains(channelName));
+				}
+
+		   	//This method asserts Watchable Logo.
+	   		assertionFunction.assertWatchableLogo();
+	   		
+		    //This method asserts Footer Logo and It's Text.
+		    assertionFunction.assertFooterLogo();
+		    
+		    //This method asserts Footer Copy Right Links.
+		    assertionFunction.assertFooterCopyRight();
+		    
+		    //This method is used to logout from Watchable Application.
+		    userLogin.LogOut(driver);
+
+			// This method is to ensure Login page is displayed when user Sign
+			// Out from Application.
+			assertionFunction.assertLoginPageDetails();
+			}
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+		}
+}

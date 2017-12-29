@@ -1,0 +1,164 @@
+package comcast.test.app.testCases.contactUs;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.common.videoManagement.homePage.common.HomePageCommonFunctions;
+import comcast.test.app.testCases.contactUs.contactUsFunctions.ContactUsFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyResetButtonFunctionality Description: This test case
+ * verifies the functionality of reset button in contact us form. On clicking on
+ * this button, it should clear all the fields including error messages..
+ * Author: Manoj
+ * **/
+
+public class VerifyResetButtonFunctionality extends BaseTest {
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyResetButtonFunctionality() throws Exception {
+
+		try {
+
+			log.info("Script: VerifyResetButtonFunctionality");
+			log.info("**************************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Scroll to Footer
+			HomePageCommonFunctions.scrollToFooterSection();
+			Thread.sleep(sleepTime);
+
+			// Click on Contact Us link from footer
+			ContactUsFun.clickOnContactUsLink();
+
+			// Verify Contact Us form opened successfully
+			assertTrue(
+					"Contact Us form is not opened",
+					CommonFun.isElementPresent(driver,
+							By.xpath(XpathObjectRepo.contactUsForm_XPATH)));
+			log.info("Contact Us form opened successfully");
+
+			// select reason from reason list
+			ContactUsFun.selectReason();
+
+			// Enter details in contact us form
+			/*
+			 * ContactUsFun.enterContachUsDetails(driver,
+			 * UILablesRepo.CONATCT_REASON, UILablesRepo.USERNAME,
+			 * UILablesRepo.CAPTCHA_CODE);
+			 */
+
+			
+			ContactUsFun.enterContachUsDetails(driver,
+					UILablesRepo.CONATCT_REASON,  UILablesRepo.USERNAME);
+
+			// Click on Submit button by keeping all fields blank
+			ContactUsFun.clickOnSubmitButton();
+
+			// Click on Reset button to clear all fields and error messages if
+			// any
+			ContactUsFun.clickOnResetButton();
+
+			// Verify Reason description reset to blank
+
+			assertEquals(
+					"Reason description not reset to blank",
+					"",
+					driver.findElement(
+							By.xpath(XpathObjectRepo.contactUsFormReasonDesc_XPATH))
+							.getAttribute("value"));
+
+			log.info("Reason description reset to blank");
+
+			// Verify Email reset to blank
+
+			assertEquals(
+					"Email not reset to blank",
+					"",
+					driver.findElement(
+							By.id(XpathObjectRepo.contactUsFormEmailText_ID))
+							.getAttribute("value"));
+
+			log.info("Email reset to blank");
+
+			// Verify Capatcha reset to blank
+
+			/*assertEquals(
+					"Capatcha not reset to blank",
+					"",
+					driver.findElement(
+							By.id(XpathObjectRepo.contactUsFormCaptchaText_ID))
+							.getAttribute("value"));
+
+			log.info("Capatcha reset to blank");*/
+
+			// Verify Reason description error message not present
+
+			assertFalse(
+					"Reason description error message present after clicking reset button",
+					CommonFun.isElementPresent(
+							driver,
+							By.xpath(XpathObjectRepo.contactUsFormReasonDesError_XPATH)));
+			log.info("Reason description error message not present after clicking reset button");
+
+			// Verify Reason list error message not present
+
+			assertFalse(
+					"Reason list error message present after clicking reset button",
+					CommonFun.isElementPresent(
+							driver,
+							By.xpath(XpathObjectRepo.contactUsFormContactReasonError_XPATH)));
+			log.info("Reason list error message not present after clicking reset button");
+
+			// Verify Email error message not present
+
+			assertFalse(
+					"Email error message present after clicking reset button",
+					CommonFun.isElementPresent(
+							driver,
+							By.xpath(XpathObjectRepo.contactUsFormEmailError_XPATH)));
+			log.info("Email error message not present after clicking reset button");
+
+			// Verify Email error message not present
+
+			assertFalse(
+					"Email error message present after clicking reset button",
+					CommonFun.isElementPresent(
+							driver,
+							By.xpath(XpathObjectRepo.contactUsFormCaptchaError_XPATH)));
+			log.info("Email error message not present after clicking reset button");
+
+			// Close the Contact Us form
+			ContactUsFun.clickOnContactUsFormCloseIcon();
+
+			// Verify Contact Us form is closed successfully
+			assertFalse(
+					"Contact Us Form is not closed",
+					driver.findElement(
+							By.xpath(XpathObjectRepo.contactUsForm_XPATH))
+							.isDisplayed());
+			log.info("Contact Us form is closed");
+
+			log.info("");
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+
+}

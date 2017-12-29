@@ -1,0 +1,119 @@
+package comcast.test.app.testCases.loginPageAndLogin;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VerifyChangePasswordMandatoryFields Description: This test case
+ * is to verify reset Password functionality by keeping all password fields as
+ * blank. Author: Manoj
+ * **/
+
+public class VerifyChangePasswordMandatoryFields extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVerifyChangePasswordMandatoryFields() throws Exception {
+
+		try {
+
+			log.info("Script: VerifyChangePasswordMandatoryFields");
+			log.info("*******************************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Login to Watchable application
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.EMAIL,
+					UILablesRepo.PASSWORD);
+
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// Select Settings Menu
+
+				LoginFun.selectSettingsMenu();
+
+				if (driver.findElement(
+						By.xpath(XpathObjectRepo.resetPasswordForm_XPATH))
+						.isDisplayed() == true) {
+
+					// Verify Reset Password form is opened successfully
+
+					assertTrue(
+							"Reset Password form is not opened",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordForm_XPATH)));
+					log.info("Reset Passwordn form opened successfully");
+
+					// Click on Update button by keeping all fields blank
+					LoginFun.clickOnResetPasswordFormUpdateButton();
+
+					// Verify Old Password error message
+					assertTrue(
+							"Old Password Error Message is not displayed",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordFormOldPasswordError_XPATH)));
+					log.info("Old Password Error Message '"
+							+ driver.findElement(
+									By.xpath(XpathObjectRepo.resetPasswordFormOldPasswordError_XPATH))
+									.getText() + "' is displayed");
+
+					// Verify New Password error message
+					assertTrue(
+							"New Password Error Message is not displayed",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordFormNewPasswordError_XPATH)));
+					log.info("New Password Error Message '"
+							+ driver.findElement(
+									By.xpath(XpathObjectRepo.resetPasswordFormNewPasswordError_XPATH))
+									.getText() + "' is displayed");
+
+					// Verify Confirm Password error message
+					assertTrue(
+							"Confirm Password Error Message is not displayed",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordFormConfirmPasswordError_XPATH)));
+					log.info("Confirm Password Error Message '"
+							+ driver.findElement(
+									By.xpath(XpathObjectRepo.resetPasswordFormConfirmPasswordError_XPATH))
+									.getText() + "' is displayed");
+
+					// Logout from Watchable Application.
+					// LoginFun.logOut(driver);
+
+					log.info("");
+
+				} else {
+					log.error("Failed to open  Reset Passwordn form...!");
+				}
+			}
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}

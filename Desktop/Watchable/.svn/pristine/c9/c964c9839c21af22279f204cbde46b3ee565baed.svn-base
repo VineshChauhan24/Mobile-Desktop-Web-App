@@ -1,0 +1,569 @@
+package comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions;
+
+import static org.junit.Assert.assertTrue;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.config.configServices.utils.BaseTest;
+
+public class LoginFun extends BaseTest {
+
+	/**
+	 * Method Name: LoginToWatchableApplication Description: This method used to
+	 * login to Watchable application.
+	 * 
+	 * @param driver
+	 *            : Native browser driver
+	 * @param userName
+	 *            : Watchable application user name
+	 * @param password
+	 *            : Watchable application password
+	 * @throwsdException
+	 */
+	public static void loginToWatchableApplication(WebDriver driver,
+			String email, String password) throws Exception {
+
+		// Click on Login button from header menu
+
+		driver.findElement(By.xpath(XpathObjectRepo.loginMenu_XPATH)).click();
+
+		Thread.sleep(sleepTime);
+
+		// Verify login pop up opened successfully
+
+		assertTrue(
+				"Login pop up is not opened",
+				CommonFun.isElementPresent(driver,
+						By.xpath(XpathObjectRepo.loginForm_XPATH)));
+		log.info("Login form opened successfully");
+
+		// Enter usr name/Email
+		driver.findElement(By.id(XpathObjectRepo.loginFormEmailText_ID))
+				.clear();
+		driver.findElement(By.id(XpathObjectRepo.loginFormEmailText_ID))
+				.sendKeys(email);
+
+		log.info("User Name/Email entered: " + email);
+
+		// Enter Password
+		driver.findElement(By.id(XpathObjectRepo.loginFormPasswordText_ID))
+				.clear();
+		driver.findElement(By.id(XpathObjectRepo.loginFormPasswordText_ID))
+				.sendKeys(password);
+
+		log.info("Password entered: " + password);
+
+		// Click on Login button
+		driver.findElement(By.id(XpathObjectRepo.loginFormLoginButton_ID))
+				.click();
+		Thread.sleep(sleepTime);
+		log.info("Clicked on Login button from Login form");
+
+		WebElement loginError = driver.findElement(By
+				.id(XpathObjectRepo.loginError_ID));
+
+		if (loginError.isDisplayed() == false) {
+
+			// Verifying successful login
+			assertTrue(
+					"Login to Watchable application is failed...!",
+					CommonFun.isElementPresent(driver,
+							By.xpath(XpathObjectRepo.loginUserEmailTitle_XPATH)));
+			log.info("Successfully login to Watchable application...!");
+		} else {
+			log.error("Login to Watchable application is failed with invalid credentials...!");
+			log.error("Login Error: "
+					+ driver.findElement(
+							By.id(XpathObjectRepo.loginError_ID))
+							.getText());
+		}
+
+	}
+	
+	
+	
+	
+	public static void loginToWatchableApplicationInvalidLengthUser(WebDriver driver,
+			String email, String password) throws Exception {
+
+		// Click on Login button from header menu
+
+		driver.findElement(By.xpath(XpathObjectRepo.loginMenu_XPATH)).click();
+
+		Thread.sleep(sleepTime);
+
+		// Verify login pop up opened successfully
+
+		assertTrue(
+				"Login pop up is not opened",
+				CommonFun.isElementPresent(driver,
+						By.xpath(XpathObjectRepo.loginForm_XPATH)));
+		log.info("Login form opened successfully");
+
+		// Enter usr name/Email
+		driver.findElement(By.id(XpathObjectRepo.loginFormEmailText_ID))
+				.clear();
+		driver.findElement(By.id(XpathObjectRepo.loginFormEmailText_ID))
+				.sendKeys(email);
+
+		log.info("User Name/Email entered: " + email);
+
+		// Enter Password
+		driver.findElement(By.id(XpathObjectRepo.loginFormPasswordText_ID))
+				.clear();
+		driver.findElement(By.id(XpathObjectRepo.loginFormPasswordText_ID))
+				.sendKeys(password);
+
+		log.info("Password entered: " + password);
+
+		// Click on Login button
+		driver.findElement(By.id(XpathObjectRepo.loginFormLoginButton_ID))
+				.click();
+		Thread.sleep(sleepTime);
+		log.info("Clicked on Login button from Login form");
+
+		
+			log.error("Login to Watchable application is failed with invalid length user nmae...!");
+			log.error("Login Error: "
+					+ driver.findElement(
+							By.xpath(XpathObjectRepo.loginUserNameError_XPATH))
+							.getText());
+		
+
+	}
+	
+
+	/**
+	 * Method Name: LoginToWatchable Description: This method used to login to
+	 * Watchable application from login pop up if user is not logged in to
+	 * application initially.
+	 * 
+	 * @param driver
+	 *            : Native browser driver
+	 * @param userName
+	 *            : Watchable application user name
+	 * @param password
+	 *            : Watchable application password
+	 * @throwsdException
+	 */
+	public static void loginToWatchable(WebDriver driver, String userName,
+			String password) throws Exception {
+
+		// Enter User Name
+		driver.findElement(By.id(XpathObjectRepo.loginFormEmailText_ID))
+				.clear();
+		driver.findElement(By.id(XpathObjectRepo.loginFormEmailText_ID))
+				.sendKeys(userName);
+
+		log.info("User name entered: " + userName);
+
+		// Enter Password
+		driver.findElement(By.id(XpathObjectRepo.loginFormPasswordText_ID))
+				.clear();
+		driver.findElement(By.id(XpathObjectRepo.loginFormPasswordText_ID))
+				.sendKeys(password);
+
+		log.info("Password entered: " + password);
+
+		// Click on Login button
+		driver.findElement(By.id(XpathObjectRepo.loginFormLoginButton_ID))
+				.click();
+		Thread.sleep(sleepTime);
+		log.info("Clicked on Login button from Login form");
+
+		WebElement loginError = driver.findElement(By
+				.id(XpathObjectRepo.loginError_ID));
+
+		if (loginError.isDisplayed() == false) {
+
+			// Verifying successful login
+			assertTrue(
+					"Login to Watchable application is failed...!",
+					CommonFun.isElementPresent(driver,
+							By.xpath(XpathObjectRepo.loginUserEmailTitle_XPATH)));
+			log.info("Successfully login Watchable application...!");
+		} else {
+			log.error("Login to Watchable application is failed with invalid credentials...!");
+		}
+
+	}
+
+	/**
+	 * Method: LogOut Description: This method is to Log out from Watchable
+	 * Application.
+	 * 
+	 * @throws InterruptedException
+	 */
+	public static void logOut(WebDriver driver) throws Exception {
+
+		// Mouse over on user profile icon
+
+		CommonFun
+				.mouseOverElement(driver, driver.findElement(By
+						.xpath(XpathObjectRepo.profileIcon_XPATH)));
+
+		Thread.sleep(sleepTime);
+
+		if (driver
+				.findElement(By.xpath(XpathObjectRepo.logoutButtonMenu_XPATH))
+				.isDisplayed() == true) {
+
+			CommonFun.mouseOverElement(driver, driver.findElement(By
+					.xpath(XpathObjectRepo.logoutButtonMenu_XPATH)));
+
+			Thread.sleep(sleepTime);
+
+			CommonFun.mouseOverElement(driver, driver.findElement(By
+					.xpath(XpathObjectRepo.logoutButton_XPATH)));
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions
+					.elementToBeClickable(By
+							.xpath(XpathObjectRepo.logoutButton_XPATH)));
+
+			// Click on Logout Menu
+			driver.findElement(By.xpath(XpathObjectRepo.logoutButton_XPATH))
+					.click(); 
+			
+			Thread.sleep(sleepTime);
+
+			log.info("Successfully Selected Logout option");
+
+			// Verifying successful logout from the application
+
+			assertTrue(
+					"Failed to logout from the application...!",
+					CommonFun.isElementPresent(driver,
+							By.xpath(XpathObjectRepo.loginMenu_XPATH)));
+			log.info("Successfully logout from the application...!");
+			Thread.sleep(sleepTime);
+		}
+
+	}
+
+	/**
+	 * Method Name: clickOnLoginButton Description: This method used click on
+	 * Login button from header
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnLoginButton() throws Exception {
+
+		// click on Login button
+
+		driver.findElement(By.xpath(XpathObjectRepo.loginMenu_XPATH)).click();
+		Thread.sleep(sleepTime);
+
+		log.info("Successfully clicked On Login button");
+
+	}
+
+	/**
+	 * Method Name: clickOnLoginFormCloseIcon Description: This method used
+	 * click on close icon from login form
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnLoginFormCloseIcon() throws Exception {
+
+		// click on close icon
+
+		driver.findElement(By.xpath(XpathObjectRepo.loginFormCloseButton_XPATH))
+				.click();
+		Thread.sleep(sleepTime);
+
+		log.info("Successfully clicked On close icon");
+
+	}
+
+	/**
+	 * Method Name: clickOnForgotPasswordFormCloseIcon Description: This method
+	 * used click on close icon from forgot password form
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnForgotPasswordFormCloseIcon() throws Exception {
+
+		// click on close icon
+
+		driver.findElement(
+				By.id(XpathObjectRepo.forgotPasswordFormCloseButton_ID))
+				.click();
+		Thread.sleep(sleepTime);
+
+		log.info("Successfully clicked On close icon");
+
+	}
+
+	/**
+	 * Method Name: clickOnResetPasswordFormCloseIcon Description: This method
+	 * used click on close icon from reset password form
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnResetPasswordFormCloseIcon() throws Exception {
+
+		// click on close icon
+
+		driver.findElement(
+				By.xpath(XpathObjectRepo.resetPasswordFormCloseButton_XPATH))
+				.click();
+
+		log.info("Successfully clicked On close icon");
+		Thread.sleep(sleepTime);
+	}
+
+	/**
+	 * Method Name: clickOnForgotPasswordFormContinueButton Description: This
+	 * method used click on continue button from forgot password form
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnForgotPasswordFormContinueButton()
+			throws Exception {
+
+		// click on continue button
+
+		driver.findElement(
+				By.id(XpathObjectRepo.forgotPasswordFormContinueButton_ID))
+				.click();
+		Thread.sleep(LessSleepTime);
+
+		log.info("Successfully clicked On Continue button");
+
+	}
+
+	/**
+	 * Method Name: clickOnResetPasswordFormUpdateButton Description: This
+	 * method used click on update button from reset password form
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnResetPasswordFormUpdateButton() throws Exception {
+
+		// click on continue button
+
+		driver.findElement(
+				By.xpath(XpathObjectRepo.resetPasswordFormUpdateButton_XPATH))
+				.click();
+		Thread.sleep(sleepTime);
+
+		log.info("Successfully clicked On Update button");
+
+	}
+
+	/**
+	 * Method Name: enterOldNewConfirmPasswordDetails Description: This method
+	 * enter old, new and confirms passwords in reset password form
+	 * 
+	 * @throwsdException
+	 */
+	public static void enterOldNewConfirmPasswordDetails(WebDriver driver,
+			String oldPass, String newPass, String confirmPass)
+			throws Exception {
+
+		// Enter Old password
+
+		driver.findElement(
+				By.id(XpathObjectRepo.resetPasswordFormOldPasswordText_ID))
+				.clear();
+		driver.findElement(
+				By.id(XpathObjectRepo.resetPasswordFormOldPasswordText_ID))
+				.sendKeys(oldPass);
+
+		log.info("Old Password entered: " + oldPass);
+
+		// Enter New password
+
+		driver.findElement(
+				By.id(XpathObjectRepo.resetPasswordFormNewPasswordText_ID))
+				.clear();
+		driver.findElement(
+				By.id(XpathObjectRepo.resetPasswordFormNewPasswordText_ID))
+				.sendKeys(newPass);
+
+		log.info("New Password entered: " + newPass);
+
+		// Enter Confirm password
+
+		driver.findElement(
+				By.xpath(XpathObjectRepo.resetPasswordFormConfirmPasswordText_XPATH))
+				.clear();
+		driver.findElement(
+				By.xpath(XpathObjectRepo.resetPasswordFormConfirmPasswordText_XPATH))
+				.sendKeys(confirmPass);
+
+		log.info("Confirm Password entered: " + confirmPass);
+
+	}
+
+	/**
+	 * Method Name: clickOnLoginButtonFormLoginForm Description: This method
+	 * used click on close icon from login form
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnLoginButtonFormLoginForm() throws Exception {
+
+		// Click on Login button from login form
+		driver.findElement(By.id(XpathObjectRepo.loginFormLoginButton_ID))
+				.click();
+		Thread.sleep(sleepTime);
+
+		log.info("Successfully clicked On login button from login form icon");
+
+	}
+
+	/**
+	 * Method Name: clickOnForgetPasswordLinkFormLoginForm Description: This
+	 * method used click on forgot your password link from login form
+	 * 
+	 * @throwsdException
+	 */
+	public static void clickOnForgetPasswordLinkFormLoginForm()
+			throws Exception {
+
+		// Click on forgot your password link
+		driver.findElement(
+				By.xpath(XpathObjectRepo.loginFormForgotPassLink_XPATH))
+				.click();
+		Thread.sleep(sleepTime);
+
+		log.info("Successfully clicked On forgot your password link from login form");
+
+	}
+
+	/**
+	 * Method: selectSettingsMenu Description: This method Select settings menu
+	 * to open Reset password form
+	 * 
+	 * @throws InterruptedException
+	 */
+	public static void selectSettingsMenu() throws Exception {
+
+		// Mouse over on user profile icon
+
+		CommonFun
+				.mouseOverElement(driver, driver.findElement(By
+						.xpath(XpathObjectRepo.profileIcon_XPATH)));
+
+		Thread.sleep(sleepTime);
+
+		if (driver.findElement(
+				By.xpath(XpathObjectRepo.settingsButtonMenu_XPATH))
+				.isDisplayed() == true) {
+
+			CommonFun.mouseOverElement(driver, driver.findElement(By
+					.xpath(XpathObjectRepo.settingsButtonMenu_XPATH)));
+
+			new WebDriverWait(driver, 40).until(ExpectedConditions
+					.elementToBeClickable(By
+							.xpath(XpathObjectRepo.settingsButton_XPATH)));
+			// Thread.sleep(sleepTime);
+
+			driver.findElement(By.xpath(XpathObjectRepo.settingsButton_XPATH))
+					.click();
+
+			Thread.sleep(sleepTime);
+			log.info("Successfully Selected Settings option");
+		}
+
+	}
+
+	/**
+	 * Method Name: LoginToWatchableApplication Description: This method used to
+	 * login to Watchable application for remember me functionality.
+	 * 
+	 * @param driver
+	 *            : Native browser driver
+	 * @param userName
+	 *            : Watchable application user name
+	 * @param password
+	 *            : Watchable application password
+	 * @throwsdException
+	 */
+	public static void loginToWatchableApplicationRememberMe(WebDriver driver,
+			String email, String password) throws Exception {
+
+		// Click on Login button from header menu
+
+		// driver.findElement(By.xpath(XpathObjectRepo.loginMenu_XPATH)).click();
+
+		// Thread.sleep(sleepTime);
+
+		// Verify login pop up opened successfully
+
+		/*
+		 * assertTrue( "Login pop up is not opened",
+		 * CommonFun.isElementPresent(driver,
+		 * By.xpath(XpathObjectRepo.loginForm_XPATH)));
+		 * log.info("Login form opened successfully");
+		 */
+
+		// Enter Email
+		driver.findElement(By.id(XpathObjectRepo.loginFormEmailText_ID))
+				.clear();
+		driver.findElement(By.id(XpathObjectRepo.loginFormEmailText_ID))
+				.sendKeys(email);
+
+		log.info("Email entered: " + email);
+
+		// Enter Password
+		driver.findElement(By.id(XpathObjectRepo.loginFormPasswordText_ID))
+				.clear();
+		driver.findElement(By.id(XpathObjectRepo.loginFormPasswordText_ID))
+				.sendKeys(password);
+
+		log.info("Password entered: " + password);
+
+		// If Remember me check box is not selected, selecting it
+
+		boolean rememberMeCheckStatus = false;
+
+		rememberMeCheckStatus = driver.findElement(
+				By.xpath(XpathObjectRepo.loginFormRememberMeCheckBox_XPATH))
+				.isSelected();
+
+		log.info(rememberMeCheckStatus);
+
+		if (rememberMeCheckStatus == false) {
+
+			driver.findElement(
+					By.xpath(XpathObjectRepo.loginFormRememberMeCheckBox_XPATH))
+					.click();
+
+			CommonFun.mouseOverElementAndClick(driver, driver.findElement(By
+					.xpath(XpathObjectRepo.loginFormRememberMeCheckBox_XPATH)),
+					"Remember me check");
+
+			Thread.sleep(LessSleepTime);
+		}
+
+		// Click on Login button
+		driver.findElement(By.id(XpathObjectRepo.loginFormLoginButton_ID))
+				.click();
+		Thread.sleep(sleepTime);
+		log.info("Clicked on Login button from Login form");
+
+		WebElement loginError = driver.findElement(By
+				.id(XpathObjectRepo.loginError_ID));
+
+		if (loginError.isDisplayed() == false) {
+
+			// Verifying successful login
+			assertTrue(
+					"Login to Watchable application is failed...!",
+					CommonFun.isElementPresent(driver,
+							By.xpath(XpathObjectRepo.loginUserEmailTitle_XPATH)));
+			log.info("Successfully login to Watchable application...!");
+		} else {
+			log.error("Login to Watchable application is failed with invalid credentials...!");
+		}
+
+	}
+
+}

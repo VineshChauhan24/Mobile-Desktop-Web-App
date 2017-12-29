@@ -1,0 +1,560 @@
+2016-03-01 16:17:52,226 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Clicked on Login button from Login form
+2016-03-01 16:17:53,022 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully login to Watchable application...!
+2016-03-01 16:17:53,692 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Play Lists menu is present
+2016-03-01 16:17:54,870 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully clicked on title 'Playlists' from Header menu
+2016-03-01 16:18:04,966 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully navigate to All Play Lists page
+2016-03-01 16:18:05,403 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Play Icon present in play list
+2016-03-01 16:18:05,971 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully clicked on play icon from play list
+2016-03-01 16:18:36,821 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - true
+2016-03-01 16:18:36,821 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - play from start present
+2016-03-01 16:18:47,472 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully navigate to video page
+2016-03-01 16:18:47,527 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - The Video page title displayed after navigating from play list is 'Playlist | Watchable'
+2016-03-01 16:18:47,735 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Video player is present in video page
+2016-03-01 16:18:48,060 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Play List share button present in play list
+2016-03-01 16:18:53,779 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Email button present in play list share option
+2016-03-01 16:19:00,991 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully clicked on play list email share button
+2016-03-01 16:19:06,266 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Play List Email sharing pop up window is displayed after clicking on Email button
+2016-03-01 16:19:07,515 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - The To email address entered is: new.user@gmail.com
+2016-03-01 16:19:08,149 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully clicked on send button  from email sharing window
+2016-03-01 16:19:13,906 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - The successful confirmation message 'Congrats, you've successfully shared this playlist!' displayed after sending Play List link
+2016-03-01 16:19:13,906 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - 
+2016-03-01 16:19:41,917 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Script: VerifyPlayListSharingSendWithBlankFields
+2016-03-01 16:19:41,921 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - ************************************************
+2016-03-01 16:19:56,305 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully opened the application
+2016-03-01 16:20:07,868 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Login form opened successfully
+2016-03-01 16:20:09,308 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - User Name/Email entered: watchable_v2_37_5@gmail.com
+2016-03-01 16:20:11,179 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Password entered: Demo1111
+2016-03-01 16:20:16,832 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Clicked on Login button from Login form
+2016-03-01 16:20:17,770 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully login to Watchable application...!
+2016-03-01 16:20:18,255 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Play Lists menu is present
+2016-03-01 16:20:19,303 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully clicked on title 'Playlists' from Header menu
+2016-03-01 16:20:29,403 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully navigate to All Play Lists page
+2016-03-01 16:20:29,771 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Play Icon present in play list
+2016-03-01 16:20:30,316 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully clicked on play icon from play list
+2016-03-01 16:21:01,290 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - true
+2016-03-01 16:21:01,291 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - play from start present
+2016-03-01 16:21:12,116 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully navigate to video page
+2016-03-01 16:21:12,252 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - The Video page title displayed after navigating from play list is 'Playlist | Watchable'
+2016-03-01 16:21:12,640 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Video player is present in video page
+2016-03-01 16:21:13,050 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Play List share button present in play list
+2016-03-01 16:21:18,830 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Email button present in play list share option
+2016-03-01 16:21:26,264 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully clicked on play list email share button
+2016-03-01 16:21:31,592 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Play List Email sharing pop up window is displayed after clicking on Email button
+2016-03-01 16:23:08,931 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Script: VerifyPlayListSharingSendWithBlankFields
+2016-03-01 16:23:08,934 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - ************************************************
+2016-03-01 16:23:20,910 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully opened the application
+2016-03-01 16:23:31,823 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Login form opened successfully
+2016-03-01 16:23:33,472 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - User Name/Email entered: watchable_v2_37_5@gmail.com
+2016-03-01 16:23:34,877 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Password entered: Demo1111
+2016-03-01 16:23:40,564 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Clicked on Login button from Login form
+2016-03-01 16:23:41,183 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully login to Watchable application...!
+2016-03-01 16:23:41,711 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Play Lists menu is present
+2016-03-01 16:23:42,856 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully clicked on title 'Playlists' from Header menu
+2016-03-01 16:23:52,923 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully navigate to All Play Lists page
+2016-03-01 16:23:53,532 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Play Icon present in play list
+2016-03-01 16:23:54,190 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully clicked on play icon from play list
+2016-03-01 16:24:25,405 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - true
+2016-03-01 16:24:25,406 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - play from start present
+2016-03-01 16:24:36,096 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully navigate to video page
+2016-03-01 16:24:36,183 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - The Video page title displayed after navigating from play list is 'Playlist | Watchable'
+2016-03-01 16:24:36,536 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Video player is present in video page
+2016-03-01 16:24:36,873 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Play List share button present in play list
+2016-03-01 16:24:42,608 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Email button present in play list share option
+2016-03-01 16:24:49,862 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully clicked on play list email share button
+2016-03-01 16:24:55,113 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Play List Email sharing pop up window is displayed after clicking on Email button
+2016-03-01 16:24:55,626 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - Successfully clicked on send button  from email sharing window
+2016-03-01 16:25:01,333 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - The Error message 'Email is required' displayed for To email address
+2016-03-01 16:25:01,333 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithBlankFields - INFO - 
+2016-03-01 16:26:35,578 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Script: VerifyPlayListSharingSendWithInvalidEmails
+2016-03-01 16:26:35,582 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - ************************************************
+2016-03-01 16:26:49,091 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Successfully opened the application
+2016-03-01 16:27:00,127 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Login form opened successfully
+2016-03-01 16:27:01,683 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - User Name/Email entered: watchable_v2_37_5@gmail.com
+2016-03-01 16:27:02,950 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Password entered: Demo1111
+2016-03-01 16:27:08,790 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Clicked on Login button from Login form
+2016-03-01 16:27:09,543 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Successfully login to Watchable application...!
+2016-03-01 16:27:10,306 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Play Lists menu is present
+2016-03-01 16:27:11,258 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Successfully clicked on title 'Playlists' from Header menu
+2016-03-01 16:27:21,290 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Successfully navigate to All Play Lists page
+2016-03-01 16:27:21,797 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Play Icon present in play list
+2016-03-01 16:27:22,521 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Successfully clicked on play icon from play list
+2016-03-01 16:27:53,948 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - true
+2016-03-01 16:27:53,948 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - play from start present
+2016-03-01 16:28:04,653 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Successfully navigate to video page
+2016-03-01 16:28:04,740 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - The Video page title displayed after navigating from play list is 'Playlist | Watchable'
+2016-03-01 16:28:04,949 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Video player is present in video page
+2016-03-01 16:28:05,199 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Play List share button present in play list
+2016-03-01 16:28:11,029 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Email button present in play list share option
+2016-03-01 16:28:18,219 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Successfully clicked on play list email share button
+2016-03-01 16:28:23,529 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Play List Email sharing pop up window is displayed after clicking on Email button
+2016-03-01 16:28:24,951 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - The To email address entered is: abc.com@d
+2016-03-01 16:28:25,787 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - Successfully clicked on send button  from email sharing window
+2016-03-01 16:28:31,930 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - The Error message 'Please enter a valid email address' displayed for To email address
+2016-03-01 16:28:31,931 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidEmails - INFO - 
+2016-03-01 16:29:15,435 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Script: VerifyPlayListSharingSendWithInvalidToEmail
+2016-03-01 16:29:15,437 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - ****************************************************
+2016-03-01 16:29:29,785 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Successfully opened the application
+2016-03-01 16:29:40,850 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Login form opened successfully
+2016-03-01 16:29:42,385 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - User Name/Email entered: watchable_v2_37_5@gmail.com
+2016-03-01 16:29:43,826 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Password entered: Demo1111
+2016-03-01 16:29:49,793 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Clicked on Login button from Login form
+2016-03-01 16:29:50,501 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Successfully login to Watchable application...!
+2016-03-01 16:29:51,015 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Play Lists menu is present
+2016-03-01 16:29:52,188 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Successfully clicked on title 'Playlists' from Header menu
+2016-03-01 16:30:02,266 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Successfully navigate to All Play Lists page
+2016-03-01 16:30:02,724 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Play Icon present in play list
+2016-03-01 16:30:03,335 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Successfully clicked on play icon from play list
+2016-03-01 16:30:34,323 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - true
+2016-03-01 16:30:34,323 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - play from start present
+2016-03-01 16:30:44,708 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Successfully navigate to video page
+2016-03-01 16:30:44,718 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - The Video page title displayed after navigating from play list is 'Playlist | Watchable'
+2016-03-01 16:30:44,748 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Video player is present in video page
+2016-03-01 16:30:44,794 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Play List share button present in play list
+2016-03-01 16:30:49,930 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Email button present in play list share option
+2016-03-01 16:30:56,098 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Successfully clicked on play list email share button
+2016-03-01 16:31:01,125 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Play List Email sharing pop up window is displayed after clicking on Email button
+2016-03-01 16:31:01,265 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - The To email address entered is: abc.com@d
+2016-03-01 16:31:01,347 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - Successfully clicked on send button  from email sharing window
+2016-03-01 16:31:06,421 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - The Error message 'Please enter a valid email address' displayed for To email address
+2016-03-01 16:31:06,421 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidToEmail - INFO - 
+2016-03-02 14:04:41,706 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Script: ValidateCaptchaByEnteringInvalidKey
+2016-03-02 14:04:41,708 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - ********************************************
+2016-03-02 14:04:53,448 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Successfully opened the application
+2016-03-02 14:05:42,910 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Successfully clicked On Contact Us link
+2016-03-02 14:05:42,954 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Contact Us form opened successfully
+2016-03-02 14:05:48,127 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Successfully selected value from reason list
+2016-03-02 14:05:53,295 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Reason Description entered: I am experiencing video quality issues on Watchable
+2016-03-02 14:05:53,495 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Email entered: watchable_v2_37_5@gmail.com
+2016-03-02 14:05:58,595 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Successfully clicked On submit button
+2016-03-02 14:05:58,651 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Captcha Error Message 'Security Check is required' is displayed
+2016-03-02 14:06:03,792 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Successfully clicked On close icon
+2016-03-02 14:06:03,856 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - Contact Us form is closed
+2016-03-02 14:06:03,856 - comcast.test.app.testCases.contactUs.ValidateCaptchaByEnteringInvalidKey - INFO - 
+2016-03-02 14:06:55,119 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - Script: VerifyNavigatingToChannelPageFromVideoPage
+2016-03-02 14:06:55,122 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - **************************************************
+2016-03-02 14:07:13,587 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - Successfully opened the application
+2016-03-02 14:07:30,068 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - Video Section title 'What we're watching' is present in Home Page
+2016-03-02 14:07:30,323 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - What we're watching video row is present in home page
+2016-03-02 14:07:31,292 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - Successfully clicked on video title form video section
+2016-03-02 14:08:01,362 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - Successfully navigate to video page
+2016-03-02 14:08:02,128 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - Successfully clicked on video player
+2016-03-02 14:08:07,538 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - Currently playing video channel title is present in video page
+2016-03-02 14:08:07,964 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - The title of the channel is: THINK TANK
+2016-03-02 14:08:08,615 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - Successfully clicked on channel title link from video page
+2016-03-02 14:08:18,709 - comcast.test.app.testCases.playerVideoPage.VerifyNavigatingToChannelPageFromVideoPage - INFO - User is successfully navigate to Show detail page.
+2016-03-02 14:09:02,490 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - Script: VerifyMetadataDisplayedMouseOverOnVideo
+2016-03-02 14:09:02,492 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - ***********************************************
+2016-03-02 14:09:19,482 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - Successfully opened the application
+2016-03-02 14:09:35,149 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - Video Section title 'What we're watching' is present in Home Page
+2016-03-02 14:09:35,337 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - What we're watching video row is present in home page
+2016-03-02 14:09:36,182 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - Successfully clicked on video title form video section
+2016-03-02 14:10:06,235 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - Successfully navigate to video page
+2016-03-02 14:10:06,537 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - Video player is present in video page
+2016-03-02 14:10:17,870 - comcast.test.app.testCases.playerVideoPage.VerifyMetadataDisplayedMouseOverOnVideo - INFO - Verify video meta data is displayed over video on mouse over
+2016-03-02 14:14:29,924 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Script: VerifySearchTextBoxBehaviour
+2016-03-02 14:14:29,927 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - *************************************
+2016-03-02 14:14:42,753 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Successfully opened the application
+2016-03-02 14:14:45,327 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search icon is present in header
+2016-03-02 14:14:45,636 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search text box is hidden by default
+2016-03-02 14:14:51,355 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search text box is visible after mouse over search icon
+2016-03-02 14:14:51,356 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - 
+2016-03-02 14:15:41,875 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Script: VeriyContactUsCaptchaButton
+2016-03-02 14:15:41,879 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - ************************************
+2016-03-02 14:18:46,613 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Script: VeriyContactUsCaptchaButton
+2016-03-02 14:18:46,616 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - ************************************
+2016-03-02 14:19:01,112 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully opened the application
+2016-03-02 14:19:35,523 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully clicked On Contact Us link
+2016-03-02 14:19:35,563 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Contact Us form opened successfully
+2016-03-02 14:19:35,603 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Captcha image is present in Contact Us form
+2016-03-02 14:19:35,646 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Anchor button is present in captcha container
+2016-03-02 14:19:35,674 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - auto
+2016-03-02 14:19:35,674 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Captcha Anchor button is not clickable
+2016-03-02 14:19:35,674 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - true
+2016-03-02 14:19:35,674 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - The captcha Anchor button is clickable
+2016-03-02 14:19:40,795 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully clicked On close icon
+2016-03-02 14:19:40,839 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Contact Us form is closed
+2016-03-02 14:19:40,839 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - 
+2016-03-03 16:26:38,849 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Script: VeriyContactUsCaptchaButton
+2016-03-03 16:26:38,851 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - ************************************
+2016-03-03 16:26:51,618 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully opened the application
+2016-03-03 16:27:31,598 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully clicked On Contact Us link
+2016-03-03 16:27:31,644 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Contact Us form opened successfully
+2016-03-03 16:27:31,714 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Captcha image is present in Contact Us form
+2016-03-03 16:27:31,784 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Anchor button is present in captcha container
+2016-03-03 16:27:31,836 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - auto
+2016-03-03 16:27:31,836 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Captcha Anchor button is not clickable
+2016-03-03 16:27:31,837 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - true
+2016-03-03 16:27:31,837 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - The captcha Anchor button is clickable
+2016-03-03 16:27:36,981 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully clicked On close icon
+2016-03-03 16:27:37,042 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Contact Us form is closed
+2016-03-03 16:27:37,042 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - 
+2016-03-04 18:05:38,057 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - Script: VerifyCaptchaButton
+2016-03-04 18:05:38,061 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - ******************************
+2016-03-04 18:05:53,293 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - Successfully opened the application
+2016-03-04 18:06:04,228 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - Successfully clicked On Sign Up button
+2016-03-04 18:06:04,823 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - Sign Up form opened successfully
+2016-03-04 18:06:05,667 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - Captcha image is present in Sign Up form
+2016-03-04 18:06:06,048 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - Anchor button is present in captcha container
+2016-03-04 18:06:06,476 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - auto
+2016-03-04 18:06:06,476 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - Captcha Anchor button is not clickable
+2016-03-04 18:06:06,477 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - true
+2016-03-04 18:06:06,477 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - The captcha Anchor button is clickable
+2016-03-04 18:06:12,297 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - Successfully clicked On captcha Anchor button
+2016-03-04 18:06:17,306 - comcast.test.app.testCases.signUp.VerifyCaptchaButton - INFO - 
+2016-03-04 18:07:43,795 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Script: VeriyContactUsCaptchaButton
+2016-03-04 18:07:43,798 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - ************************************
+2016-03-04 18:07:57,810 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully opened the application
+2016-03-04 18:08:40,760 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully clicked On Contact Us link
+2016-03-04 18:08:40,816 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Contact Us form opened successfully
+2016-03-04 18:08:40,867 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Captcha image is present in Contact Us form
+2016-03-04 18:08:40,911 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Anchor button is present in captcha container
+2016-03-04 18:08:40,941 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - auto
+2016-03-04 18:08:40,942 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Captcha Anchor button is not clickable
+2016-03-04 18:08:40,942 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - true
+2016-03-04 18:08:40,942 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - The captcha Anchor button is clickable
+2016-03-04 18:08:46,060 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Successfully clicked On close icon
+2016-03-04 18:08:46,141 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - Contact Us form is closed
+2016-03-04 18:08:46,142 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaButton - INFO - 
+2016-03-04 18:09:48,212 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Script: VeriyContactUsCaptchaTermsLink
+2016-03-04 18:09:48,215 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - *************************************
+2016-03-04 18:09:59,715 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Successfully opened the application
+2016-03-04 18:10:54,117 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Successfully clicked On Contact Us link
+2016-03-04 18:10:54,174 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Contact Us form opened successfully
+2016-03-04 18:10:54,231 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Captcha image is present in Contact Us form
+2016-03-04 18:10:54,272 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Captcha Terms Linkis present in captcha container
+2016-03-04 18:10:54,304 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - auto
+2016-03-04 18:10:54,305 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Captcha Terms link is not clickable
+2016-03-04 18:10:54,305 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - true
+2016-03-04 18:10:54,305 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - The Captcha Terms link is clickable
+2016-03-04 18:10:59,416 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Successfully clicked On close icon
+2016-03-04 18:10:59,492 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - Contact Us form is closed
+2016-03-04 18:10:59,492 - comcast.test.app.testCases.contactUs.VeriyContactUsCaptchaTermsLink - INFO - 
+2016-03-04 18:12:06,337 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Script: VerifyEmailSharingSendWithInvalidFromEmail
+2016-03-04 18:12:06,341 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - ************************************************
+2016-03-04 18:12:22,218 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Successfully opened the application
+2016-03-04 18:12:28,629 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Login form opened successfully
+2016-03-04 18:12:30,391 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - User Name/Email entered: watchable_v2_38@gmail.com
+2016-03-04 18:12:32,279 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Password entered: Demo1111
+2016-03-04 18:12:38,252 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Clicked on Login button from Login form
+2016-03-04 18:12:38,367 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Successfully login to Watchable application...!
+2016-03-04 18:12:40,547 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Featured video row is present in home page
+2016-03-04 18:12:40,826 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Successfully clicked on video title form video section
+2016-03-04 18:13:11,021 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - true
+2016-03-04 18:13:11,022 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - play from start present
+2016-03-04 18:13:21,142 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Successfully navigate to video page
+2016-03-04 18:13:21,179 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Video player is present in video page
+2016-03-04 18:13:31,420 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Email button is present in video control
+2016-03-04 18:13:43,195 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Successfully clicked on Email button from player controls
+2016-03-04 18:13:48,374 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Email sharing pop up window is displayed after clicking on Email button
+2016-03-04 18:13:48,649 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - The To email address entered is: new.user@gmail.com
+2016-03-04 18:13:48,806 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - Successfully clicked on send button  from email sharing window
+2016-03-04 18:13:53,806 - comcast.test.app.testCases.socialSharing.VerifyEmailSharingSendWithInvalidFromEmail - INFO - 
+2016-03-04 18:14:32,869 - comcast.test.app.testCases.contactUs.VeriyContactUsHiddenFields - INFO - Script: VeriyContactUsHiddenFields
+2016-03-04 18:14:32,872 - comcast.test.app.testCases.contactUs.VeriyContactUsHiddenFields - INFO - **********************************
+2016-03-04 18:14:45,504 - comcast.test.app.testCases.contactUs.VeriyContactUsHiddenFields - INFO - Successfully opened the application
+2016-03-04 18:16:04,388 - comcast.test.app.testCases.contactUs.VeriyContactUsHiddenFields - INFO - Successfully clicked On Contact Us link
+2016-03-04 18:16:04,438 - comcast.test.app.testCases.contactUs.VeriyContactUsHiddenFields - INFO - Contact Us form opened successfully
+2016-03-04 18:16:04,523 - comcast.test.app.testCases.contactUs.VeriyContactUsHiddenFields - INFO - Reason description text box is hidden in Contact Us form
+2016-03-04 18:16:04,585 - comcast.test.app.testCases.contactUs.VeriyContactUsHiddenFields - INFO - Email text box is hidden in Contact Us form
+2016-03-04 18:16:04,585 - comcast.test.app.testCases.contactUs.VeriyContactUsHiddenFields - INFO - 
+2016-03-04 18:16:37,396 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Script: VerifySearchTextBoxBehaviour
+2016-03-04 18:16:37,399 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - *************************************
+2016-03-04 18:17:38,021 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Successfully opened the application
+2016-03-04 18:17:40,289 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search icon is present in header
+2016-03-04 18:17:40,864 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search text box is hidden by default
+2016-03-04 18:17:46,938 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search text box is visible after mouse over search icon
+2016-03-04 18:17:46,938 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - 
+2016-03-04 18:18:17,241 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Script: VerifyPlayListSharingSendWithInvalidFromEmail
+2016-03-04 18:18:17,245 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - ************************************************
+2016-03-04 18:18:28,972 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully opened the application
+2016-03-04 18:18:40,500 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Login form opened successfully
+2016-03-04 18:18:42,122 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - User Name/Email entered: watchable_v2_38@gmail.com
+2016-03-04 18:18:44,289 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Password entered: Demo1111
+2016-03-04 18:18:50,304 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Clicked on Login button from Login form
+2016-03-04 18:18:51,152 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully login to Watchable application...!
+2016-03-04 18:18:52,301 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Play Lists menu is present
+2016-03-04 18:18:53,485 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully clicked on title 'Playlists' from Header menu
+2016-03-04 18:19:03,604 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully navigate to All Play Lists page
+2016-03-04 18:19:04,118 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Play Icon present in play list
+2016-03-04 18:19:04,852 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully clicked on play icon from play list
+2016-03-04 18:19:36,251 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - true
+2016-03-04 18:19:36,251 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - play from start present
+2016-03-04 18:19:46,925 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully navigate to video page
+2016-03-04 18:19:47,015 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - The Video page title displayed after navigating from play list is 'Playlist | Watchable'
+2016-03-04 18:19:47,379 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Video player is present in video page
+2016-03-04 18:19:47,675 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Play List share button present in play list
+2016-03-04 18:19:53,537 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Email button present in play list share option
+2016-03-04 18:20:01,045 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully clicked on play list email share button
+2016-03-04 18:20:06,495 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Play List Email sharing pop up window is displayed after clicking on Email button
+2016-03-04 18:20:08,204 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - The To email address entered is: new.user@gmail.com
+2016-03-04 18:20:09,121 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully clicked on send button  from email sharing window
+2016-03-04 18:21:42,709 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Script: VerifyPlayListSharingSendWithInvalidFromEmail
+2016-03-04 18:21:42,714 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - ************************************************
+2016-03-04 18:21:55,896 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully opened the application
+2016-03-04 18:22:07,292 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Login form opened successfully
+2016-03-04 18:22:09,427 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - User Name/Email entered: watchable_v2_38@gmail.com
+2016-03-04 18:22:10,874 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Password entered: Demo1111
+2016-03-04 18:22:16,510 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Clicked on Login button from Login form
+2016-03-04 18:22:17,448 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully login to Watchable application...!
+2016-03-04 18:22:18,128 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Play Lists menu is present
+2016-03-04 18:22:19,642 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully clicked on title 'Playlists' from Header menu
+2016-03-04 18:22:29,723 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully navigate to All Play Lists page
+2016-03-04 18:22:30,414 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Play Icon present in play list
+2016-03-04 18:22:31,144 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully clicked on play icon from play list
+2016-03-04 18:23:02,517 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - true
+2016-03-04 18:23:02,518 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - play from start present
+2016-03-04 18:23:12,589 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully navigate to video page
+2016-03-04 18:23:12,613 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - The Video page title displayed after navigating from play list is 'Playlist | Watchable'
+2016-03-04 18:23:12,653 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Video player is present in video page
+2016-03-04 18:23:12,731 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Play List share button present in play list
+2016-03-04 18:23:17,889 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Email button present in play list share option
+2016-03-04 18:23:24,137 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully clicked on play list email share button
+2016-03-04 18:23:29,194 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Play List Email sharing pop up window is displayed after clicking on Email button
+2016-03-04 18:23:29,429 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - The To email address entered is: new.user@gmail.com
+2016-03-04 18:23:29,522 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - Successfully clicked on send button  from email sharing window
+2016-03-04 18:23:34,522 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendWithInvalidFromEmail - INFO - 
+2016-03-11 10:33:09,638 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Script: VerifySearchTextBoxBehaviour
+2016-03-11 10:33:09,641 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - *************************************
+2016-03-11 10:33:27,447 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Successfully opened the application
+2016-03-11 10:33:29,702 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search icon is present in header
+2016-03-11 10:33:30,409 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search text box is hidden by default
+2016-03-11 10:33:36,561 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search text box is visible after mouse over search icon
+2016-03-11 10:33:36,561 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - 
+2016-03-11 10:34:24,135 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Script: VerifyNavigatingToShowPageFromVideoSectionFromSearchResult
+2016-03-11 10:34:24,138 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - ***************************************************************
+2016-03-11 10:35:11,541 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Successfully opened the application
+2016-03-11 10:35:13,093 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Search icon(button) is present in header
+2016-03-11 10:35:14,496 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Successfully clicked on Search icon
+2016-03-11 10:35:15,758 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Search text box is present in header
+2016-03-11 10:35:23,400 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - The search key entered is : food
+2016-03-11 10:35:33,555 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Successfully navigate to search result page
+2016-03-11 10:35:34,339 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Search Results for "food"
+2016-03-11 10:35:34,339 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - --------------------------------------------------
+2016-03-11 10:35:34,646 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - 16 Video(s) present in search result
+2016-03-11 10:35:34,646 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - The Video(s) present in search result are:
+2016-03-11 10:35:35,455 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Successfully clicked on first show title link
+2016-03-11 10:35:45,524 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - User is successfully navigate to Show detail page.
+2016-03-11 10:35:45,525 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - 
+2016-03-11 11:24:12,049 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Script: VerifySearchTextBoxBehaviour
+2016-03-11 11:24:12,056 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - *************************************
+2016-03-11 11:24:56,757 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Script: VerifySearchTextBoxBehaviour
+2016-03-11 11:24:56,760 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - *************************************
+2016-03-11 11:26:18,017 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Successfully opened the application
+2016-03-11 11:26:21,966 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search icon is present in header
+2016-03-11 11:26:22,504 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search text box is hidden by default
+2016-03-11 11:26:28,259 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - Search text box is visible after mouse over search icon
+2016-03-11 11:26:28,259 - comcast.test.app.testCases.homePage.VerifySearchTextBoxBehaviour - INFO - 
+2016-03-11 11:27:06,057 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Script: VerifyNavigatingToShowPageFromVideoSectionFromSearchResult
+2016-03-11 11:27:06,061 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - ***************************************************************
+2016-03-11 11:28:04,810 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Successfully opened the application
+2016-03-11 11:28:05,992 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Search icon(button) is present in header
+2016-03-11 11:28:06,611 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Successfully clicked on Search icon
+2016-03-11 11:28:08,176 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Search text box is present in header
+2016-03-11 11:28:15,062 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - The search key entered is : food
+2016-03-11 11:28:25,109 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Successfully navigate to search result page
+2016-03-11 11:28:25,774 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Search Results for "food"
+2016-03-11 11:28:25,775 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - --------------------------------------------------
+2016-03-11 11:28:25,999 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - 16 Video(s) present in search result
+2016-03-11 11:28:25,999 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - The Video(s) present in search result are:
+2016-03-11 11:28:26,572 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - Successfully clicked on first show title link
+2016-03-11 11:28:36,675 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - User is successfully navigate to Show detail page.
+2016-03-11 11:28:36,675 - comcast.test.app.testCases.search.VerifyNavigatingToShowPageFromVideoSectionFromSearchResult - INFO - 
+2016-03-11 11:29:45,908 - comcast.test.app.testCases.channelPage.VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage - INFO - Script: VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage
+2016-03-11 11:29:45,912 - comcast.test.app.testCases.channelPage.VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage - INFO - ************************************************************************
+2016-03-11 11:30:22,220 - comcast.test.app.testCases.channelPage.VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage - INFO - Successfully opened the application
+2016-03-11 11:30:47,826 - comcast.test.app.testCases.channelPage.VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage - INFO - Successfully clicked On First show Link from Watchable SHOWS OF THE WEEK section
+2016-03-11 11:30:48,207 - comcast.test.app.testCases.channelPage.VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage - INFO - Successfully navigate to show details page
+2016-03-11 11:31:22,200 - comcast.test.app.testCases.channelPage.VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage - INFO - Watchable logo is present in footer
+2016-03-11 11:31:27,272 - comcast.test.app.testCases.channelPage.VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage - INFO - Successfully clicked On footer Watchable Logo
+2016-03-11 11:31:32,279 - comcast.test.app.testCases.channelPage.VerifyClickingOnFooterWatchableLogoFromShowPageNavigatesHomePage - INFO - Successfully Navigated to Home page after clicking on footer Watchable logo from show page
+2016-03-11 11:32:45,851 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Script: VerifyMyWatchlistPageVideosSectionDetails
+2016-03-11 11:32:45,855 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - *****************************************************
+2016-03-11 11:34:20,304 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Successfully opened the application
+2016-03-11 11:34:31,328 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Login form opened successfully
+2016-03-11 11:34:32,826 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - User Name/Email entered: watchable_v2_38@gmail.com
+2016-03-11 11:34:34,028 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Password entered: Demo1111
+2016-03-11 11:34:39,638 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Clicked on Login button from Login form
+2016-03-11 11:34:40,603 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Successfully login to Watchable application...!
+2016-03-11 11:34:41,344 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - My Shows menu is present
+2016-03-11 11:34:42,458 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Successfully clicked on title 'My Shows' from Header menu
+2016-03-11 11:34:52,513 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Successfully navigate to my Shows page
+2016-03-11 11:34:52,932 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - The title 'MY SHOWS' is present in My Shows Page
+2016-03-11 11:34:53,068 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Videos are displaying in My Shows page
+2016-03-11 11:34:53,068 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Total number of Videos displaying: 4
+2016-03-11 11:34:53,068 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - Shows names are displaying in My Shows page
+2016-03-11 11:34:53,068 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - The details of videos oresent in first  row of My Shows page are below
+2016-03-11 11:34:53,069 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - ----------------------------------------------------------------------
+2016-03-11 11:34:53,526 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - 1. Top 5 Tips for Beer Drinkers || JukinVideo Top Five
+2016-03-11 11:34:53,852 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO -    Last Updated: Yesterday
+2016-03-11 11:34:53,852 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO -  
+2016-03-11 11:34:54,272 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - 2. Best Videos Compilation Week 1 March 2016 || JukinVideo
+2016-03-11 11:34:54,749 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO -    Last Updated: 3 days ago
+2016-03-11 11:34:54,749 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO -  
+2016-03-11 11:34:55,154 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - 3. Car Crash Compilation from the JukinVideo Vault
+2016-03-11 11:34:55,585 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO -    Last Updated: Last week
+2016-03-11 11:34:55,585 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO -  
+2016-03-11 11:34:55,999 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - 4. Top 5 Washed Up Videos || JukinVideo Top Five
+2016-03-11 11:34:56,384 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO -    Last Updated: Last week
+2016-03-11 11:34:56,384 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO -  
+2016-03-11 11:34:56,384 - comcast.test.app.testCases.myWatchlist.VerifyMyWatchlistPageVideosSectionDetails - INFO - 
+2016-03-11 11:35:55,324 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Script: VerifyEmailSharringPopuoWindowContents
+2016-03-11 11:35:55,327 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - ************************************************
+2016-03-11 11:36:47,053 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Successfully opened the application
+2016-03-11 11:36:53,121 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Login form opened successfully
+2016-03-11 11:36:54,594 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - User Name/Email entered: watchable_v2_38@gmail.com
+2016-03-11 11:36:55,281 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Password entered: Demo1111
+2016-03-11 11:37:00,351 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Clicked on Login button from Login form
+2016-03-11 11:37:00,431 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Successfully login to Watchable application...!
+2016-03-11 11:37:02,353 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Featured video row is present in home page
+2016-03-11 11:37:02,499 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Successfully clicked on video title form video section
+2016-03-11 11:37:32,626 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - true
+2016-03-11 11:37:32,627 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - play from start present
+2016-03-11 11:37:42,690 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Successfully navigate to video page
+2016-03-11 11:37:52,881 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Video player is present in video page
+2016-03-11 11:37:52,917 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Email button is present in sharing section
+2016-03-11 11:38:04,099 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Successfully clicked on Email button from player controls
+2016-03-11 11:38:09,121 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Email sharing pop up window is displayed after clicking on Email button
+2016-03-11 11:38:09,188 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - The Title Email This Video is displaying email pop up window
+2016-03-11 11:38:14,218 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Close button is displaying email pop up window
+2016-03-11 11:38:14,253 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - From email address text box is displaying email pop up window
+2016-03-11 11:38:14,304 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - To email address text box is displaying email pop up window
+2016-03-11 11:38:14,340 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Message text box is displaying email pop up window
+2016-03-11 11:38:14,375 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - Send button is displaying email pop up window
+2016-03-11 11:38:14,465 - comcast.test.app.testCases.socialSharing.VerifyEmailSharringPopuoWindowContents - INFO - The Message I found this great video on Watchable and thought you would enjoy it! is displaying in message area of email pop up window
+2016-03-11 11:39:11,102 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Script: VerifyVideoEmailSharringFromEmailContentLoginWithUserName
+2016-03-11 11:39:11,106 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - *****************************************************************
+2016-03-11 11:39:31,405 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Successfully opened the application
+2016-03-11 11:39:37,434 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Login form opened successfully
+2016-03-11 11:39:38,797 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - User Name/Email entered: watchable_v2_38
+2016-03-11 11:39:40,398 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Password entered: Demo1111
+2016-03-11 11:39:46,049 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Clicked on Login button from Login form
+2016-03-11 11:39:46,698 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Successfully login to Watchable application...!
+2016-03-11 11:39:56,717 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Featured video row is present in home page
+2016-03-11 11:39:56,793 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Successfully clicked on video title form video section
+2016-03-11 11:40:26,921 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - true
+2016-03-11 11:40:26,921 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - play from start present
+2016-03-11 11:40:37,020 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Successfully navigate to video page
+2016-03-11 11:40:47,171 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Video player is present in video page
+2016-03-11 11:40:47,213 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Email button is present in sharing section
+2016-03-11 11:40:58,020 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Successfully clicked on Email button from player controls
+2016-03-11 11:41:03,046 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - Email sharing pop up window is displayed after clicking on Email button
+2016-03-11 11:41:03,069 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - From email address text box is displaying email pop up window
+2016-03-11 11:41:03,108 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - From email address text box is pre-populated with logged in user's email id after login with user name
+2016-03-11 11:41:03,132 - comcast.test.app.testCases.socialSharing.VerifyVideoEmailSharringFromEmailContentLoginWithUserName - INFO - From email address pre-populated is : watchable_v2_38@gmail.com
+2016-03-11 11:41:44,852 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Script: VerifyPlayListSharingSendFunctionality
+2016-03-11 11:41:44,855 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - **********************************************
+2016-03-11 11:42:02,225 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully opened the application
+2016-03-11 11:42:13,280 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Login form opened successfully
+2016-03-11 11:42:14,702 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - User Name/Email entered: watchable_v2_38@gmail.com
+2016-03-11 11:42:15,857 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Password entered: Demo1111
+2016-03-11 11:42:21,518 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Clicked on Login button from Login form
+2016-03-11 11:42:22,156 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully login to Watchable application...!
+2016-03-11 11:42:22,808 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Play Lists menu is present
+2016-03-11 11:42:23,776 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully clicked on title 'Playlists' from Header menu
+2016-03-11 11:42:33,871 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully navigate to All Play Lists page
+2016-03-11 11:42:34,289 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Play Icon present in play list
+2016-03-11 11:42:35,008 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully clicked on play icon from play list
+2016-03-11 11:43:06,184 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - true
+2016-03-11 11:43:06,184 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - play from start present
+2016-03-11 11:43:16,963 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully navigate to video page
+2016-03-11 11:43:17,041 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - The Video page title displayed after navigating from play list is 'Playlist | Watchable'
+2016-03-11 11:43:17,375 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Video player is present in video page
+2016-03-11 11:43:17,677 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Play List share button present in play list
+2016-03-11 11:43:23,488 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Email button present in play list share option
+2016-03-11 11:43:30,393 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully clicked on play list email share button
+2016-03-11 11:43:35,414 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Play List Email sharing pop up window is displayed after clicking on Email button
+2016-03-11 11:43:35,579 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - The To email address entered is: new.user@gmail.com
+2016-03-11 11:43:35,657 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - Successfully clicked on send button  from email sharing window
+2016-03-11 11:43:40,733 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - The successful confirmation message 'Congrats, you've successfully shared this playlist!' displayed after sending Play List link
+2016-03-11 11:43:40,733 - comcast.test.app.testCases.playLists.VerifyPlayListSharingSendFunctionality - INFO - 
+2016-03-11 11:44:17,134 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Script: VerifyUpNexSectionNextButton
+2016-03-11 11:44:17,137 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - ***********************************************
+2016-03-11 11:44:52,113 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Successfully opened the application
+2016-03-11 11:45:09,999 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Video Section title 'What we're watching' is present in Home Page
+2016-03-11 11:45:10,221 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - What we're watching video row is present in home page
+2016-03-11 11:45:11,043 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Successfully clicked on video title form video section
+2016-03-11 11:45:41,163 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Successfully navigate to video page
+2016-03-11 11:45:47,413 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Up Next vidos section is prsent in Video page with videos
+2016-03-11 11:45:47,510 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Next button is present in up next section
+2016-03-11 11:45:47,555 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - triangle-right active
+2016-03-11 11:45:47,587 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Next button is clickaable in up next section
+2016-03-11 11:45:47,631 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - isDisplayed :false
+2016-03-11 11:45:47,631 - comcast.test.app.testCases.playerVideoPage.VerifyUpNexSectionNextButton - INFO - Previous button is not displaying in first page of up next section
+2016-06-21 11:31:21,690 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Script: VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage
+2016-06-21 11:31:21,696 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - *************************************************************************
+2016-06-21 11:39:21,408 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Script: VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage
+2016-06-21 11:39:21,413 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - *************************************************************************
+2016-06-21 11:39:33,807 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Successfully opened the application
+2016-06-21 11:39:38,884 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Browse Shows menu 'Browse Shows' is present
+2016-06-21 11:39:42,036 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Successfully clicked on Browse Shows Menu
+2016-06-21 12:04:04,981 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Script: VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage
+2016-06-21 12:04:04,987 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - *************************************************************************
+2016-06-21 12:04:17,001 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Successfully opened the application
+2016-06-21 12:04:21,902 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Browse Shows menu 'Browse Shows' is present
+2016-06-21 12:04:24,044 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Successfully clicked on Browse Shows Menu
+2016-06-21 12:12:31,233 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Script: VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage
+2016-06-21 12:12:31,241 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - *************************************************************************
+2016-06-21 12:12:44,020 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Successfully opened the application
+2016-06-21 12:12:46,868 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Browse Shows menu 'Browse Shows' is present
+2016-06-21 12:12:53,054 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Successfully clicked on Browse Shows Menu
+2016-06-21 12:12:58,524 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - The All Shows page title 'Top Shows | Watchable' is displayed
+2016-06-21 12:14:01,831 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Watchable logo is present in footer
+2016-06-21 12:14:07,029 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Successfully clicked On footer Watchable Logo
+2016-06-21 12:14:12,049 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - Successfully Navigated to Home page after clicking on footer Watchable logo from all shows page
+2016-06-21 12:14:12,050 - comcast.test.app.testCases.allChannels.VerifyClickOnFooterWatchableLogoFromAllShowsPageNavigatesHomePage - INFO - 
+2016-06-21 12:20:22,600 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - Script: VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage
+2016-06-21 12:20:22,606 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - *******************************************************************
+2016-06-21 12:20:33,717 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - Successfully opened the application
+2016-06-21 12:20:38,887 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - Browse Shows menu 'Browse Shows' is present
+2016-06-21 12:20:42,404 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - Successfully clicked on Browse Shows Menu
+2016-06-21 12:20:47,857 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - The All Shows page title 'Top Shows | Watchable' is displayed
+2016-06-21 12:22:18,502 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - Home Link is present
+2016-06-21 12:22:23,694 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - Successfully clicked On Home link
+2016-06-21 12:22:28,714 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - Successfully Navigated to Home page after clicking on Watchable logo from All Shows Page
+2016-06-21 12:22:28,714 - comcast.test.app.testCases.allChannels.VerifyClickOnHomeFooterLinkFromAllShowsPageNavigatesHomePage - INFO - 
+2016-06-21 13:47:43,635 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 13:47:43,640 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 13:48:01,333 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 13:51:30,300 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 13:51:30,306 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 13:51:46,206 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 13:54:36,149 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 13:54:36,157 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 13:54:51,926 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 13:59:40,493 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 13:59:40,503 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 13:59:57,844 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 14:06:45,733 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 14:06:45,738 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 14:07:00,851 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 14:09:22,381 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 14:09:22,390 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 14:09:38,244 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 15:13:39,027 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 15:13:39,031 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 15:13:57,707 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 15:19:23,425 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 15:19:23,431 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 15:19:41,962 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 15:32:24,567 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 15:32:24,572 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 15:32:43,876 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 15:37:38,328 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 15:37:38,332 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 15:38:08,004 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 15:41:36,881 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 15:41:36,885 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 15:42:03,510 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 15:45:23,120 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Script: VerifyAllGenreCategories
+2016-06-21 15:45:23,125 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - ********************************
+2016-06-21 15:45:41,422 - comcast.test.app.testCases.homePage.VerifyAllGenreCategories - INFO - Successfully opened the application
+2016-06-21 17:33:21,612 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - Script: VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton
+2016-06-21 17:33:21,616 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - ****************************************************************
+2016-06-21 17:33:42,902 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - Successfully opened the application
+2016-06-21 17:34:48,960 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - The shows Section title 'Watchable shows of the week' is present  in Home Page
+2016-06-21 17:34:49,986 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - Watchable SHOWS OF THE WEEK row is present in home page
+2016-06-21 17:34:50,770 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - Watchable SHOWS OF THE WEEK row contains channels
+2016-06-21 17:34:51,396 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - More shows button is present at the end of Watchable SHOWS OF THE WEEK section.
+2016-06-21 17:34:54,001 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - Successfully clicked on  More shows button
+2016-06-21 17:34:59,494 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - The All Shows page title 'Top Shows | Watchable' is displayed
+2016-06-21 17:34:59,494 - comcast.test.app.testCases.homePage.VerifyNavigatingToAllShowsPageClickingOnMoreShowsButton - INFO - 

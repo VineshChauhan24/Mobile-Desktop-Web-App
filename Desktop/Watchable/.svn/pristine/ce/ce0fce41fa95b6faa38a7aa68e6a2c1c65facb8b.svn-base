@@ -1,0 +1,129 @@
+package comcast.test.app.testCases.loginPageAndLogin;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import comcast.test.app.common.UILablesRepo;
+import comcast.test.app.common.XpathObjectRepo;
+import comcast.test.app.common.AssertionRepo.common.AssertionRepoFunctions;
+import comcast.test.app.common.commonFunctions.CommonFun;
+import comcast.test.app.testCases.loginPageAndLogin.loginPageFunctions.LoginFun;
+import comcast.test.config.configServices.DataServiceProperties;
+import comcast.test.config.configServices.utils.BaseTest;
+
+/**
+ * Class Name: VeriyResetPasswordPageContent Description: This test case
+ * verifies the content of reset password form. Author: Manoj
+ * **/
+
+public class VeriyResetPasswordPageContent extends BaseTest {
+
+	AssertionRepoFunctions assertionFunction = new AssertionRepoFunctions();
+
+	@Test
+	public void testVeriyResetPasswordPageContent() throws Exception {
+
+		try {
+
+			log.info("Script: VeriyResetPasswordPageContent");
+			log.info("**************************************");
+
+			// Navigate to the Home page of the application
+			driver.get(DataServiceProperties.HOMEAPPURL);
+
+			// Verify application is opened successfully.
+			AssertionRepoFunctions.assertWatchableTitle();
+			log.info("Successfully opened the application");
+
+			// Login to Watchable application
+			LoginFun.loginToWatchableApplication(driver, UILablesRepo.EMAIL,
+					UILablesRepo.PASSWORD);
+
+			WebElement loginError = driver.findElement(By
+					.id(XpathObjectRepo.loginError_ID));
+
+			if (loginError.isDisplayed() == false) {
+
+				// Select Settings Menu
+
+				LoginFun.selectSettingsMenu();
+
+				if (driver.findElement(
+						By.xpath(XpathObjectRepo.resetPasswordForm_XPATH))
+						.isDisplayed() == true) {
+
+					// Verify Reset Password form is opened successfully
+					assertTrue(
+							"Reset Password form is not opened",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordForm_XPATH)));
+					log.info("Reset Passwordn form opened successfully");
+
+					// Verify title present in Reset Password form
+					assertTrue(
+							"Reset password form does not contain title",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordFormTitle_XPATH)));
+					log.info("The title '"
+							+ driver.findElement(
+									By.xpath(XpathObjectRepo.resetPasswordFormTitle_XPATH))
+									.getText()
+							+ "' Present in Reset password form");
+
+					// Verify Close icon present in Reset password form
+					assertTrue(
+							"Close icon is not present in Reset password form",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordFormCloseButton_XPATH)));
+					log.info("Close icon is present in Reset password form");
+
+					// Verify old password text box present in Reset form
+					assertTrue(
+							"Old password text box is not present in Reset password form",
+							CommonFun.isElementPresent(
+									driver,
+									By.id(XpathObjectRepo.resetPasswordFormOldPasswordText_ID)));
+					log.info("Old password text box is present in Reset password form");
+
+					// Verify New password text box present in Reset form
+					assertTrue(
+							"New password text box is not present in Reset password form",
+							CommonFun.isElementPresent(
+									driver,
+									By.id(XpathObjectRepo.resetPasswordFormNewPasswordText_ID)));
+					log.info("New password text box is present in Reset password form");
+
+					// Verify Confirm password text box present in Reset form
+					assertTrue(
+							"Confirm password text box is not present in Reset password form",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordFormConfirmPasswordText_XPATH)));
+					log.info("Confirm password text box is present in Reset password form");
+
+					// Verify update button present in Reset password form
+					assertTrue(
+							"Update button is not present in Reset password form",
+							CommonFun.isElementPresent(
+									driver,
+									By.xpath(XpathObjectRepo.resetPasswordFormUpdateButton_XPATH)));
+					log.info("Update button is present in Reset password form");
+
+					log.info("");
+				} else {
+					log.error("Failed to open  Reset Passwordn form...!");
+				}
+			}
+
+		} catch (Throwable t) {
+			captureScreenshot();
+			collector.addError(t);
+		}
+	}
+}
